@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%% Page Setup %%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 11pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[margin=3cm]{geometry}
+\setlength\parindent{0pt}
+\setlength{\parskip}{\baselineskip}%
+\usepackage{graphicx}
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%% Math Stuff %%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tkz-euclide}
+\usepackage{pgf-pie}
+\usepackage{cancel}
+
+%%%%%%%%%%%%%%% Quotation Stuff %%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+
+%%%%%%%%%%%%%%% Color %%%%%%%%%%%%%%%
+
+\definecolor{p}{rgb}{0.9118, 0.4961, 0.6804}
+\definecolor{p1}{rgb}{1, 0.92, 0.963}
+\definecolor{g}{rgb}{0.023, 0.477, 0.219}
+\definecolor{g1}{rgb}{0.03, 0.75, 0.20}
+\definecolor{g2}{rgb}{0.95, 1, 0.95}
+
+%%%%%%%%%%%%%%% Link Setup %%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=g, filecolor=g, urlcolor=g,}
+
+%%%%%%%%%%%%%%% Box %%%%%%%%%%%%%%%
+
+\newmdenv[innerlinewidth=2pt, roundcorner=4pt,linecolor=g1,innerleftmargin=20pt,
+innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor = g2]{mybox}
+
+%%%%%%%%%%%%%%% Border Stuff %%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{\thepage}
+\fancyfoot[CE,CO]{}
+\fancyfoot[LE,RO]{}
+
+%%%%%%%%%%%%%%% Bug Fix Adjustments %%%%%%%%%%%%%%%
+
+\setlength{\headheight}{14pt}
+\setlength{\footskip}{55pt}
+
+%%%%%%%%%%%%%%% Index %%%%%%%%%%%%%%%
+
+\usepackage{makeidx}
+\makeindex
+
+%%%%%%%%%%%%%%% Custom Commands %%%%%%%%%%%%%%%
+
+\def\greenlozenge{\mathbin{\color{g}\blacklozenge}}
+
+\newcommand{\emphasis}[1]{\underline{\textbf{#1}} }
+\newcommand{\vocab}[1]{\underline{\textbf{#1}}\index{#1}}
+
+\newcommand{\claim}{\textbf{\underline{Claim}} }
+\newcommand{\corollary}{\underline{\textbf{Corollary}} }
+\newcommand{\defn}{\underline{\textbf{Def}} }
+\newcommand{\digression}{\underline{\textbf{Digression}} }
+\newcommand{\easy}{\underline{\textbf{Easy}} }
+\newcommand{\example}{\underline{\textbf{Example}} }
+\newcommand{\fact}{\underline{\textbf{Fact}} }
+\newcommand{\facts}{\underline{\textbf{Facts}} }
+\newcommand{\goal}{\underline{\textbf{Goal}} }
+\newcommand{\idea}{\underline{\textbf{Idea}} }
+\newcommand{\lemma}{\underline{\textbf{Lemma}} }
+\newcommand{\need}{\underline{\textbf{Need}} }
+\newcommand{\note}{\underline{\textbf{Note}} }
+\newcommand{\proof}{\underline{\textbf{Proof}} }
+\newcommand{\recall}{\underline{\textbf{Recall}} }
+\newcommand{\remark}{\underline{\textbf{Remark}} }
+\newcommand{\theorem}{\underline{\textbf{Theorem}} }
+\newcommand{\verify}{\underline{\textbf{Verify}} }
+
+%%%%%%%%%%%%%%% Math Operators %%%%%%%%%%%%%%%
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
+
+\title{Transcendental Numbers}
+\author{Vincent Lin}
+\date{Fall 2023}
+
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter{}
+\chapter{Preliminaries}
+\section{Transcendental Numbers}
+\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
+
+To find some algebraic numbers, we can take a nonzero polynomial with rational coefficents and find its roots. By definition, these roots are algebraic numbers. For example, $\sqrt{2}$ is algebraic because it is a root of $x^2 - 2$. Also, $i$ is algebraic because it is the root of $x^2 + 1$. All rational numbers are algebraic as well. Let $\frac{p}{q} \in \Q$ be rational, where $p, q \in \Z$ and $q$ is nonzero. Then, it is the root of $x - \frac{p}{q}$.\par
+
+What about transcendental numbers? Do they exist?\par
+
+\begin{mybox}
+    \theorem{Yes, transcendental numbers exist.}
+\end{mybox}
+
+\proof{Consider the set of algebraic numbers. This set is countable. }
+
+\chapter{Lindemann-Weierstrass Theorem}
+\begin{mybox}
+    \theorem{(Lindemann-Weierstrass Theorem) If $\alpha_1, \ldots, \alpha_n$ algebraic numbers that are linearly independent over $\Q$, then $e^{\alpha_1}, \ldots, e^{\alpha_n}$ are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}\par
+\end{mybox}
+\proof{}
+
+\chapter{Gelfond-Schneider Theorem}
+
+\begin{mybox}
+    \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \R \setminus \Q$. Then, ${\alpha}^{\beta}$ is transcendental.}\par
+\end{mybox}
+\proof{}
+\chapter{Weak Form of Baker's Theorem}
+\chapter{Schanuel's Conjecture}
+\backmatter{}
+\printindex
+\end{document}
