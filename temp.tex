@@ -72,7 +72,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \newcommand{\vocab}[1]{\underline{\textbf{#1}}\index{#1}}
 
 \newcommand{\claim}{\textbf{\underline{Claim}} }
-\newcommand{\corollary}{\underline{\textbf{Corollary}} }
+%\newcommand{\corollary}{\underline{\textbf{Corollary}} }
 \newcommand{\defn}{\underline{\textbf{Def}} }
 \newcommand{\digression}{\underline{\textbf{Digression}} }
 \newcommand{\easy}{\underline{\textbf{Easy}} }
@@ -81,17 +81,28 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \newcommand{\facts}{\underline{\textbf{Facts}} }
 \newcommand{\goal}{\underline{\textbf{Goal}} }
 \newcommand{\idea}{\underline{\textbf{Idea}} }
-\newcommand{\lemma}{\underline{\textbf{Lemma}} }
+%\newcommand{\lemma}{\underline{\textbf{Lemma}} }
 \newcommand{\need}{\underline{\textbf{Need}} }
 \newcommand{\note}{\underline{\textbf{Note}} }
 \newcommand{\proof}{\underline{\textbf{Proof}} }
 \newcommand{\recall}{\underline{\textbf{Recall}} }
 \newcommand{\remark}{\underline{\textbf{Remark}} }
-\newcommand{\theorem}{\underline{\textbf{Theorem}} }
+%\newcommand{\theorem}{\underline{\textbf{Theorem}} }
 \newcommand{\verify}{\underline{\textbf{Verify}} }
 
+
+%%%%%%%%%%%%%%% New Theorems %%%%%%%%%%%%%%%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
 %%%%%%%%%%%%%%% Math Operators %%%%%%%%%%%%%%%
+\DeclareMathOperator{\A}{\mathbb{A}}
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\C}{\mathbb{C}}
 \DeclareMathOperator{\characteristic}{char}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\dom}{dom}
@@ -122,7 +133,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \tableofcontents
 \mainmatter{}
 \chapter{Preliminaries}
-\section{Transcendental Numbers}
+\section{Algebraic and Transcendental Numbers}
 \defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
 
 To find some algebraic numbers, we can take a nonzero polynomial with rational coefficents and find its roots. By definition, these roots are algebraic numbers. For example, $\sqrt{2}$ is algebraic because it is a root of $x^2 - 2$. Also, $i$ is algebraic because it is the root of $x^2 + 1$. All rational numbers are algebraic as well. Let $\frac{p}{q} \in \Q$ be rational, where $p, q \in \Z$ and $q$ is nonzero. Then, it is the root of $x - \frac{p}{q}$.\par
@@ -133,25 +144,63 @@ What about transcendental numbers? Do they exist?\par
     \theorem{Yes, transcendental numbers exist.}
 \end{mybox}
 
-\proof{Consider the set of algebraic numbers. This set is countable. }
+\proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we return zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$, making $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental.\[ \greenlozenge \]}
 
+If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence of a large class of numbers.
+
+\section{Liouville Numbers}
+\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}
+\section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
+\begin{mybox}
+    \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
+        I(t) = \int_{0}^{t} e^{t-x}f(x) dx.\] Then, \[I(t) = e^t\sum\limits_{j=0}^{m}f^{(j)}(0) - \sum\limits_{j=0}^{m} f^{(j)}(t).\] where $f^{(j)}(t)$ is the $j$-th derivative of $f$ with respect to $x$ evaluated at $t$.}\par
+\end{mybox}
+
+\proof{Probably induction and integration by parts. I will fill this in later.}
 \chapter{Lindemann-Weierstrass Theorem}
 \begin{mybox}
-    \theorem{(Lindemann-Weierstrass Theorem) If $\alpha_1, \ldots, \alpha_n$ algebraic numbers that are linearly independent over $\Q$, then $e^{\alpha_1}, \ldots, e^{\alpha_n}$ are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}\par
+    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}\par
 \end{mybox}
 \proof{}
 
 \chapter{Gelfond-Schneider Theorem}
+\section{Useful Lemmas}
+In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce four lemmas to help prove this.
 
+\begin{mybox}
+    \lemma{Let the functions \[a_1(t), \ldots, a_n(t)\] be nonzero real polynomials $(\in \R[t])$ of degree \[d_1, \ldots, d_n\] respectively. Furthermore, let \[w_1, \ldots, w_n\] be (pairwise) distinct real numbers. Then, counting multiplicities, the function \[f(t) = \sum\limits_{j=1}^{n} a_j(t){e}^{{w_j}t}\] has at most $n - 1 + \sum\limits_{i=1}^{n} d_i$ real roots.}
+\end{mybox}
+
+\proof{Let $k = n + \sum\limits_{i=1}^{n} d_i$. We will prove this statement using strong induction on $k$.}
+
+\begin{mybox}
+    \lemma{Let $f(z)$ be an analytic function in the disk $D \subseteq \C$. Here, we define $D = \{z : \vert z \vert < d\}$ for some positive real $d$. Suppose $f$ is continuous on the closure of $D$, $\overline{D} = \{z : \vert z \vert \leq d\}$. Furthermore, let $\vert f \vert_d = \max\limits_{z \in \overline{D}, \vert z \vert = d} f(z)$. Then, for every $z \in \overline{D}$, $\vert f(z) \vert \leq \vert f \vert_d$.}
+\end{mybox}
+\proof{Seems very difficult. Involves Maximum Modulus Principle, proof is omitted in most texts.}
+\begin{mybox}
+    \lemma{something from complex analysis}
+\end{mybox}
+
+\begin{mybox}
+    \lemma{something with matrices}
+\end{mybox}
+
+
+\section{Main Theorem}
 \begin{mybox}
     \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \R \setminus \Q$. Then, ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
-\proof{}
-\chapter{Weak Form of Baker's Theorem}
+
+\proof{We will incorporate four lemmas in this proof}
+\chapter{Baker's Theorem}
 \begin{mybox}
-    \theorem{(Baker's Theorem)}
+    \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }
 \end{mybox}
 \chapter{Schanuel's Conjecture}
+\begin{mybox}
+    \conjecture{(Schanuel's Conjecture) Suppose we have $n$ complex numbers \[z_1, \ldots, z_n\] that are linearly independent over $\Q$. Then, $\Q(z_1, \ldots, z_n, e^{z_1}, \ldots, e^{z_n})$ has transcendence degree at least $n$ over $\Q$.} 
+\end{mybox}
+
 \backmatter{}
 \printindex
 \end{document}

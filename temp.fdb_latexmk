@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex temp.idx"] 1695944361 "temp.idx" "temp.ind" "temp" 1695944363 0
-  "temp.idx" 1695944362 91 5ed8b9b18b7df5a8a59040b0da75987a "pdflatex"
+["makeindex temp.idx"] 1695951516 "temp.idx" "temp.ind" "temp" 1695957069 0
+  "temp.idx" 1695957069 134 bffad3981f6161b13a0311e57b2db828 "pdflatex"
   (generated)
   "temp.ilg"
   "temp.ind"
   (rewritten before read)
-["pdflatex"] 1695944362 "temp.tex" "temp.pdf" "temp" 1695944363 0
+["pdflatex"] 1695957068 "temp.tex" "temp.pdf" "temp" 1695957069 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrb1095.tfm" 1136768653 3584 67ad9712354d3ed89e9c15916fb5d736 ""
@@ -18,6 +18,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1136768653 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm2074.tfm" 1136768653 3584 8e2870ec7aa9776f59654942b0923f51 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm" 1136768653 3584 406ad7b70d9a41f7833f92b6313150c8 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm" 1136768653 3072 b73d2778cc3af44970de4de5e032d7f6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -36,13 +37,17 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1095.pfb" 1215737283 155163 863797a012ec2afc420949ffa4b8b3b6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb" 1215737283 136412 72810c330e499ac8cb28fff329182dec ""
@@ -51,6 +56,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1215737283 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb" 1215737283 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb" 1215737283 196446 8fbbe4b97b83e5182def6d29a44e57fb ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/babel-english/english.ldf" 1496785618 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
@@ -266,11 +272,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684207353 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684207278 7883455 c07dcb3f638da73dc1a9d744117c6e60 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "temp.aux" 1695944362 2273 4e0e68048430861298032b720e081d7f "pdflatex"
-  "temp.ind" 1695944361 135 38ddb110fe7d5149d6e9f60a687a0a8c "makeindex temp.idx"
-  "temp.out" 1695944362 983 273584354ba2626202a0421cffb064ec "pdflatex"
-  "temp.tex" 1695944360 5413 250c81a2147aaaab9a65da913461690a ""
-  "temp.toc" 1695944362 508 561c961ee69376a98e53d5208dea9ab8 "pdflatex"
+  "temp.aux" 1695957069 3514 acd4b3466bc52cef98d3536694fe4872 "pdflatex"
+  "temp.ind" 1695951516 191 024da4918f0a3881b90184d7c1133e0f "makeindex temp.idx"
+  "temp.out" 1695957069 1593 cd272909de607d074f4f4bab5e37edb3 "pdflatex"
+  "temp.tex" 1695957065 10091 394753492642d58dc19d0187d68d4d6e ""
+  "temp.toc" 1695957069 822 5c960141ec927397163c20dae3c76734 "pdflatex"
   (generated)
   "temp.aux"
   "temp.idx"
