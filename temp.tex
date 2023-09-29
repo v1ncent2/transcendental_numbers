@@ -122,7 +122,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers}
+\title{Transcendental Numbers (Rough Outline 9/28/23)}
 \author{Vincent Lin}
 \date{Fall 2023}
 
@@ -134,7 +134,15 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \mainmatter{}
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
-\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
+\defn{Let $k, l$ be fields and $l/k$. Then, $a \in l$ is \vocab{algebraic} over $k$ if there is a nonzero polynomial $f \in k[x]$ such that $f(a) = 0$. Otherwise, $a$ is \vocab{transcendental} over $k$.}\par
+
+\defn{Let $l/k$ be a field extension. We say that $X \subseteq L$ is \vocab{algebraically independent} over $k$ if for all $a_1, \ldots, a_t$ distinct and all $f \in k[x_1, \ldots, x_t]$, $f(a_1, \ldots, a_t) = 0$ implies $f = 0$.}
+
+Now, we will consider the field extension $\C/\Q$.\par
+
+\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic. In other words, an algebraic number is a complex number that is algebraic over $\Q$ and a transcendental number is a complex number that is not algebraic over $\Q$.}\par
+
+\note{We will use $\A$ to denote the set of algebraic numbers and we will use $\C \setminus \A$ to denote the set transcendental numbers. We will use $\R \setminus \A$ to denote the set of real transcendental numbers.}\par
 
 To find some algebraic numbers, we can take a nonzero polynomial with rational coefficents and find its roots. By definition, these roots are algebraic numbers. For example, $\sqrt{2}$ is algebraic because it is a root of $x^2 - 2$. Also, $i$ is algebraic because it is the root of $x^2 + 1$. All rational numbers are algebraic as well. Let $\frac{p}{q} \in \Q$ be rational, where $p, q \in \Z$ and $q$ is nonzero. Then, it is the root of $x - \frac{p}{q}$.\par
 
@@ -144,12 +152,24 @@ What about transcendental numbers? Do they exist?\par
     \theorem{Yes, transcendental numbers exist.}
 \end{mybox}
 
-\proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we return zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$, making $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental.\[ \greenlozenge \]}
+\proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we return zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$, making $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
 
-If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence of a large class of numbers.
+If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence of a large class of numbers.\par
+
+
+
 
 \section{Liouville Numbers}
-\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}
+\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
+
+Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a rational $\frac{p}{q}$, where $q > 1$.\par
+
+\begin{mybox}
+    \theorem{(Liouville's Approximation Theorem) For any algebraic number $\alpha$ of degree $n > 2$, a rational approximation $\frac{p}{q}$ to $\alpha$, }
+\end{mybox}
+\proof{We will show that no algebraic number has this property. Namely, if $\alpha \in \A$, then for any approximation $\frac{p}{q}$ with $q > 1$, there will be some natural $n$ where $\vert \alpha - \frac{p}{q}\vert > \frac{1}{q^n}$.}
+
+blah blah blah
 \section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
 \begin{mybox}
     \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
@@ -159,7 +179,7 @@ If transcendental numbers exist, then can we find an example? To show that a num
 \proof{Probably induction and integration by parts. I will fill this in later.}
 \chapter{Lindemann-Weierstrass Theorem}
 \begin{mybox}
-    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}\par
+    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
 \end{mybox}
 \proof{}
 
