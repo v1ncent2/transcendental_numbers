@@ -122,7 +122,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers (Rough Outline 9/28/23)}
+\title{Transcendental Numbers (Rough Outline 9/30/23)}
 \author{Vincent Lin}
 \date{Fall 2023}
 
@@ -147,9 +147,11 @@ What about transcendental numbers? Do they exist?\par
     \theorem{Yes, transcendental numbers exist.}
 \end{mybox}
 
-\proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we return zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$, making $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
+\proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N} {\Q}^{n}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we map the input to zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$. This makes $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
 
 If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence.\par
+
+\section{Fields}
 
 Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $k, l$ be fields and let $l/k$ be a field extension.\par
 
@@ -162,23 +164,33 @@ Before that, we will generalize the concept of transcendence to other fields. In
     \item{An \vocab{algebraic closure} of $k$ is an algebraic extension of $k$ that is algebraically closed.}
 \end{itemize}
 
-
-
 \section{Liouville Numbers}
-Now we will start looking for our first transcendental number! First, we will prove a small lemma.\par
+Now we will start looking for our first transcendental number! First, we will start by proving a lemma.\par
 
 \begin{mybox}
-    \lemma{For any polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
+    \lemma{For any nonzero polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
 \end{mybox}
 
-\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $x-\alpha \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
+\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
 \begin{align*}
     p(x) &= {(x-\alpha)}^{m}q(x) \\
-    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x).
+    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= m{\left(x- \alpha\right)}^{m-1}q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= {\left(x-\alpha\right)}^{m-1}\left(mq(x) + (x-\alpha)q'(x)\right)
 \end{align*}
 
-\[ \greenlozenge \]}
+Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $\alpha$ of multiplicity at least $m-1$.\par
 
+
+Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. In order to show this, we will shift the polynomial by $\alpha$ (all of the roots will therefore be shifted by $\alpha$ as well). Namely, we look at $p(x+\alpha) = {x}^{m}q(x+\alpha)$. Note that $p(x+\alpha)$ now has the root $0$ with multiplicity $m$ (it has $m$ factors of $x$) and since $q(x)$ had no $x-\alpha$ factors, $q(x+\alpha)$ has no roots at zero. In other words, $x \nmid q(x+\alpha)$. Now, showing $p'(x)$ has root $\alpha$ with multiplicity $m-1$ is equivalent to showing $p'(x+\alpha)$ as root $0$ with multiplicity $m-1$ (it has exactly $m-1$ factors of $x$). Thus, substituting $x+\alpha$ in $p'(x)$: 
+
+\[
+    p'(x+\alpha) = {x}^{m-1}\left(mq(x+\alpha) + xq'(x+\alpha)\right)
+\]
+
+We have $m-1$ factors of $x$ from the $x^{m-1}$ term. Therefore, we need to show the rest of the expression has no factors of $x$. In other words, $x \nmid \left(mq(x+\alpha) + xq'(x+\alpha)\right)$, we can take the expression $\left(mq(x+\alpha) + xq'(x+\alpha)\right)$ modulo $x$ to get $mq(x+\alpha)$. Since $m > 0$ and $q(x+\alpha)$ has no factors of $x$, we know that $x$ cannot divide the entire expression. Shifting back by $\alpha$, we get that $x-\alpha$ cannot be a factor of $mq(x) + (x-\alpha)q'(x)$, so the multiplicity of $x-\alpha$ in $p(x)$ is at most $m-1$.
+
+\[ \greenlozenge \]}
 
 \defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
 
