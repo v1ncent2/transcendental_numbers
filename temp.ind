@@ -1,16 +1,27 @@
 \begin{theindex}
 
-  \item algebraic, \hyperpage{1}
+  \item algebraic, \hyperpage{2}
+  \item algebraic closure, \hyperpage{2}
+  \item algebraic extension, \hyperpage{2}
   \item algebraic number, \hyperpage{1}
-  \item algebraically independent, \hyperpage{1}
+  \item algebraically closed, \hyperpage{2}
+  \item algebraically independent, \hyperpage{2}
 
   \indexspace
 
-  \item Liouville number, \hyperpage{2}
+  \item degree, \hyperpage{2}
 
   \indexspace
 
-  \item transcendental, \hyperpage{1}
+  \item Liouville number, \hyperpage{3}
+
+  \indexspace
+
+  \item minimal polynomial, \hyperpage{2}
+
+  \indexspace
+
+  \item transcendental, \hyperpage{2}
   \item transcendental number, \hyperpage{1}
 
 \end{theindex}

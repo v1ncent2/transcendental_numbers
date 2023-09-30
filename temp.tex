@@ -134,13 +134,8 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \mainmatter{}
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
-\defn{Let $k, l$ be fields and $l/k$. Then, $a \in l$ is \vocab{algebraic} over $k$ if there is a nonzero polynomial $f \in k[x]$ such that $f(a) = 0$. Otherwise, $a$ is \vocab{transcendental} over $k$.}\par
 
-\defn{Let $l/k$ be a field extension. We say that $X \subseteq L$ is \vocab{algebraically independent} over $k$ if for all $a_1, \ldots, a_t$ distinct and all $f \in k[x_1, \ldots, x_t]$, $f(a_1, \ldots, a_t) = 0$ implies $f = 0$.}
-
-Now, we will consider the field extension $\C/\Q$.\par
-
-\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic. In other words, an algebraic number is a complex number that is algebraic over $\Q$ and a transcendental number is a complex number that is not algebraic over $\Q$.}\par
+\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
 
 \note{We will use $\A$ to denote the set of algebraic numbers and we will use $\C \setminus \A$ to denote the set transcendental numbers. We will use $\R \setminus \A$ to denote the set of real transcendental numbers.}\par
 
@@ -154,20 +149,45 @@ What about transcendental numbers? Do they exist?\par
 
 \proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we return zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$, making $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
 
-If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence of a large class of numbers.\par
+If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence.\par
 
+Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $k, l$ be fields and let $l/k$ be a field extension.\par
+
+\begin{itemize}
+    \item{$a \in l$ is \vocab{algebraic} over $k$ if there is a nonzero polynomial $f \in k[x]$ such that $f(a) = 0$. Otherwise, $a$ is \vocab{transcendental} over $k$. In other words, an algebraic number is a complex number that is algebraic over $\Q$ and a transcendental number is a complex number that is not algebraic over $\Q$.} 
+    \item{$X \subseteq L$ is \vocab{algebraically independent} over $k$ if for all $a_1, \ldots, a_t$ distinct and all $f \in k[x_1, \ldots, x_t]$, $f(a_1, \ldots, a_t) = 0$ implies $f = 0$.}
+    \item{If $a \in l$ is algebraic over $k$, the \vocab{minimal polynomial} of $a$ over $k$, denoted $m_a$, is the unique monic irreducible polynomial which generates the kernel of the evaluation map $\phi(f) = f(a)$ for $f \in k[x]$. The \vocab{degree} of $\alpha \in k$ is the degree of the minimial polynomial $m_a$.}
+    \item{$l/k$ is an \vocab{algebraic extension} if every element in $l$ is algebraic over $k$.}
+    \item{$l$ is \vocab{algebraically closed} if every nonconstant single variable polynomial in $l$ has a root in $l$.}
+    \item{An \vocab{algebraic closure} of $k$ is an algebraic extension of $k$ that is algebraically closed.}
+\end{itemize}
 
 
 
 \section{Liouville Numbers}
-\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
-
-Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a rational $\frac{p}{q}$, where $q > 1$.\par
+Now we will start looking for our first transcendental number! First, we will prove a small lemma.\par
 
 \begin{mybox}
-    \theorem{(Liouville's Approximation Theorem) For any algebraic number $\alpha$ of degree $n > 2$, a rational approximation $\frac{p}{q}$ to $\alpha$, }
+    \lemma{For any polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
 \end{mybox}
-\proof{We will show that no algebraic number has this property. Namely, if $\alpha \in \A$, then for any approximation $\frac{p}{q}$ with $q > 1$, there will be some natural $n$ where $\vert \alpha - \frac{p}{q}\vert > \frac{1}{q^n}$.}
+
+\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $x-\alpha \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
+\begin{align*}
+    p(x) &= {(x-\alpha)}^{m}q(x) \\
+    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x).
+\end{align*}
+
+\[ \greenlozenge \]}
+
+
+\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
+
+Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a sequence of rationals of the form $\left\{\frac{p_i}{q_i}\right\}$, where $q_i > 1$, and the distance between $x$ and $\frac{p_i}{q_i}$ is nonzero, but less than $\frac{1}{{(q_i)}^{i}}$.\par
+
+\begin{mybox}
+    \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$, we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{1}{q^n}\]}
+\end{mybox}
+\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that.}
 
 blah blah blah
 \section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
