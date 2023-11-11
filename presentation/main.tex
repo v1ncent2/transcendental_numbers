@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\usetheme{Madrid}
+
+
+\title{Transcendental Numbers} 
+
+\author{Vincent Lin} 
+
+\date{\today} 
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\frametitle{Introduction}
+	Motivation, definitions, etc
+
+    \begin{definition}
+        An \alert{algebraic number} is $\alpha \in \mathbb{C}$ which is a root of a nonzero polynomial in $\mathbb{Q}[x]$. $\alpha \in \mathbb{C}$ that are not algebraic numbers are called \alert{transcendental numbers}.
+    \end{definition}
+
+ 	\begin{example}
+		\begin{itemize}
+		    \item{$q \in \mathbb{Q}$ are algebraic numbers.}
+		\end{itemize}
+	\end{example} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{More Definitions}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Can we construct a transcendental number?}
+    \begin{theorem}
+        $\sum\limits_{i = 1}^{\infty}\frac{1}{10^{n!}}$ is transcendental.
+    \end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Which of the following are transcendental?}
+	
+    \[\log(2), \log_{2}(21441)\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[e + \pi, e\pi, e^{\pi}, {\pi}^{e}, {e}^{e}\] \\ \[\phi, \gamma, \lambda\]
+	
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Transcendental by the Lindemann-Weierstrass Theorem}
+    \[\alert{\log(2)}, \log_{2}(21441)\] \\ \[\alert{e}, \alert{\pi}, \alert{\sqrt[4]{\pi}}\] \\ \[\alert{\cos{1}}\] \\ \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[e + \pi, e\pi, e^{\pi}, {\pi}^{e}, {e}^{e}\] \\ \[\phi, \gamma, \lambda\]
+\end{frame}
+
+\begin{frame}
+	\frametitle{Transcendental by the Gelfond-Schneider Theorem}
+	
+    \[\log(2), \alert{\log_{2}(21441)}\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[\alert{2^{\sqrt{2}}}, \alert{{\sqrt{2}}^{\sqrt{2}}}, \alert{{i}^{i}}\] \\ \[e + \pi, e\pi, \alert{e^{\pi}}, {\pi}^{e}, {e}^{e}\] \\ \[\phi, \gamma, \lambda\]
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Unknown. Schanuel's Conjecture implies transcendence.}
+
+    \[\log(2), \log_{2}(21441)\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[\alert{e + \pi}, \alert{e\pi}, e^{\pi}, \alert{{\pi}^{e}}, \alert{{e}^{e}}\] \\ \[\phi, \gamma, \lambda\]
+   
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algebraic. Minimal polynomial is $x^2 - x - 1$.}
+	
+    \[\log(2), \log_{2}(21441)\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[e + \pi, e\pi, e^{\pi}, {\pi}^{e}, {e}^{e}\] \\ \[\alert{\phi}, \gamma, \lambda\]
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Both irrationality and transcendence are unknown.}
+	
+    \[\log(2), \log_{2}(21441)\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[e + \pi, e\pi, e^{\pi}, {\pi}^{e}, {e}^{e}\] \\ \[\phi, \alert{\gamma}, \lambda\]
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Algebraic. Minimal polynomial has degree 71!}
+	
+    \[\log(2), \log_{2}(21441)\] \\ \[e, \pi, \sqrt[4]{\pi}\] \\ \[\cos{1}\] \[2^{\sqrt{2}}, {\sqrt{2}}^{\sqrt{2}}, {i}^{i}\] \\ \[e + \pi, e\pi, e^{\pi}, {\pi}^{e}, {e}^{e}\] \\ \[\phi, \gamma, \alert{\lambda}\]
+	
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lindemann-Weierstrass Theorem}
+    \begin{theorem}
+        If $\alpha_1, \ldots, \alpha_n$ are algebraic numbers and linearly independent over $\mathbb{Q}$, then $e^{\alpha_1}, \ldots, e^{\alpha_n}$ are algebraically independent over $\mathbb{Q}$.
+    \end{theorem}
+    \begin{corollary}
+        If $\alpha$ is a nonzero algebraic number, then $e^{\alpha}$ is transcendental.
+    \end{corollary}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Gelfond-Schneider Theorem}
+    \begin{theorem}
+        Let $\alpha$ be a nonzero algebraic not equal to $1$. If $\beta$ is not rational ($\in \mathbb{C} \setminus \mathbb{Q}$), then $\alpha^{\beta}$ is transcendental.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Baker's Theorem}
+    \begin{theorem}
+        
+    \end{theorem}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Schanuel's Conjecture}
+    \begin{theorem}
+        
+    \end{theorem}
+\end{frame}
+
+
+
+%------------------------------------------------
+
+\begin{frame} % Use [allowframebreaks] to allow automatic splitting across slides if the content is too long
+	\frametitle{References}
+	
+	\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below, you may need to use multiple columns and/or reduce the font size further if you have many references
+		\footnotesize % Reduce the font size in the bibliography
+		
+		\bibitem[Smith, 2022]{p1}
+			John Smith (2022)
+			\newblock Publication title
+			\newblock \emph{Journal Name} 12(3), 45 -- 678.
+			
+		\bibitem[Kennedy, 2023]{p2}
+			Annabelle Kennedy (2023)
+			\newblock Publication title
+			\newblock \emph{Journal Name} 12(3), 45 -- 678.
+	\end{thebibliography}
+\end{frame}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

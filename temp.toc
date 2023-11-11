@@ -8,6 +8,7 @@
 \contentsline {chapter}{\numberline {2}Lindemann-Weierstrass Theorem}{5}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Gelfond-Schneider Theorem}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Useful Lemmas}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Main Theorem}{8}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Baker's Theorem}{9}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{11}{chapter.5}%
+\contentsline {section}{\numberline {3.2}Main Theorem}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Consequences}{9}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Baker's Theorem}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{13}{chapter.5}%

@@ -122,7 +122,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers (Rough Outline 10/13/23)}
+\title{Transcendental Numbers (Rough Outline 11/11/23)}
 \author{Vincent Lin}
 \date{Fall 2023}
 
@@ -137,11 +137,11 @@ Research into transcendental numbers started with rational approximations. This 
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
 
-\defn{An \vocab{algebraic number} is a complex number that is the root of a finite nonzero polynomial in one variable with rational coefficients. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
+\defn{An \vocab{algebraic number} is $\alpha \in \C$ which is the root of a nonzero polynomial in $\Q[x]$. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
 
 \note{We will use $\A$ to denote the set of algebraic numbers and we will use $\C \setminus \A$ to denote the set transcendental numbers. We will use $\R \setminus \A$ to denote the set of real transcendental numbers.}\par
 
-To find some algebraic numbers, we can take a nonzero polynomial with rational coefficents and find its roots. By definition, these roots are algebraic numbers. For example, $\sqrt{2}$ is algebraic because it is a root of $x^2 - 2$. Also, $i$ is algebraic because it is the root of $x^2 + 1$. All rational numbers are algebraic as well. Let $\frac{p}{q} \in \Q$ be rational, where $p, q \in \Z$ and $q$ is nonzero. Then, it is the root of $x - \frac{p}{q}$.\par
+To find examples of algebraic numbers, we can take any nonzero polynomial in $\Q[x]$ find its roots. By definition, these roots are algebraic numbers. For example, $\sqrt{2}$ is algebraic because it is a root of $x^2 - 2$. Also, $i$ is algebraic because it is the root of $x^2 + 1$. All rational numbers are algebraic as well. Let $\frac{p}{q} \in \Q$ be rational, where $p, q \in \Z$ and $q$ is nonzero. Then, it is the root of $x - \frac{p}{q}$. Therefore, $\Q \subseteq \A$.\par
 
 What about transcendental numbers? Do they exist?\par
 
@@ -226,13 +226,40 @@ for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Also, note t
 
 \chapter{Gelfond-Schneider Theorem}
 \section{Useful Lemmas}
-In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce four lemmas to help prove this.
+In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce a few definitions and lemmas to help prove this.
 
+\defn{The square \vocab{Vandermonde matrix} of size $n$ is the matrix $V = V(x_1, \ldots, x_n)$ is the $n \times n$ matrix 
+\[
+    \begin{pmatrix}
+        1 & x_1 & x_{1}^2 & \cdots & x_{1}^{n-1} \\
+        1 & x_2 & x_{2}^2 & \cdots & x_{2}^{n-1} \\
+        1 & x_3 & x_{3}^2 & \cdots & x_{3}^{n-1} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        1 & x_n & x_{n}^2 & \cdots & x_{n}^{n-1}
+    \end{pmatrix}
+\]
+}
+with nonzero element $x_i^{j}$ in the $i$-th row and $j+1$-th column column for $i \in \{1, \ldots, n\}$ where $0 \leq j \leq n-1$ and $1 \leq i \leq n$.\par
+
+\begin{mybox}
+    \lemma{Let $V = V(x_1, \ldots, x_n)$ be the square Vandermonde matrix of size $n$. Then, the determinant of the square Vandermonde matrix is \[\prod\limits_{1 \leq i < j \leq n} (x_j - x_i).\] Therefore the determinant vanishes if and only if $x_i = x_j$ for any $i \neq j$.} 
+\end{mybox}
+
+\proof{}
+
+% This is from an incomplete proof of the Gelfond-Schneider Theorem. 
+
+\newpage
 \begin{mybox}
     \lemma{Let the functions \[a_1(t), \ldots, a_n(t)\] be nonzero real polynomials $(\in \R[t])$ of degree \[d_1, \ldots, d_n\] respectively. Furthermore, let \[w_1, \ldots, w_n\] be (pairwise) distinct real numbers. Then, counting multiplicities, the function \[f(t) = \sum\limits_{j=1}^{n} a_j(t){e}^{{w_j}t}\] has at most $n - 1 + \sum\limits_{i=1}^{n} d_i$ real roots.}
 \end{mybox}
 
-\proof{Let $k = n + \sum\limits_{i=1}^{n} d_i$. We will prove this statement using strong induction on $k$.}
+\proof{Note that we can multiply the function $f(t)$ by $e^{-w_{n}t}$ and the number of roots stays the same. This is because this function is nonzero 
+
+    Let $k = n + \sum\limits_{i=1}^{n} d_i$. This means that we want to show $f(t)$ has at most $k-1$ roots. We will prove this statement using strong induction on $k$. For our base case $k = 1$. In this case, we know that \[1 = n + \sum_{i=1}^{n}d_i\] so it must be the case that $n = 1$, making $d_1 = 0$. Therefore, $a_1(t)$ is a nonzero constant polynomial so $f(t) = a_1(t){e}^{w_{j}t} = c{e}^{w_{j}t}$ for some nonzero constant $c$. This is an exponential function which is either always greater than zero or always less than zero. Therefore, it has $k-1 = 0$ roots. This completes the base case.\par
+
+Now assume that $k > 1$ and that the proposition holds true for all $k'$, where $1 \leq k' < k$. Now, consider $f'(t)$. We will try to bound the number of roots in $f'(t)$. Firstly, note that $f(t)$ is differentiable over the reals. Therefore, between any two different roots, i.e. $f(i) = f(j) = 0$, where $i \neq j$ there is a point with derivative zero from Rolle's theorem. Therefore, we know that if $f(t)$ has $N$ roots.
+}
 
 \begin{mybox}
     \lemma{Let $f(z)$ be an analytic function in the disk $D \subseteq \C$. Here, we define $D = \{z : \vert z \vert < d\}$ for some positive real $d$. Suppose $f$ is continuous on the closure of $D$, $\overline{D} = \{z : \vert z \vert \leq d\}$. Furthermore, let $\vert f \vert_d = \max\limits_{z \in \overline{D}, \vert z \vert = d} f(z)$. Then, for every $z \in \overline{D}$, $\vert f(z) \vert \leq \vert f \vert_d$.}
@@ -249,9 +276,10 @@ In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce 
 
 \section{Main Theorem}
 \begin{mybox}
-    \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \R \setminus \Q$. Then, ${\alpha}^{\beta}$ is transcendental.}\par
+    \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \C \setminus \Q$. Then, ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
 
+\section{Consequences}
 \proof{We will incorporate four lemmas in this proof}
 \chapter{Baker's Theorem}
 \begin{mybox}
@@ -264,7 +292,5 @@ In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce 
 
 \backmatter{}
 \printindex
-\bibliography{bib}
 \newpage{}
-References
 \end{document}

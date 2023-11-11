@@ -1,18 +1,11 @@
 # Fdb version 4
-["bibtex temp"] 1698124470 "temp.aux" "temp.bbl" "temp" 1698124470 0
-  "bib.bib" 0 -1 0 ""
-  "temp.aux" 1697255182 4064 34e299a39e99c061c9a7062cbe6d3d0c "pdflatex"
-  (generated)
-  "temp.bbl"
-  "temp.blg"
-  (rewritten before read)
-["makeindex temp.idx"] 1696009865 "temp.idx" "temp.ind" "temp" 1698124470 0
-  "temp.idx" 1697255182 478 e978168a62fc19888eb9360cc4f50024 "pdflatex"
+["makeindex temp.idx"] 1699641210 "temp.idx" "temp.ind" "temp" 1699731113 0
+  "temp.idx" 1699731113 523 87e894af2339ff0a32743a4302b6a544 "pdflatex"
   (generated)
   "temp.ilg"
   "temp.ind"
   (rewritten before read)
-["pdflatex"] 1697255182 "temp.tex" "temp.pdf" "temp" 1698124470 0
+["pdflatex"] 1699731112 "temp.tex" "temp.pdf" "temp" 1699731113 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -281,12 +274,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684207353 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684207278 7883455 c07dcb3f638da73dc1a9d744117c6e60 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "temp.aux" 1697255182 4064 34e299a39e99c061c9a7062cbe6d3d0c "pdflatex"
-  "temp.bbl" 0 -1 0 "bibtex temp"
-  "temp.ind" 1696009865 543 77613708050187cbdd980758135ad7f6 "makeindex temp.idx"
-  "temp.out" 1697255182 1763 e6ac0350cd22f1fe617509df55be1788 "pdflatex"
-  "temp.tex" 1697255427 16170 4fbc48d0016688a42f3eed3561d43bfc ""
-  "temp.toc" 1697255182 939 d422d3987d5d1e8407eb8db540ba7b34 "pdflatex"
+  "temp.aux" 1699731113 4294 1ca20bf2467c94acf19cd8a2089b56c8 "pdflatex"
+  "temp.ind" 1699641211 601 e02b5a2dac361ba580266d75b37b5706 "makeindex temp.idx"
+  "temp.out" 1699731113 1878 b8a4341975b065f21e9c7d9ef9c83909 "pdflatex"
+  "temp.tex" 1699731112 18228 e08bbb5b42cf69a757ff1352627b487f ""
+  "temp.toc" 1699731113 1012 275b32230da995b85660eba7504331a6 "pdflatex"
   (generated)
   "temp.aux"
   "temp.idx"
