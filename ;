@@ -247,80 +247,28 @@ with nonzero complex elements $x_i^{j}$ in the $i$-th row and $j+1$-th column co
 
 \proof{For $1 \leq i \leq n$, let $E := {\{e_i\}}$ be the canonical basis for ${\C}^{n}$.\par
 
-    Let $P_n$ be the $\C$-vector space of polynomials with degree less than $n$. Furthermore, for $1 \leq i \leq n$, let $A := \{a_i\}$ be the monomial basis for $P_n$ where $a_i(x) = x^{i-1}$ and let $B := \{b_i\}$ be another monomial basis for $P_n$ where $b_i(x) = \prod\limits_{j < i} (x-x_j)$. For example, $\\ b_1 = 1, \\ b_2 = (x - x_1), \\ b_3 = (x - x_1)(x - x_2), \\ \vdots \\ b_n = (x - x_1)(x - x_2) \ldots (x - x_{n-1})$.\par
+Let $P_n$ be the $\C$-vector space of polynomials with degree less than $n$. Furthermore, for $1 \leq i \leq n$, let $A := \{a_i\}$ be the monomial basis for $P_n$ where $a_i(x) = x^{i-1}$ and let $B := \{b_i\}$ be another monomial basis for $P_n$ where $b_i(x) = \prod\limits_{j < i} (x-x_j)$. For example, $b_1 = 1, b_2 = (x - x_1), b_3 = (x - x_1)(x - x_2), \ldots$.\par
 
-Consider the linear transformation $\psi : P_n \to \C^n$ via $\psi(p) = (p(x_1), \ldots, p(x_n))$. We can think of this as a map from $p(x)$ to a column vector of length $n$. 
-\[
-    p \mapsto 
-    \begin{pmatrix}
-        p(x_1) \\
-        p(x_2) \\
-        \hdots \\
-        p(x_n)
-    \end{pmatrix}
-\]
-Let $V$ be the matrix of $\psi$ with respect to $A$ and $E$. Now, let $L$ be the matrix of $\psi$ with respect to $B$ and $E$. Finally, let $U$ be the change of basis matrix from $B$ to $A$. Then, 
+Consider the linear transformation $\psi : P_n \to \C^n$ via $\psi(p) = (p(x_1), \ldots, p(x_n))$. Let $V$ be the matrix of $\psi$ with respect to $A$ and $E$. Now, let $L$ be the matrix of $\psi$ with respect to $B$ and $E$. Finally, let $U$ be the change of basis matrix from $B$ to $A$. Then, 
 \begin{align*}
     &VU = L \\
     &\det(VU) = \det(L) \\
     &\det(V)\det(U) = \det(L)
 \end{align*}
 
-Now, $V$, the matrix of $\psi$ with respect to $A$ and $E$ is  
-\[\begin{pmatrix}
+Now, $V$ is 
+$\begin{pmatrix}
     \vert & \vert &\cdots & \vert \\
     \psi(a_1) & \psi(a_2) &\cdots & \psi(a_n) \\
     \vert & \vert &\cdots & \vert
 \end{pmatrix} = 
+
 \begin{pmatrix}
     1 & x_1 & \cdots & x_1^{n-1} \\
     1 & x_2 & \cdots & x_2^{n-1} \\
     \vdots & \vdots & \ddots & \vdots \\
     1 & x_n & \cdots & x_n^{n-1}
-\end{pmatrix},\] 
-the square Vandermonde matrix of size $n$.\par
-
-On the other hand, $L$, the matrix of $\psi$ with respect to $B$ and $E$ is
-\[\begin{pmatrix}
-    \vert & \vert &\cdots & \vert \\
-    \psi(b_1) & \psi(b_2) &\cdots & \psi(b_n) \\
-    \vert & \vert &\cdots & \vert
-\end{pmatrix}
-\]
-\[
-= \begin{pmatrix}
-    1 & (x_1-x_1)&\cdots & (x_1-x_1)(x_1-x_2)\ldots (x_1-x_{n-1}) \\
-    1 & (x_2-x_1) &\cdots & (x_2-x_1)(x_2-x_2)\ldots (x_2-x_{n-1}) \\
-    \vdots & \vdots &\ddots & \vdots \\
-    1 & (x_n-x_1) & \cdots& (x_n-x_1)(x_n-x_2)\ldots(x_n-x_{n-1})
-\end{pmatrix} 
-\]
-\[
-=  \begin{pmatrix}
-    1 &  0 &\cdots & 0 \\
-    1 & (x_2-x_1) & \cdots & 0 \\
-    \vdots & \vdots &\ddots & \vdots \\
-    1 & (x_n-x_1) & \cdots& (x_n-x_1)(x_n-x_2)\ldots(x_n-x_{n-1})
-\end{pmatrix} 
-\]
-Note that $L$ is lower triangular so $\det(L)$ is the product of the entries along its diagonal, or $\prod\limits_{1 \leq i < j \leq n} (x_j - x_i)$.\par
-
-Finally, consider the change of basis matrix $U$ from basis $B$ to basis $A$ in $P_n$. The columns of $U$ records the coefficients of the $b_i$ polynomials after expanding. Note that since the $b_i$ are monic, the diagonal of $U$ consists of all $1$s because the $(i,i)$-entry of $U$ is the coefficient of $x^{i-1}$ (the leading coefficient) in $b_i$. Therefore, $U$ is of the form
-
-\[
-    = \begin{pmatrix}
-        1 & \text{blah} & \text{blah} & \cdots & \text{blah} \\
-        0 & 1           & \text{blah} & \cdots & \text{blah} \\
-        0 & 0           & 1           & \cdots & \text{blah} \\
-        \vdots & \vdots  & \vdots & \ddots & \vdots \\
-        0 & 0 & 0 & \cdots & 1
-    \end{pmatrix}.
-\]
-Thus, since $U$ is upper triangular, $\det(U)$ is the product of the $1$s along the diagonal so $\det(U) = 1$.\par
-
-Plugging what we know about $\det(L)$ and $\det(U)$ into $\det(V)\det(U) = \det(L)$, we get that $\det(V) = \prod\limits_{1 \leq i < j \leq n} (x_j - x_i)$.
-
-\[\greenlozenge\]
+\end{pmatrix}$
 }
 % This is from an incomplete proof of the Gelfond-Schneider Theorem. 
 

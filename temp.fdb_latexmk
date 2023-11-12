@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex temp.idx"] 1699641210 "temp.idx" "temp.ind" "temp" 1699731113 0
-  "temp.idx" 1699731113 523 87e894af2339ff0a32743a4302b6a544 "pdflatex"
+["makeindex temp.idx"] 1699749189 "temp.idx" "temp.ind" "temp" 1699756865 0
+  "temp.idx" 1699756865 523 87e894af2339ff0a32743a4302b6a544 "pdflatex"
   (generated)
   "temp.ilg"
   "temp.ind"
   (rewritten before read)
-["pdflatex"] 1699731112 "temp.tex" "temp.pdf" "temp" 1699731113 0
+["pdflatex"] 1699756864 "temp.tex" "temp.pdf" "temp" 1699756865 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -13,6 +13,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrb1440.tfm" 1136768653 3584 0d3e0ce88315d380f718f66d61189120 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrb2074.tfm" 1136768653 3584 9fcfbafd08a222cf27d70d3a45a69f05 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrb2488.tfm" 1136768653 3584 6731abce35521d877c47e8effc0b3b95 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1136768653 3584 3169d30142b88a27d4ab0e3468e963a2 ""
@@ -274,11 +276,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684207353 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684207278 7883455 c07dcb3f638da73dc1a9d744117c6e60 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "temp.aux" 1699731113 4294 1ca20bf2467c94acf19cd8a2089b56c8 "pdflatex"
-  "temp.ind" 1699641211 601 e02b5a2dac361ba580266d75b37b5706 "makeindex temp.idx"
-  "temp.out" 1699731113 1878 b8a4341975b065f21e9c7d9ef9c83909 "pdflatex"
-  "temp.tex" 1699731112 18228 e08bbb5b42cf69a757ff1352627b487f ""
-  "temp.toc" 1699731113 1012 275b32230da995b85660eba7504331a6 "pdflatex"
+  "temp.aux" 1699756865 4303 8a9aef6734f23aec0902b5bb326a7aeb "pdflatex"
+  "temp.ind" 1699749189 601 e02b5a2dac361ba580266d75b37b5706 "makeindex temp.idx"
+  "temp.out" 1699756865 1860 8167efc94d037691bbe156d2bfea78e0 "pdflatex"
+  "temp.tex" 1699756863 21659 c1bc4a6465d95b4614a5a6d473873f82 ""
+  "temp.toc" 1699756865 1011 2fa46fde936cd4c23637bcefe6da4c0e "pdflatex"
   (generated)
   "temp.aux"
   "temp.idx"

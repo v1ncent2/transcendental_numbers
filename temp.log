@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  11 NOV 2023 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  11 NOV 2023 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -908,46 +908,46 @@ Package mdframed Info: mdframed works in twoside mode on input line 223.
 ]
 Chapter 3.
 Package mdframed Info: mdframed works in twoside mode on input line 245.
-[7]
-Package mdframed Info: mdframed works in twoside mode on input line 254.
-Package mdframed Info: Not enough space on this page on input line 255.
-Package mdframed Info: mdframed works in twoside mode on input line 265.
- [8]
-Package mdframed Info: mdframed works in twoside mode on input line 269.
-Package mdframed Info: mdframed works in twoside mode on input line 273.
-Package mdframed Info: mdframed works in twoside mode on input line 279.
- [9] [10
+[7] [8] [9]
+Package mdframed Info: mdframed works in twoside mode on input line 329.
+Package mdframed Info: Not enough space on this page on input line 330.
+Package mdframed Info: mdframed works in twoside mode on input line 340.
+ [10]
+Package mdframed Info: mdframed works in twoside mode on input line 344.
+Package mdframed Info: mdframed works in twoside mode on input line 348.
+Package mdframed Info: mdframed works in twoside mode on input line 354.
+ [11] [12
 
 ]
 Chapter 4.
-Package mdframed Info: mdframed works in twoside mode on input line 286.
-[11] [12
+Package mdframed Info: mdframed works in twoside mode on input line 361.
+[13] [14
 
 ]
 Chapter 5.
-Package mdframed Info: mdframed works in twoside mode on input line 290.
-[13] [14
+Package mdframed Info: mdframed works in twoside mode on input line 365.
+[15] [16
 
-] (./temp.ind [15
+] (./temp.ind [17
 
 
 ]) (./temp.aux)
 Package rerunfilecheck Info: File `temp.out' has not changed.
-(rerunfilecheck)             Checksum: B8A4341975B065F21E9C7D9EF9C83909;1878.
+(rerunfilecheck)             Checksum: 8167EFC94D037691BBE156D2BFEA78E0;1860.
  ) 
 Here is how much of TeX's memory you used:
- 29934 strings out of 476025
- 609381 string characters out of 5790017
- 1866388 words of memory out of 5000000
- 49690 multiletter control sequences out of 15000+600000
- 529845 words of font info for 79 fonts, out of 8000000 for 9000
+ 29940 strings out of 476025
+ 609435 string characters out of 5790017
+ 1872388 words of memory out of 5000000
+ 49692 multiletter control sequences out of 15000+600000
+ 531375 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,11n,126p,1577b,1212s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,12n,126p,1577b,1212s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on temp.pdf (21 pages, 317431 bytes).
+Output written on temp.pdf (23 pages, 324700 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
