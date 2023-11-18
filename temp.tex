@@ -116,6 +116,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Obj}{Obj}
 \DeclareMathOperator{\Q}{\mathbb{Q}}
 \DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\Spec}{Spec}
@@ -153,7 +154,7 @@ What about transcendental numbers? Do they exist?\par
 
 If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence.\par
 
-\section{Fields}
+\section{Algebra Preliminaries}
 
 Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $k, l$ be fields and let $l/k$ be a field extension.\par
 
@@ -165,6 +166,8 @@ Before that, we will generalize the concept of transcendence to other fields. In
     \item{$l$ is \vocab{algebraically closed} if every nonconstant single variable polynomial in $l$ has a root in $l$.}
     \item{An \vocab{algebraic closure} of $k$ is an algebraic extension of $k$ that is algebraically closed.}
 \end{itemize}
+
+\section{Analysis Preliminaries}
 
 \section{Liouville Numbers}
 Now we will start looking for our first transcendental number! First, we will start by proving a lemma.\par
@@ -247,15 +250,21 @@ with nonzero complex elements $x_i^{j}$ in the $i$-th row and $j+1$-th column co
 
 \proof{For $1 \leq i \leq n$, let $E := {\{e_i\}}$ be the canonical basis for ${\C}^{n}$.\par
 
-    Let $P_n$ be the $\C$-vector space of polynomials with degree less than $n$. Furthermore, for $1 \leq i \leq n$, let $A := \{a_i\}$ be the monomial basis for $P_n$ where $a_i(x) = x^{i-1}$ and let $B := \{b_i\}$ be another monomial basis for $P_n$ where $b_i(x) = \prod\limits_{j < i} (x-x_j)$. For example, $\\ b_1 = 1, \\ b_2 = (x - x_1), \\ b_3 = (x - x_1)(x - x_2), \\ \vdots \\ b_n = (x - x_1)(x - x_2) \ldots (x - x_{n-1})$.\par
-
+    Let $P_n$ be the $\C$-vector space of polynomials with degree less than $n$. Furthermore, for $1 \leq i \leq n$, let $A := \{a_i\}$ be the monomial basis for $P_n$ where $a_i(x) = x^{i-1}$ and let $B := \{b_i\}$ be another monomial basis for $P_n$ where $b_i(x) = \prod\limits_{j < i} (x-x_j)$. For example, 
+\begin{align*}
+    b_1 &= 1, \\ 
+    b_2 &= (x - x_1), \\ 
+    b_3 &= (x - x_1)(x - x_2), \\
+        &\vdots \\
+    b_n &= (x - x_1)(x - x_2) \ldots (x - x_{n-1}).
+\end{align*}
 Consider the linear transformation $\psi : P_n \to \C^n$ via $\psi(p) = (p(x_1), \ldots, p(x_n))$. We can think of this as a map from $p(x)$ to a column vector of length $n$. 
 \[
     p \mapsto 
     \begin{pmatrix}
         p(x_1) \\
         p(x_2) \\
-        \hdots \\
+        \vdots \\
         p(x_n)
     \end{pmatrix}
 \]
@@ -308,7 +317,7 @@ Note that $L$ is lower triangular so $\det(L)$ is the product of the entries alo
 Finally, consider the change of basis matrix $U$ from basis $B$ to basis $A$ in $P_n$. The columns of $U$ records the coefficients of the $b_i$ polynomials after expanding. Note that since the $b_i$ are monic, the diagonal of $U$ consists of all $1$s because the $(i,i)$-entry of $U$ is the coefficient of $x^{i-1}$ (the leading coefficient) in $b_i$. Therefore, $U$ is of the form
 
 \[
-    = \begin{pmatrix}
+    \begin{pmatrix}
         1 & \text{blah} & \text{blah} & \cdots & \text{blah} \\
         0 & 1           & \text{blah} & \cdots & \text{blah} \\
         0 & 0           & 1           & \cdots & \text{blah} \\
@@ -321,6 +330,22 @@ Thus, since $U$ is upper triangular, $\det(U)$ is the product of the $1$s along 
 Plugging what we know about $\det(L)$ and $\det(U)$ into $\det(V)\det(U) = \det(L)$, we get that $\det(V) = \prod\limits_{1 \leq i < j \leq n} (x_j - x_i)$.
 
 \[\greenlozenge\]
+
+Now we will introduce some concepts from complex analysis. Consider the set of complex numbers $\C$ as a normed space equipped with the absolute value function $\vert \cdot \vert : \C \to \R$ via $\vert z \vert = \sqrt{z\bar{z}}$, where $\bar{z}$ is the complex conjugate of $z$. This norm induces a metric space, so we can define the distance between $x$ and $y$ as $d(x,y) := \vert x - y \vert$. Furthermore, this metric space induces a topological space so we can define open sets $U \subseteq \C$ such that all points $z \in U$ are contained in a ball within $U$ centered at $z$. In other words, for all $z \in U$, there is $\varepsilon > 0$ such that for all $y$ where $d(z,y) < \varepsilon$, $y \in U$.\par
+
+\defn{Let $f : \C \to \C$ be a function. The \vocab{limit} of $f$ as $z \to z_0$ is $L$ if and only if for all $\varepsilon > 0$, there is $\delta > 0$ such that $0 < \vert z - z_0 \vert < \delta \implies \vert f(x) - L \vert < \varepsilon$. We write $L$ as \[\lim\limits_{z \to z_0} f(z).\]\par}
+
+\defn{Let $U \subseteq \C$ be an open subset. Let $f : U \to \C$ be a function. The \vocab{derivative} of $f$ at a point $z_0 \in \C$ is defined as 
+\[
+    f'(z_0) := \lim\limits_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}.
+\] If the derivative exists, the function is said to be \vocab{complex differentiable} or \vocab{differentiable} at $z_0$.\par}
+
+\defn{Let $f : \C \to \C$ be a function and let $U \subseteq \C$ be an open subset of $\C$. Then, $f$ is \vocab{holomorphic} on $U$ if it is complex differentiable on every point in $U$. Furthermore, if $U = \C$, then $f$ is an \vocab{entire} function.}
+
+\begin{mybox}
+    \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
+\end{mybox}
+
 }
 % This is from an incomplete proof of the Gelfond-Schneider Theorem. 
 
