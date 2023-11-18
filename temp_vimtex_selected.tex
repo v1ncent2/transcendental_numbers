@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%% Page Setup %%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 11pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[margin=3cm]{geometry}
+\setlength\parindent{0pt}
+\setlength{\parskip}{\baselineskip}%
+\usepackage{graphicx}
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%% Math Stuff %%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tkz-euclide}
+\usepackage{pgf-pie}
+\usepackage{cancel}
+
+%%%%%%%%%%%%%%% Quotation Stuff %%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+
+%%%%%%%%%%%%%%% Color %%%%%%%%%%%%%%%
+
+\definecolor{p}{rgb}{0.9118, 0.4961, 0.6804}
+\definecolor{p1}{rgb}{1, 0.92, 0.963}
+\definecolor{g}{rgb}{0.023, 0.477, 0.219}
+\definecolor{g1}{rgb}{0.03, 0.75, 0.20}
+\definecolor{g2}{rgb}{0.95, 1, 0.95}
+
+%%%%%%%%%%%%%%% Link Setup %%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=g, filecolor=g, urlcolor=g,}
+
+%%%%%%%%%%%%%%% Box %%%%%%%%%%%%%%%
+
+\newmdenv[innerlinewidth=2pt, roundcorner=4pt,linecolor=g1,innerleftmargin=20pt,
+innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor = g2]{mybox}
+
+%%%%%%%%%%%%%%% Border Stuff %%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{\thepage}
+\fancyfoot[CE,CO]{}
+\fancyfoot[LE,RO]{}
+
+%%%%%%%%%%%%%%% Bug Fix Adjustments %%%%%%%%%%%%%%%
+
+\setlength{\headheight}{14pt}
+\setlength{\footskip}{55pt}
+
+%%%%%%%%%%%%%%% Index %%%%%%%%%%%%%%%
+
+\usepackage{makeidx}
+\makeindex
+
+%%%%%%%%%%%%%%% Custom Commands %%%%%%%%%%%%%%%
+
+\def\greenlozenge{\mathbin{\color{g}\blacklozenge}}
+
+\newcommand{\emphasis}[1]{\underline{\textbf{#1}} }
+\newcommand{\vocab}[1]{\underline{\textbf{#1}}\index{#1}}
+
+\newcommand{\claim}{\textbf{\underline{Claim}} }
+%\newcommand{\corollary}{\underline{\textbf{Corollary}} }
+\newcommand{\defn}{\underline{\textbf{Def}} }
+\newcommand{\digression}{\underline{\textbf{Digression}} }
+\newcommand{\easy}{\underline{\textbf{Easy}} }
+\newcommand{\example}{\underline{\textbf{Example}} }
+\newcommand{\fact}{\underline{\textbf{Fact}} }
+\newcommand{\facts}{\underline{\textbf{Facts}} }
+\newcommand{\goal}{\underline{\textbf{Goal}} }
+\newcommand{\idea}{\underline{\textbf{Idea}} }
+%\newcommand{\lemma}{\underline{\textbf{Lemma}} }
+\newcommand{\need}{\underline{\textbf{Need}} }
+\newcommand{\note}{\underline{\textbf{Note}} }
+\newcommand{\proof}{\underline{\textbf{Proof}} }
+\newcommand{\recall}{\underline{\textbf{Recall}} }
+\newcommand{\remark}{\underline{\textbf{Remark}} }
+%\newcommand{\theorem}{\underline{\textbf{Theorem}} }
+\newcommand{\verify}{\underline{\textbf{Verify}} }
+
+
+%%%%%%%%%%%%%%% New Theorems %%%%%%%%%%%%%%%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%%%%%%%%%%%%%%% Math Operators %%%%%%%%%%%%%%%
+\DeclareMathOperator{\A}{\mathbb{A}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\C}{\mathbb{C}}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
+
+\title{Transcendental Numbers (Draft)}
+\author{Vincent Lin}
+\date{Last Updated: 11/18/23}
+
+
+\begin{document}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix} = 0
+\]}
+\end{mybox}
+
+
+% This is from an incomplete proof of the Gelfond-Schneider Theorem. 
+
+
+
+
+\end{document}

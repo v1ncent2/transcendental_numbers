@@ -123,9 +123,9 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers (Rough Outline 11/11/23)}
+\title{Transcendental Numbers (Draft)}
 \author{Vincent Lin}
-\date{Fall 2023}
+\date{Last Updated: 11/18/23}
 
 
 \begin{document}
@@ -166,70 +166,6 @@ Before that, we will generalize the concept of transcendence to other fields. In
     \item{$l$ is \vocab{algebraically closed} if every nonconstant single variable polynomial in $l$ has a root in $l$.}
     \item{An \vocab{algebraic closure} of $k$ is an algebraic extension of $k$ that is algebraically closed.}
 \end{itemize}
-
-\section{Analysis Preliminaries}
-
-\section{Liouville Numbers}
-Now we will start looking for our first transcendental number! First, we will start by proving a lemma.\par
-
-\begin{mybox}
-    \lemma{For any nonzero polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
-\end{mybox}
-
-\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
-\begin{align*}
-    p(x) &= {(x-\alpha)}^{m}q(x) \\
-    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x) \\
-          &= m{\left(x- \alpha\right)}^{m-1}q(x) + {(x-\alpha)}^{m}q'(x) \\
-          &= {\left(x-\alpha\right)}^{m-1}\left(mq(x) + (x-\alpha)q'(x)\right)
-\end{align*}
-
-Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $\alpha$ of multiplicity at least $m-1$.\par
-
-
-Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. In order to show this, we will shift the polynomial by $\alpha$ (all of the roots will therefore be shifted by $\alpha$ as well). Namely, we look at $p(x+\alpha) = {x}^{m}q(x+\alpha)$. Note that $p(x+\alpha)$ now has the root $0$ with multiplicity $m$ (it has $m$ factors of $x$) and since $q(x)$ had no $x-\alpha$ factors, $q(x+\alpha)$ has no roots at zero. In other words, $x \nmid q(x+\alpha)$. Now, showing $p'(x)$ has root $\alpha$ with multiplicity $m-1$ is equivalent to showing $p'(x+\alpha)$ as root $0$ with multiplicity $m-1$ (it has exactly $m-1$ factors of $x$). Thus, substituting $x+\alpha$ in $p'(x)$: 
-
-\[
-    p'(x+\alpha) = {x}^{m-1}\left(mq(x+\alpha) + xq'(x+\alpha)\right)
-\]
-
-We have $m-1$ factors of $x$ from the $x^{m-1}$ term. Therefore, we need to show the rest of the expression has no factors of $x$. In other words, $x \nmid \left(mq(x+\alpha) + xq'(x+\alpha)\right)$, we can take the expression $\left(mq(x+\alpha) + xq'(x+\alpha)\right)$ modulo $x$ to get $mq(x+\alpha)$. Since $m > 0$ and $q(x+\alpha)$ has no factors of $x$, we know that $x$ cannot divide the entire expression. Shifting back by $\alpha$, we get that $x-\alpha$ cannot be a factor of $mq(x) + (x-\alpha)q'(x)$, so the multiplicity of $x-\alpha$ in $p(x)$ is at most $m-1$.
-
-\[ \greenlozenge \]}
-
-\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
-
-Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a sequence of rationals of the form $\left\{\frac{p_i}{q_i}\right\}$, where $q_i > 1$, and the distance between $x$ and $\frac{p_i}{q_i}$ is nonzero, but less than $\frac{1}{{(q_i)}^{i}}$.\par
-
-\begin{mybox}
-    \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$, we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{1}{q^n}\]}
-\end{mybox}
-
-\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Furthermore, $f$ is irreducible in $\mathbb{R}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
-\begin{align*}
-    f\left(\frac{p}{q}\right) &= a_n{\left(\frac{p}{q}\right)}^n + a_{n-1}{\left(\frac{p}{q}\right)}^{n-1}+ \cdots + a_0 \\
-                              &= \frac{C}{q^n}
-\end{align*}
-for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Also, note that since we want a good approximation of $\alpha$ that is close to $\frac{1}{q^n}$ away, this rational must be at most distance $1$ away from $\alpha$.
-    \[\greenlozenge\]
-}
-
-\section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
-\begin{mybox}
-    \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
-        I(t) = \int_{0}^{t} e^{t-x}f(x) dx.\] Then, \[I(t) = e^t\sum\limits_{j=0}^{m}f^{(j)}(0) - \sum\limits_{j=0}^{m} f^{(j)}(t).\] where $f^{(j)}(t)$ is the $j$-th derivative of $f$ with respect to $x$ evaluated at $t$.}\par
-\end{mybox}
-
-\proof{Probably induction and integration by parts. I will fill this in later.}
-\chapter{Lindemann-Weierstrass Theorem}
-\begin{mybox}
-    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
-\end{mybox}
-\proof{}
-
-\chapter{Gelfond-Schneider Theorem}
-\section{Background}
-In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce a few definitions and lemmas to help prove this.
 
 \defn{The square \vocab{Vandermonde matrix} of size $n$ is the matrix $V = V(x_1, \ldots, x_n)$ is the $n \times n$ matrix 
 \[
@@ -330,7 +266,10 @@ Thus, since $U$ is upper triangular, $\det(U)$ is the product of the $1$s along 
 Plugging what we know about $\det(L)$ and $\det(U)$ into $\det(V)\det(U) = \det(L)$, we get that $\det(V) = \prod\limits_{1 \leq i < j \leq n} (x_j - x_i)$.
 
 \[\greenlozenge\]
+}
 
+
+\section{Analysis Preliminaries}
 Now we will introduce some concepts from complex analysis. Consider the set of complex numbers $\C$ as a normed space equipped with the absolute value function $\vert \cdot \vert : \C \to \R$ via $\vert z \vert = \sqrt{z\bar{z}}$, where $\bar{z}$ is the complex conjugate of $z$. This norm induces a metric space, so we can define the distance between $x$ and $y$ as $d(x,y) := \vert x - y \vert$. Furthermore, this metric space induces a topological space so we can define open sets $U \subseteq \C$ such that all points $z \in U$ are contained in a ball within $U$ centered at $z$. In other words, for all $z \in U$, there is $\varepsilon > 0$ such that for all $y$ where $d(z,y) < \varepsilon$, $y \in U$.\par
 
 \defn{Let $f : \C \to \C$ be a function. The \vocab{limit} of $f$ as $z \to z_0$ is $L$ if and only if for all $\varepsilon > 0$, there is $\delta > 0$ such that $0 < \vert z - z_0 \vert < \delta \implies \vert f(x) - L \vert < \varepsilon$. We write $L$ as \[\lim\limits_{z \to z_0} f(z).\]\par}
@@ -346,32 +285,121 @@ Now we will introduce some concepts from complex analysis. Consider the set of c
     \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
 \end{mybox}
 
+
+
+\section{Liouville Numbers}
+Now we will start looking for our first transcendental number! First, we will start by proving a lemma.\par
+
+\begin{mybox}
+    \lemma{For any nonzero polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
+\end{mybox}
+
+\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
+\begin{align*}
+    p(x) &= {(x-\alpha)}^{m}q(x) \\
+    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= m{\left(x- \alpha\right)}^{m-1}q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= {\left(x-\alpha\right)}^{m-1}\left(mq(x) + (x-\alpha)q'(x)\right)
+\end{align*}
+
+Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $\alpha$ of multiplicity at least $m-1$.\par
+
+
+Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. In order to show this, we will shift the polynomial by $\alpha$ (all of the roots will therefore be shifted by $\alpha$ as well). Namely, we look at $p(x+\alpha) = {x}^{m}q(x+\alpha)$. Note that $p(x+\alpha)$ now has the root $0$ with multiplicity $m$ (it has $m$ factors of $x$) and since $q(x)$ had no $x-\alpha$ factors, $q(x+\alpha)$ has no roots at zero. In other words, $x \nmid q(x+\alpha)$. Now, showing $p'(x)$ has root $\alpha$ with multiplicity $m-1$ is equivalent to showing $p'(x+\alpha)$ as root $0$ with multiplicity $m-1$ (it has exactly $m-1$ factors of $x$). Thus, substituting $x+\alpha$ in $p'(x)$: 
+
+\[
+    p'(x+\alpha) = {x}^{m-1}\left(mq(x+\alpha) + xq'(x+\alpha)\right)
+\]
+
+We have $m-1$ factors of $x$ from the $x^{m-1}$ term. Therefore, we need to show the rest of the expression has no factors of $x$. In other words, $x \nmid \left(mq(x+\alpha) + xq'(x+\alpha)\right)$, we can take the expression $\left(mq(x+\alpha) + xq'(x+\alpha)\right)$ modulo $x$ to get $mq(x+\alpha)$. Since $m > 0$ and $q(x+\alpha)$ has no factors of $x$, we know that $x$ cannot divide the entire expression. Shifting back by $\alpha$, we get that $x-\alpha$ cannot be a factor of $mq(x) + (x-\alpha)q'(x)$, so the multiplicity of $x-\alpha$ in $p(x)$ is at most $m-1$.
+
+\[ \greenlozenge \]}
+
+\defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
+
+Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a sequence of rationals of the form $\left\{\frac{p_i}{q_i}\right\}$, where $q_i > 1$, and the distance between $x$ and $\frac{p_i}{q_i}$ is nonzero, but less than $\frac{1}{{(q_i)}^{i}}$.\par
+
+\begin{mybox}
+    \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$, we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{1}{q^n}\]}
+\end{mybox}
+
+\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Furthermore, $f$ is irreducible in $\mathbb{R}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
+\begin{align*}
+    f\left(\frac{p}{q}\right) &= a_n{\left(\frac{p}{q}\right)}^n + a_{n-1}{\left(\frac{p}{q}\right)}^{n-1}+ \cdots + a_0 \\
+                              &= \frac{C}{q^n}
+\end{align*}
+for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Also, note that since we want a good approximation of $\alpha$ that is close to $\frac{1}{q^n}$ away, this rational must be at most distance $1$ away from $\alpha$.
+    \[\greenlozenge\]
+}
+
+\section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
+\begin{mybox}
+    \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
+        I(t) = \int_{0}^{t} e^{t-x}f(x) dx.\] Then, \[I(t) = e^t\sum\limits_{j=0}^{m}f^{(j)}(0) - \sum\limits_{j=0}^{m} f^{(j)}(t).\] where $f^{(j)}(t)$ is the $j$-th derivative of $f$ with respect to $x$ evaluated at $t$.}\par
+\end{mybox}
+
+\proof{Probably induction and integration by parts. I will fill this in later.}
+\chapter{Lindemann-Weierstrass Theorem}
+\begin{mybox}
+    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
+\end{mybox}
+\proof{}
+
+\chapter{Gelfond-Schneider Theorem}
+\section{Background}
+In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce two lemmas to help prove this.\par
+
+\begin{mybox}
+    \lemma{Consider the follow system of $m$ equations with $n$ unknowns with $m < n$: 
+    \[\begin{pmatrix}
+        a_{1,1} & \cdots & a_{1,n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m,1} & \cdots & a_{m,n} 
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ \vdots \\ 0
+    \end{pmatrix},
+\]} and $a_{i,j} \in \Z$. We write this compactly as $A\mathbf{x} = \mathbf{0}$. Suppose $a \in \Z$ is an upper bound of the coefficients so that $a \geq \vert a_{i,j} \vert$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$. Then, the system of equations has a nontrivial solution in ${\Z}^n$ for $\mathbf{x}$, such that for all $x_j$, \[\vert x_j \vert < 1 + {(na)}^{\frac{m}{n-m}}.\] 
+\end{mybox}
+
+\proof{Let $\mathbf{x}$ be a column vector of height $n$ and let $\mathbf{y}$ be a column vector of height $m$ where $A\mathbf{x} = \mathbf{y}$. Let the entries of $\mathbf{y}$ be $y_k$ where $1 \leq k \leq m$. A solution corresponds to finding an $\mathbf{x}$ such that $\mathbf{y}$ is the zero vector.\par
+
+
+\defn{$\mathbf{x}$ is a \vocab{lattice point} if it is in $\Z^{n}$.}\par
+
+Note that if $\mathbf{x}$ is a lattice point, then since the entries of $A = (a_{i,j})$ are integers, $\mathbf{y}$ will also be a lattice point.\par
+
+Let $q$ be any positive integer. Let $C$ be the $n$-dimensional hypercube centered at the origin of side length $2q$. Equivalently, this is all points with coordinates in $[-q, q]$ or points whose coordinate's absolute values are upper bounded by $q$. Now, let $\mathbf{x}$ range through all the ${(2q+1)}^{n}$ lattice points in $C$ (each of the $n$ coordinates is in $\{-q, -q + 1, \ldots, 0, \ldots, q-1, q\}$, which is a set of $2q+1$ options). We can now upper bound each of the $y_k$ coordinates in $\mathbf{y}$ via
+
+\begin{align*}
+    \vert y_k \vert &= \left\vert \sum_{i=1}^{n} a_{k,j}x_j \right\vert \\
+                    &\leq \sum_{i=1}^{n} \vert a_{k,j}x_j \vert \\
+                    &= \sum_{i=1}^{n} \vert a_{k,j} \vert \vert x_j \vert \\
+                    &\leq \sum_{i=1}^{n} aq \\
+                    &= naq
+\end{align*}
+
+Therefore, we know that the coordinates of $\mathbf{y}$ are in $\{-naq, -naq+1, \ldots, 0, \ldots, naq-1, naq+1\}$ and so there are ${(2naq + 1)}^{n}$ possible lattice points $\mathbf{y}$ could be as $\mathbf{x}$ ranges through the lattice points of $C$.\par
+
+As of now, we selected $q$ to be any positive integer. However, to finish the proof of this lemma, we would like to use the pigeonhole principle to say that two of the inputs $\mathbf{x'}, \mathbf{x''}$ in $C$ correspond to outputs that coincide. That is to say, the ${(2q+1)}^{n}$ input points outnumber the ${(2naq+1)}^{m}$ possible output locations. In order to do this, we select $q$ to be the unique integer such that: \[{(na)}^{\frac{m}{n-m}}-1 \leq 2q < {(na)}^{\frac{m}{n-m}} + 1.\] This means $2q$ is the even integer in the interval of length $2$. From the left inequality, we get ${(na)}^{m} \leq {(2q+1)}^{n-m}$. Now, 
+\begin{align*}
+    {(2naq + 1)}^{m} &= {\left(na \cdot \frac{2naq + 1}{na}\right)}^{m} \\
+                     &= {(na)}^{m}{\left(2q + \frac{1}{na}\right)}^{m} \\
+                     &< {(na)}^{m}{\left(2q + 1\right)}^{m} \\
+                     &\leq {(2q+1)}^{n-m}{(2q+1)}^{m} \\
+                     &= {(2q+1)}^{n}.
+\end{align*}
+
+Thus, we get that there are solutions $\mathbf{x'} \neq \mathbf{x''}$ such that $A\mathbf{x'} = A\mathbf{x''}$. Thus, $A(\mathbf{x'} - \mathbf{x''}) = \mathbf{0}$. Note that if we let $x'_j, x''_j$ denote the $j$-th coordinate of $\mathbf{x'}, \mathbf{x''}$ respectively, \[\vert x'_j - x''_j \vert \leq \vert x'_j \vert + \vert x''_j \vert \leq q + q = 2q < {(na)}^{\frac{m}{m-n}} + 1,\]
+so $\mathbf{x'} - \mathbf{x''}$ is a nontrivial solution to $A\mathbf{x} = 0$ we were looking for.\par
+
+\[\greenlozenge\]
 }
 % This is from an incomplete proof of the Gelfond-Schneider Theorem. 
 
-\newpage
-\begin{mybox}
-    \lemma{Let the functions \[a_1(t), \ldots, a_n(t)\] be nonzero real polynomials $(\in \R[t])$ of degree \[d_1, \ldots, d_n\] respectively. Furthermore, let \[w_1, \ldots, w_n\] be (pairwise) distinct real numbers. Then, counting multiplicities, the function \[f(t) = \sum\limits_{j=1}^{n} a_j(t){e}^{{w_j}t}\] has at most $n - 1 + \sum\limits_{i=1}^{n} d_i$ real roots.}
-\end{mybox}
 
-\proof{Note that we can multiply the function $f(t)$ by $e^{-w_{n}t}$ and the number of roots stays the same. This is because this function is nonzero 
-
-    Let $k = n + \sum\limits_{i=1}^{n} d_i$. This means that we want to show $f(t)$ has at most $k-1$ roots. We will prove this statement using strong induction on $k$. For our base case $k = 1$. In this case, we know that \[1 = n + \sum_{i=1}^{n}d_i\] so it must be the case that $n = 1$, making $d_1 = 0$. Therefore, $a_1(t)$ is a nonzero constant polynomial so $f(t) = a_1(t){e}^{w_{j}t} = c{e}^{w_{j}t}$ for some nonzero constant $c$. This is an exponential function which is either always greater than zero or always less than zero. Therefore, it has $k-1 = 0$ roots. This completes the base case.\par
-
-Now assume that $k > 1$ and that the proposition holds true for all $k'$, where $1 \leq k' < k$. Now, consider $f'(t)$. We will try to bound the number of roots in $f'(t)$. Firstly, note that $f(t)$ is differentiable over the reals. Therefore, between any two different roots, i.e. $f(i) = f(j) = 0$, where $i \neq j$ there is a point with derivative zero from Rolle's theorem. Therefore, we know that if $f(t)$ has $N$ roots.
-}
-
-\begin{mybox}
-    \lemma{Let $f(z)$ be an analytic function in the disk $D \subseteq \C$. Here, we define $D = \{z : \vert z \vert < d\}$ for some positive real $d$. Suppose $f$ is continuous on the closure of $D$, $\overline{D} = \{z : \vert z \vert \leq d\}$. Furthermore, let $\vert f \vert_d = \max\limits_{z \in \overline{D}, \vert z \vert = d} f(z)$. Then, for every $z \in \overline{D}$, $\vert f(z) \vert \leq \vert f \vert_d$.}
-\end{mybox}
-\proof{Seems very difficult. Involves Maximum Modulus Principle, proof is omitted in most texts.}
-\begin{mybox}
-    \lemma{something from complex analysis}
-\end{mybox}
-
-\begin{mybox}
-    \lemma{something with matrices}
-\end{mybox}
 
 
 \section{Main Theorem}
@@ -380,7 +408,7 @@ Now assume that $k > 1$ and that the proposition holds true for all $k'$, where 
 \end{mybox}
 
 \section{Consequences}
-\proof{We will incorporate four lemmas in this proof}
+
 \chapter{Baker's Theorem}
 \begin{mybox}
     \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }
