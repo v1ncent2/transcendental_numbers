@@ -3,37 +3,52 @@
   \item algebraic, \hyperpage{2}
   \item algebraic closure, \hyperpage{2}
   \item algebraic extension, \hyperpage{2}
+  \item algebraic integer, \hyperpage{3}
   \item algebraic number, \hyperpage{1}
+  \item algebraic number field, \hyperpage{3}
   \item algebraically closed, \hyperpage{2}
   \item algebraically independent, \hyperpage{2}
 
   \indexspace
 
-  \item complex differentiable, \hyperpage{5}
+  \item complex differentiable, \hyperpage{8}
+  \item conjugates, \hyperpage{2}
 
   \indexspace
 
   \item degree, \hyperpage{2}
-  \item derivative, \hyperpage{5}
-  \item differentiable, \hyperpage{5}
+  \item derivative, \hyperpage{8}
+  \item differentiable, \hyperpage{8}
 
   \indexspace
 
-  \item entire, \hyperpage{5}
+  \item entire, \hyperpage{8}
 
   \indexspace
 
-  \item holomorphic, \hyperpage{5}
+  \item holomorphic, \hyperpage{8}
 
   \indexspace
 
-  \item lattice point, \hyperpage{11}
-  \item limit, \hyperpage{5}
-  \item Liouville number, \hyperpage{6}
+  \item integral basis, \hyperpage{3}
+
+  \indexspace
+
+  \item lattice point, \hyperpage{13}
+  \item limit, \hyperpage{8}
+  \item Liouville number, \hyperpage{8}
 
   \indexspace
 
   \item minimal polynomial, \hyperpage{2}
+
+  \indexspace
+
+  \item number field, \hyperpage{3}
+
+  \indexspace
+
+  \item ring of integers, \hyperpage{3}
 
   \indexspace
 
@@ -42,6 +57,6 @@
 
   \indexspace
 
-  \item Vandermonde matrix, \hyperpage{2}
+  \item Vandermonde matrix, \hyperpage{5}
 
 \end{theindex}

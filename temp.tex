@@ -10,6 +10,7 @@
 \usepackage{tgadventor}
 %\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
+\usepackage{bm}
 
 %%%%%%%%%%%%%%% Math Stuff %%%%%%%%%%%%%%%
 
@@ -125,14 +126,14 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 
 \title{Transcendental Numbers (Draft)}
 \author{Vincent Lin}
-\date{Last Updated: 11/18/23}
+\date{Last Updated: 11/28/23}
 
 
 \begin{document}
 \frontmatter
 \maketitle
 \tableofcontents
-\chapter{Abstract}
+\chapter{Preface}
 Research into transcendental numbers started with rational approximations. This paper covers preliminaries on the neccesary parts of field theory before going into the Lindemann-Weierstrass theorem, Gelfond-Schneider theorem, and Baker's theorem and concludes with a discussion of Schanuel's conjecture. This sequence of theorems are related to determining whether complex numbers are transcendental or not and is based off of the work by Baker.
 \mainmatter{}
 \chapter{Preliminaries}
@@ -152,20 +153,73 @@ What about transcendental numbers? Do they exist?\par
 
 \proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N} {\Q}^{n}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we map the input to zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$. This makes $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
 
-If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining the transcendence.\par
+If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining transcendence.\par
 
 \section{Algebra Preliminaries}
 
-Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $k, l$ be fields and let $l/k$ be a field extension.\par
+Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $K, L$ be fields and let $L/K$ be a field extension. We will introduce a few definitions for recall.\par
 
-\begin{itemize}
-    \item{$a \in l$ is \vocab{algebraic} over $k$ if there is a nonzero polynomial $f \in k[x]$ such that $f(a) = 0$. Otherwise, $a$ is \vocab{transcendental} over $k$. In other words, an algebraic number is a complex number that is algebraic over $\Q$ and a transcendental number is a complex number that is not algebraic over $\Q$.} 
-    \item{$X \subseteq L$ is \vocab{algebraically independent} over $k$ if for all $a_1, \ldots, a_t$ distinct and all $f \in k[x_1, \ldots, x_t]$, $f(a_1, \ldots, a_t) = 0$ implies $f = 0$.}
-    \item{If $a \in l$ is algebraic over $k$, the \vocab{minimal polynomial} of $a$ over $k$, denoted $m_a$, is the unique monic irreducible polynomial which generates the kernel of the evaluation map $\phi(f) = f(a)$ for $f \in k[x]$. The \vocab{degree} of $\alpha \in k$ is the degree of the minimial polynomial $m_a$.}
-    \item{$l/k$ is an \vocab{algebraic extension} if every element in $l$ is algebraic over $k$.}
-    \item{$l$ is \vocab{algebraically closed} if every nonconstant single variable polynomial in $l$ has a root in $l$.}
-    \item{An \vocab{algebraic closure} of $k$ is an algebraic extension of $k$ that is algebraically closed.}
-\end{itemize}
+\recall{\begin{itemize}
+    \item{$a \in L$ is \vocab{algebraic} over $k$ if there is a nonzero polynomial $f \in K[x]$ such that $f(a) = 0$. Otherwise, $a$ is \vocab{transcendental} over $K$. In other words, an algebraic number is a complex number that is algebraic over $\Q$ and a transcendental number is a complex number that is not algebraic over $\Q$.} 
+    \item{$X \subseteq L$ is \vocab{algebraically independent} over $K$ if for all $a_1, \ldots, a_t$ distinct and all $f \in K[x_1, \ldots, x_t]$, $f(a_1, \ldots, a_t) = 0$ implies $f = 0$.}
+    \item{If $a \in L$ is algebraic over $K$, the \vocab{minimal polynomial} of $a$ over $K$, denoted $m^K_a$ or $m_a$ when the underlying field is implied, is the unique monic irreducible polynomial which generates the kernel of the evaluation map $\phi(f) = f(a)$ for $f \in K[x]$. The \vocab{degree} of $\alpha \in K$ is the degree of the minimial polynomial $m_a$ and the \vocab{conjugates} of $a$ are the roots of $m_a$.}
+    \item{$L/K$ is an \vocab{algebraic extension} if every element in $L$ is algebraic over $K$.}
+    \item{$L$ is \vocab{algebraically closed} if every nonconstant single variable polynomial in $L$ has a root in $L$.}
+    \item{An \vocab{algebraic closure} of $K$ is an algebraic extension of $K$ that is algebraically closed.}
+    \end{itemize}}
+\par
+Now we will consider some important facts about number fields:\par
+\recall{\begin{itemize}
+    \item{An \vocab{algebraic number field} or \vocab{number field} is an algebraic extension of $\Q$.}
+    \item{An \vocab{algebraic integer} is $\alpha \in \C$ such that it is the root of a monic polynomial in $\Z[x]$.}
+    \item{If $K$ is a number field, $\mathcal{O}_K$ is the \vocab{ring of integers} of $K$ and is the ring of all algebraic integers in $K$. It is a free $\Z$-module of rank $[K : \Q]$. If $\alpha \in K$, there is a positive $c \in \Z$ such that $c\alpha \in \mathcal{O}_K$.}
+    \item{Let $K$ be a number field. An \vocab{integral basis} is a $\Q$-basis for $K$ that is also a $\Z$-basis for $\mathcal{O}_K$.}
+    \end{itemize}}
+
+\begin{mybox}
+    \lemma{Let $K$ be a number field and let $\alpha \in K$. The degree of $\alpha$ over $\Q$ divides the degree of $K$.\par}
+\end{mybox}
+\proof{By the tower law, $[K : \Q(\alpha)][\Q(\alpha) : \Q] = [K:\Q]$. Thus, $[\Q(\alpha):\Q] \mid [K:\Q]$.\par\[\greenlozenge\]}
+
+\begin{mybox}
+    \lemma{Let $K$ be a number field of degree $n$ and let $\alpha, \beta \in K$ be algebraic numbers of degree $n$. Denote the conjugates of $\alpha$ as $\alpha_1, \ldots, \alpha_n$ and the conjugates of $\beta$ as $\beta_1, \ldots, \beta_n$. Then conjugates of $\alpha + \beta$ are $\alpha_{i} + \beta_{j}$ for $i, j = 1, \ldots n$. Similarly, the conjugates of $\alpha \beta$ are $\alpha_{i}\beta_{j}$.} 
+\end{mybox}
+
+\proof{Let $\sigma_1, \ldots, \sigma_n$ be the embeddings where $\sigma_i : K \hookrightarrow \C$ that fix $\Q$ and sends $\sigma_i(\alpha) = \alpha_i$. Then, $\sigma_i(\alpha + \beta) = \sigma_i(\alpha) + \sigma_i(\beta)$ and $\sigma_i(\alpha \beta) = \sigma_i(\alpha)\sigma_i(\beta)$ by homomorphism properties.\par}
+
+
+\note{Let $K$ be a number field and let $\alpha \in K$. Then, let $\alpha_1, \ldots, \alpha_n$ be the conjugates of $\alpha$ in $K$. We write $\| \alpha \|$ to denote $\max \{\vert \alpha_1 \vert, \ldots, \vert \alpha_n \vert\}$.\par}
+
+\begin{mybox}
+    \lemma{$\|\alpha + \beta\| \leq \| \alpha \| + \| \beta \|$ and $\| \alpha\beta \| \leq \| \alpha \| \| \beta \|$.}
+\end{mybox}
+
+\proof{\[ \greenlozenge \]}
+\begin{mybox}
+    \lemma{If $K$ is a number field, it has an integral basis.\par}
+\end{mybox}
+\proof{We know that $\mathcal{O}_K$ is a free $\Z$-module of rank $n := [K : \Q]$ so let $\{\beta_1, \ldots, \beta_n\}$ be a basis for $\mathcal{O}_K$ as a $\Z$-module. To show that this is a basis for $K$, we will show that this set $\Q$-spans $K$ and is $\Q$-linearly independent.\par
+
+First, we will show it is spanning. Let $\alpha \in K$. Then, find positive $c \in \Z$  such that $c\alpha \in \mathcal{O}_K$. Now, for $\lambda_1, \ldots, \lambda_n \in \Z$, we can write \[c\alpha = \lambda_1 \beta_1 + \cdots + \lambda_n \beta_n.\] Therefore, since $c > 0$, and is an integer, we can divide by $c$ to get \[\alpha = \frac{\lambda_1}{c} \beta_1 + \cdots + \frac{\lambda_n}{c} \beta_n.\] Since $\frac{\lambda_i}{c} \in \Q$, we know that the basis $\Q$-spans $K$. Now, we will show it is $\Q$-linearly independent. Suppose for contradiction \[0 = \lambda_1\beta_1 + \cdots + \lambda_n\beta_n,\] where $\lambda_i \in \Q$ but there is a nonzero $\lambda_i$. Then, we can multiply both sides by the least common multiple of the demoninators of the $\lambda_i$ to get that the $\lambda_i$'s are not $\Z$-linearly independent, which is a contradiction.\par \[ \greenlozenge \]}
+\newpage
+\begin{mybox}
+    \lemma{For any nonzero polynomial $p(x) \in \C[x]$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$, has the root $\alpha$ with multiplicity $m-1$. More generally, if $R$ is an integral domain and $p \in R[x]$ has $\alpha$ with multiplicity $m$, $p'$, the formal derivative, has root $\alpha$ with multiplicity $m-1$ if $\characteristic (R)$ is not a factor of $m$.}
+\end{mybox}
+
+\proof{We can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get
+\begin{align*}
+    p(x) &= {(x-\alpha)}^{m}q(x) \\
+    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= m{\left(x- \alpha\right)}^{m-1}q(x) + {(x-\alpha)}^{m}q'(x) \\
+          &= {\left(x-\alpha\right)}^{m-1}\left(mq(x) + (x-\alpha)q'(x)\right)
+\end{align*}
+
+Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $\alpha$ of multiplicity at least $m-1$.\par
+
+
+Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. We need to show that $x-\alpha$ does not divide $\left(mq(x) + (x-\alpha)q'(x)\right)$. We can take this expression modulo $(x-\alpha)$ to get that it is equivalent to $mq(x)$. Note that $(x-\alpha) \nmid q(x)$, so we need $m > 0$. This is true when $\characteristic(R)$ is not a factor of $m$ (otherwise the entire expression is zero). Therefore, we have multiplicity at most $m-1$. Since $\characteristic(\C) = 0$, we know this rule applies to complex polynomials.\par
+\[ \greenlozenge \]}
+
 
 \defn{The square \vocab{Vandermonde matrix} of size $n$ is the matrix $V = V(x_1, \ldots, x_n)$ is the $n \times n$ matrix 
 \[
@@ -179,7 +233,7 @@ Before that, we will generalize the concept of transcendence to other fields. In
 \]
 }
 with nonzero complex elements $x_i^{j}$ in the $i$-th row and $j+1$-th column column where $0 \leq j \leq n-1$ and $1 \leq i \leq n$.\par
-
+\newpage
 \begin{mybox}
     \lemma{Let $V = V(x_1, \ldots, x_n)$ be the square Vandermonde matrix of size $n$. Then, the determinant of the square Vandermonde matrix is \[\prod\limits_{1 \leq i < j \leq n} (x_j - x_i).\] Therefore, the determinant vanishes if and only if $x_i = x_j$ for any $i \neq j$.} 
 \end{mybox}
@@ -234,8 +288,8 @@ On the other hand, $L$, the matrix of $\psi$ with respect to $B$ and $E$ is
 \]
 \[
 = \begin{pmatrix}
-    1 & (x_1-x_1)&\cdots & (x_1-x_1)(x_1-x_2)\ldots (x_1-x_{n-1}) \\
-    1 & (x_2-x_1) &\cdots & (x_2-x_1)(x_2-x_2)\ldots (x_2-x_{n-1}) \\
+    1 & \textcolor{red}{\cancelto{0}{(x_1-x_1)}}&\cdots & \textcolor{red}{\cancelto{0}{(x_1-x_1)}}(x_1-x_2)\ldots (x_1-x_{n-1}) \\
+    1 & (x_2-x_1) &\cdots & (x_2-x_1)\textcolor{red}{\cancelto{0}{(x_2-x_2)}}\ldots (x_2-x_{n-1}) \\
     \vdots & \vdots &\ddots & \vdots \\
     1 & (x_n-x_1) & \cdots& (x_n-x_1)(x_n-x_2)\ldots(x_n-x_{n-1})
 \end{pmatrix} 
@@ -288,32 +342,8 @@ Now we will introduce some concepts from complex analysis. Consider the set of c
 
 
 \section{Liouville Numbers}
-Now we will start looking for our first transcendental number! First, we will start by proving a lemma.\par
+Now we will start looking for our first transcendental number!\par
 
-\begin{mybox}
-    \lemma{For any nonzero polynomial $p(x)$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$ has the root $\alpha$ with multiplicity $m-1$.}
-\end{mybox}
-
-\proof{From the fundamental theorem of algebra, we can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get 
-\begin{align*}
-    p(x) &= {(x-\alpha)}^{m}q(x) \\
-    p'(x) &= \left({(x-\alpha)}^{m}\right)'q(x) + {(x-\alpha)}^{m}q'(x) \\
-          &= m{\left(x- \alpha\right)}^{m-1}q(x) + {(x-\alpha)}^{m}q'(x) \\
-          &= {\left(x-\alpha\right)}^{m-1}\left(mq(x) + (x-\alpha)q'(x)\right)
-\end{align*}
-
-Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $\alpha$ of multiplicity at least $m-1$.\par
-
-
-Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. In order to show this, we will shift the polynomial by $\alpha$ (all of the roots will therefore be shifted by $\alpha$ as well). Namely, we look at $p(x+\alpha) = {x}^{m}q(x+\alpha)$. Note that $p(x+\alpha)$ now has the root $0$ with multiplicity $m$ (it has $m$ factors of $x$) and since $q(x)$ had no $x-\alpha$ factors, $q(x+\alpha)$ has no roots at zero. In other words, $x \nmid q(x+\alpha)$. Now, showing $p'(x)$ has root $\alpha$ with multiplicity $m-1$ is equivalent to showing $p'(x+\alpha)$ as root $0$ with multiplicity $m-1$ (it has exactly $m-1$ factors of $x$). Thus, substituting $x+\alpha$ in $p'(x)$: 
-
-\[
-    p'(x+\alpha) = {x}^{m-1}\left(mq(x+\alpha) + xq'(x+\alpha)\right)
-\]
-
-We have $m-1$ factors of $x$ from the $x^{m-1}$ term. Therefore, we need to show the rest of the expression has no factors of $x$. In other words, $x \nmid \left(mq(x+\alpha) + xq'(x+\alpha)\right)$, we can take the expression $\left(mq(x+\alpha) + xq'(x+\alpha)\right)$ modulo $x$ to get $mq(x+\alpha)$. Since $m > 0$ and $q(x+\alpha)$ has no factors of $x$, we know that $x$ cannot divide the entire expression. Shifting back by $\alpha$, we get that $x-\alpha$ cannot be a factor of $mq(x) + (x-\alpha)q'(x)$, so the multiplicity of $x-\alpha$ in $p(x)$ is at most $m-1$.
-
-\[ \greenlozenge \]}
 
 \defn{A \vocab{Liouville number} is a real number $x$ such that for all $n \in \N$, there exists integers $p, q$ with $q > 1$ such that \[0 < \left\vert x - \frac{p}{q} \right\vert < \frac{1}{q^n}.\]}\par
 
@@ -350,7 +380,7 @@ for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Also, note t
 In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce two lemmas to help prove this.\par
 
 \begin{mybox}
-    \lemma{Consider the follow system of $m$ equations with $n$ unknowns with $m < n$: 
+    \lemma{Consider the following system of $m$ equations with $n$ unknowns with $0 < m < n$: 
     \[\begin{pmatrix}
         a_{1,1} & \cdots & a_{1,n} \\
         \vdots & \ddots & \vdots \\
@@ -361,7 +391,7 @@ In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce 
     \end{pmatrix} = \begin{pmatrix}
         0 \\ \vdots \\ 0
     \end{pmatrix},
-\]} and $a_{i,j} \in \Z$. We write this compactly as $A\mathbf{x} = \mathbf{0}$. Suppose $a \in \Z$ is an upper bound of the coefficients so that $a \geq \vert a_{i,j} \vert$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$. Then, the system of equations has a nontrivial solution in ${\Z}^n$ for $\mathbf{x}$, such that for all $x_j$, \[\vert x_j \vert < 1 + {(na)}^{\frac{m}{n-m}}.\] 
+\] and $a_{i,j} \in \Z$. We write this compactly as $A\mathbf{x} = \mathbf{0}$. Let $a \in \Z$, $a > 0$, and $a \geq \vert a_{i,j} \vert$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$. Then, the system of equations has a nontrivial solution in ${\Z}^n$ for $\mathbf{x}$, such that for all $x_j$, \[\vert x_j \vert < 1 + {(na)}^{\frac{m}{n-m}}.\]} 
 \end{mybox}
 
 \proof{Let $\mathbf{x}$ be a column vector of height $n$ and let $\mathbf{y}$ be a column vector of height $m$ where $A\mathbf{x} = \mathbf{y}$. Let the entries of $\mathbf{y}$ be $y_k$ where $1 \leq k \leq m$. A solution corresponds to finding an $\mathbf{x}$ such that $\mathbf{y}$ is the zero vector.\par
@@ -395,12 +425,28 @@ As of now, we selected $q$ to be any positive integer. However, to finish the pr
 Thus, we get that there are solutions $\mathbf{x'} \neq \mathbf{x''}$ such that $A\mathbf{x'} = A\mathbf{x''}$. Thus, $A(\mathbf{x'} - \mathbf{x''}) = \mathbf{0}$. Note that if we let $x'_j, x''_j$ denote the $j$-th coordinate of $\mathbf{x'}, \mathbf{x''}$ respectively, \[\vert x'_j - x''_j \vert \leq \vert x'_j \vert + \vert x''_j \vert \leq q + q = 2q < {(na)}^{\frac{m}{m-n}} + 1,\]
 so $\mathbf{x'} - \mathbf{x''}$ is a nontrivial solution to $A\mathbf{x} = 0$ we were looking for.\par
 
-\[\greenlozenge\]
+\[\greenlozenge\]}
+
+Now, we will generalize the previous lemma.\par
+
+\begin{mybox}
+ \lemma{Consider the following system of $p$ equations with $q$ unknowns with $0 < p < q$: 
+    \[\begin{pmatrix}
+        \alpha_{1,1} & \cdots & \alpha_{1,q} \\
+        \vdots & \ddots & \vdots \\
+        \alpha_{p,1} & \cdots & \alpha_{p,q} 
+    \end{pmatrix}
+    \begin{pmatrix}
+        \xi_1 \\ \vdots \\ \xi_q
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ \vdots \\ 0
+        \end{pmatrix}\] and $\alpha_{i,j} \in K$, a number field. We write this compactly as $A \bm{\xi} = \bm{0}$. Let $a \in \Z$, $a > 0$, and $a \geq \| \alpha_{i,j} \|$ for all $1 \leq i \leq p$ and $1 \leq j \leq q$. Then, there is a constant $c > 0$ depending only on $K$ and independent of $p, q$, and $\alpha_{i,j}$ such that the system of equations has a nontrivial solution in ${K}^n$ for $\bm{\xi}$, such that for all $\xi_j$, \[\| \xi_j \| < c + c{(cqa)}^{\frac{p}{q-p}}.\]
 }
+\end{mybox}
+
+\proof{Let $h := [K : \Q]$ and let $\{\beta_1, \ldots, \beta_h\}$ be an integral basis for $K$. For $\alpha \in \mathcal{O}_K$ we can write $\alpha = g_1\beta_1 + \cdots + g_h\beta_h$.
+\[ \greenlozenge \]}
 % This is from an incomplete proof of the Gelfond-Schneider Theorem. 
-
-
-
 
 \section{Main Theorem}
 \begin{mybox}
