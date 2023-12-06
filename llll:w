@@ -197,7 +197,6 @@ The proof for multiplication is similar by replacing $+$ with $\cdot$ instead.\[
 \proof{We know that $\mathcal{O}_K$ is a free $\Z$-module of rank $n := [K : \Q]$ so let $\{\beta_1, \ldots, \beta_n\}$ be a basis for $\mathcal{O}_K$ as a $\Z$-module. To show that this is a basis for $K$, we will show that this set $\Q$-spans $K$ and is $\Q$-linearly independent.\par
 
 First, we will show it is spanning. Let $\alpha \in K$. Then, find positive $c \in \Z$  such that $c\alpha \in \mathcal{O}_K$. Now, for $\lambda_1, \ldots, \lambda_n \in \Z$, we can write \[c\alpha = \lambda_1 \beta_1 + \cdots + \lambda_n \beta_n.\] Therefore, since $c > 0$, and is an integer, we can divide by $c$ to get \[\alpha = \frac{\lambda_1}{c} \beta_1 + \cdots + \frac{\lambda_n}{c} \beta_n.\] Since $\frac{\lambda_i}{c} \in \Q$, we know that the basis $\Q$-spans $K$. Now, we will show it is $\Q$-linearly independent. Suppose for contradiction \[0 = \lambda_1\beta_1 + \cdots + \lambda_n\beta_n,\] where $\lambda_i \in \Q$ but there is a nonzero $\lambda_i$. Then, we can multiply both sides by the least common multiple of the demoninators of the $\lambda_i$ to get that the $\lambda_i$'s are not $\Z$-linearly independent, which is a contradiction.\par \[ \greenlozenge \]}
-
 \newpage
 \begin{mybox}
     \lemma{For any nonzero polynomial $p(x) \in \C[x]$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$, has the root $\alpha$ with multiplicity $m-1$. More generally, if $R$ is an integral domain and $p \in R[x]$ has $\alpha$ with multiplicity $m$, $p'$, the formal derivative, has root $\alpha$ with multiplicity $m-1$ if $\characteristic (R)$ is not a factor of $m$.}
@@ -318,6 +317,7 @@ Plugging what we know about $\det(L)$ and $\det(U)$ into $\det(V)\det(U) = \det(
 
 \[\greenlozenge\]
 }
+
 
 \section{Analysis Preliminaries}
 Now we will introduce some concepts from complex analysis. Consider the set of complex numbers $\C$ as a normed space equipped with the absolute value function $\vert \cdot \vert : \C \to \R$ via $\vert z \vert = \sqrt{z\bar{z}}$, where $\bar{z}$ is the complex conjugate of $z$. This norm induces a metric space, so we can define the distance between $x$ and $y$ as $d(x,y) := \vert x - y \vert$. Furthermore, this metric space induces a topological space so we can define open sets $U \subseteq \C$ such that all points $z \in U$ are contained in a ball within $U$ centered at $z$. In other words, for all $z \in U$, there is $\varepsilon > 0$ such that for all $y$ where $d(z,y) < \varepsilon$, $y \in U$.\par
@@ -456,153 +456,24 @@ Now, we will generalize the previous lemma.\par
         {\alpha}^{(1)} \\ \vdots \\ {\alpha}^{(h)}
     \end{pmatrix}
 \]
-Note that since the $\beta$'s form a basis, $\Delta(\{\beta_1, \ldots, \beta_h\}) \neq 0$. Therefore, we can solve for the $g_j$'s as a linear combination of the $\alpha^{(i)}$'s: \[g_j = \lambda_1 \alpha^{(1)} + \cdots + \lambda_h \alpha^{(h)}.\] Let $c_1$ be a particular positive integer that will upper bound the first minors of the determininant $\left\vert \left(\beta^{(i)}_j\right) \right\vert$, which consequently upper bounds $\vert \lambda_1 \vert + \cdots + \vert \lambda_h \vert$. This will be explained later. Now, we will take the absolute values of both sides to get:
+Note that since the $\beta$'s form a basis, $\Delta(\{\beta_1, \ldots, \beta_h\}) \neq 0$. Therefore, we can solve for the $g_j$'s as a linear combination of the $\alpha^{(i)}$'s: \[g_j = \lambda_1 \alpha^{(1)} + \cdots + \lambda_h \alpha^{(h)}.\] Let $c_1$ be a positive integer upper bound on $\vert \lambda_1 \vert + \cdots + \vert \lambda_h \vert$, which will be explained later. Now, we will take the absolute values of both sides to get:
 
 \begin{align*}
     \vert g_j \vert &= \left\vert \lambda_1 \alpha^{(1)} + \cdots + \lambda_h \alpha^{(h)} \right\vert \\
                     &\leq \left\vert \lambda_1 \alpha^{(1)} \right\vert + \cdots + \left\vert \lambda_h \alpha^{(h)} \right\vert \\
                     &\leq \vert \lambda_1 \vert \left\vert \alpha^{(1)} \right\vert + \cdots + \vert \lambda_h \vert \left\vert \alpha^{(h)} \right\vert \\
                     &\leq \vert \lambda_1 \vert \| \alpha \| + \cdots + \vert \lambda_h \vert \| \alpha \| \\
-                    &= \| \alpha \| \left(\vert \lambda_1 \vert + \cdots + \vert \lambda_h \vert\right) \\
-                    &\leq c_1\| \alpha \|  
+                    &\leq \| \alpha \| \left(\vert \lambda_1 \vert + \cdots + \vert \lambda_h \vert\right) \\
 \end{align*}
 
-Note that since 
-\[
-    \begin{pmatrix}
-        g_1 \\ \vdots \\ g_h
-    \end{pmatrix} =
-    {\begin{pmatrix}
-        {\beta}^{(1)}_1 & \hdots & {\beta}^{(1)}_h \\
-        \vdots & \ddots & \vdots \\
-        {\beta}^{(h)}_1 & \hdots & {\beta}^{(h)}_h
-    \end{pmatrix}
-}^{-1}
-    \begin{pmatrix}
-        {\alpha}^{(1)} \\ \vdots \\ {\alpha}^{(h)}
-    \end{pmatrix}
-\]
-
-the $c_1$ bound on the $\lambda$ coefficients is dependent only on the entries of ${\left(\beta^{(i)}_j\right)}^{-1}$ and thus $c_1$ only depends on the number field $K$; it is independent of $\alpha$. From this, we have shown that for all $\alpha \in \mathcal{O}_K$, there is a constant $c_1$ dependent only on $K$ and independent of $\alpha$, such that if we express $\alpha$ as a linear combination of the integral basis, all coefficients have absolute value upper bounded by $c_1 \| \alpha \|$.
-
-Now, we write every $\xi_i$ in terms of the integral basis for $i = 1, \ldots, q$:
-\[ \xi_i = x_{i,1}\beta_1 + \cdots + x_{i,h}\beta_{h} \]
-
-Note that we now get the following equations (in matrix form):
-
-\[\begin{pmatrix}
-    x_{1,1} & \hdots & x_{1,h} \\
-    \vdots & \ddots & \vdots \\
-    x_{q,1} & \hdots & x_{q,h} 
-\end{pmatrix} 
-\begin{pmatrix}
-    \beta_1 \\ \vdots \\ \beta_h
-\end{pmatrix} = 
-\begin{pmatrix}
-    \xi_1 \\ \vdots \\ \xi_q 
-\end{pmatrix}
-\]
-
- Finding a bound on the $\xi_i$'s is therefore related to finding a bound on the integers $x_{i,j}$. Consider the inital system of equations we were working with:
-
-\[\begin{pmatrix}
-        \alpha_{1,1} & \cdots & \alpha_{1,q} \\
-        \vdots & \ddots & \vdots \\
-        \alpha_{p,1} & \cdots & \alpha_{p,q} 
-    \end{pmatrix}
-    \begin{pmatrix}
-        \xi_1 \\ \vdots \\ \xi_q
-    \end{pmatrix} = \begin{pmatrix}
-        0 \\ \vdots \\ 0
-        \end{pmatrix}\]
-
-        We will substitute the $\bm{\xi}$ vector with the previous matrix equation to get:
-
-\[
-    \begin{pmatrix}
-        \alpha_{1,1} & \cdots & \alpha_{1,q} \\
-        \vdots & \ddots & \vdots \\
-        \alpha_{p,1} & \cdots & \alpha_{p,q} 
-    \end{pmatrix}
-    \begin{pmatrix}
-    x_{1,1} & \hdots & x_{1,h} \\
-    \vdots & \ddots & \vdots \\
-    x_{q,1} & \hdots & x_{q,h} 
-\end{pmatrix} 
-\begin{pmatrix}
-    \beta_1 \\ \vdots \\ \beta_h
-\end{pmatrix} = 
-\begin{pmatrix}
-        0 \\ \vdots \\ 0
-        \end{pmatrix}\]
-
-Written in equation form, we can think of this substitution as: 
-
-\[\sum\limits_{i = 1}^{q} \alpha_{k,i}\xi_i = \sum\limits_{i=1}^{q}\sum\limits_{j=1}^{h}\alpha_{k,i}\beta_{j}x_{i,j} = \mathbf{0}\]
-
-Note that since $\alpha_{k,i}\beta_{j}$'s are in $\mathcal{O}_K$, we will also write them in terms of the integral basis and integer coefficients again. Specifically, we will write \[\alpha_{k,i}\beta_{j} = \sum\limits_{r = 1}^{h} m_{k,i,j,r}\beta_{r}\] for $k = 1, \ldots, p$, $i = 1, \ldots, q$, and $j = 1, \ldots, h$, where $m_{k,i,j,r} \in \Z$.
-
-We therefore have converted our entire system of $p$ equations to be written in terms of the integral basis and integer coefficients: 
-
-\[\sum\limits_{i=1}^{q}\sum\limits_{j=1}^{h}\sum\limits_{r=1}^{h} m_{k,i,j,r}x_{i,j}\beta_{r} = \mathbf{0}\]
-
-where $k = 1, \ldots, p$.\par
-
-Note that since $\{\beta_1, \ldots, \beta_h\}$ forms an integral basis, it is $\Q$-linearly independent so if some linear combination of them sum to $\mathbf{0}$, it must be the case that the integer coefficients 
-\[\sum\limits_{i=1}^{q}\sum\limits_{j=1}^{h} m_{k,i,j,r}x_{i,j} = \mathbf{0}\] 
-
-for all $k = 1, \ldots, p$, $r = 1, \ldots, h$. The $x_{i,j}$'s are the unknown variables because they are the coefficients of the $\xi_i$'s which were the original unknown variables, but the $m_{k,i,j,r}$'s come from the $\alpha_{k,i}$'s. We have therefore converted the problem from a system of equations in terms of algebraic integers to $ph$ equations and $qh$ unknowns ($x_{i,j}$'s) for integers. To finish this proof we will use Siegel's lemma so we need to find an upper bound on the absolute values of the coefficients $m_{k,i,j,r}$.\par
-
-\recall{For $\alpha \in \mathcal{O}_K$ expressed as a linear combination of the integral basis, the coefficients $g_j$ have absolute value strictly upper bounded by $c_1 \| \alpha \|$ for $c_1$ dependent only on $K$ and not $\alpha$.\par}
-
-If we use $\alpha_{k,i}\beta_{j}$ for $\alpha$, the coefficients are exactly $m_{k,i,j,r}$ so we know that 
-\begin{align*}
-    \vert m_{k,i,j,r} \vert &< c_1 \| \alpha_{k,i}\beta_{j} \|  \\
-                            &\leq c_1 \| \alpha_{k, i} \| \| \beta_{j} \| \\ 
-                            &\leq c_{1}a \| \beta_{j} \|
-\end{align*}
-
-where $a$ is the upper bound on the $\| \alpha_{k,i} \|$ in the statement of the lemma we are trying to prove.\par
-
-Now, pick $c_2 \in \R$, such that
-\begin{enumerate}
-    \item{$\max\limits_{j} c_{1} \| \beta_{j} \| \leq c_2 < 1 + \max\limits_{j} c_{1} \| \beta_{j} \|$.}
-    \item{$c_{2}a \in \Z$.}
-\end{enumerate}
-
-Note that this construction is possible since $a \in \Q$ and $a \geq 1$. While this construction makes $c_2$ technically depend on $a$, it is dependent on it in a trivial way and the magnitude of $c_2$ is bounded. This is because the bound to use to use the previous lemma is an integer. We will later further upper bound this with another constant so that the dependence disappears completely. Note that with $c_2$, we know that $\vert m_{k,i,j,r} \vert < c_{1}a \| \beta_{j} \| \leq c_2a$. We can now apply Siegel's lemma with $m,n,a$ in its statement replaced by $ph,qh,c_2a$ respectively to get that there is a nontrivial solution $x_{i,j}$ such that
-
-\[\vert x_{i,j} \vert < 1 + {\left(qhc_{2}a\right)}^{\frac{ph}{qh-ph}} = 1 + {\left(hc_{2}qa\right)}^{\frac{p}{q-p}}\]
-
-Now that we have our bound on $\vert x_{i,j} \vert$, recall that \[ \xi_i = x_{i,1}\beta_1 + \cdots + x_{i,h}\beta_{h} \] so we can say \[\| \xi_i \| < h \cdot \max\limits_{j} \| \beta_j \| \left(1 + {\left(hc_{2}qa\right)}^{\frac{p}{q-p}}\right).\] 
-
-Select $c$ which exceeds $h \| \beta \|$ and $h c_2$ (note this makes $c$ dependent only on $K$) so that
-
-\[\| \xi_i \| < c + {\left(cqa\right)}^{\frac{p}{q-p}}. \] 
-
-From the conclusion of Siegel's lemma, the system of equations has a nontrivial solution with this bound.
-\[ \greenlozenge \]
-}
-
+\[ \greenlozenge \]}
 % This is from an incomplete proof of the Gelfond-Schneider Theorem. 
 
-\newpage
 \section{Main Theorem}
 \begin{mybox}
     \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \C \setminus \Q$. Then, ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
 
-    \proof{Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$.
-
-}
-\begin{center}
-\begin{tikzpicture} 
-\begin{scope}
-    \clip [rounded corners=.4cm] (0,0) rectangle coordinate (centerpoint) (10,10cm); 
-    \node [inner sep=0pt] at (centerpoint) {\includegraphics[scale=0.5]{img/domain.png}}; 
-\end{scope}
-\end{tikzpicture} 
-\end{center}
 \section{Consequences}
 
 \chapter{Baker's Theorem}

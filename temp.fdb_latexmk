@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex temp.idx"] 1701276462 "temp.idx" "temp.ind" "temp" 1701276519 0
-  "temp.idx" 1701276519 1047 d8b24c442552d7cc4a25826d74ec619d "pdflatex"
+["makeindex temp.idx"] 1701817020 "temp.idx" "temp.ind" "temp" 1701830665 0
+  "temp.idx" 1701830665 1047 d8b24c442552d7cc4a25826d74ec619d "pdflatex"
   (generated)
   "temp.ilg"
   "temp.ind"
   (rewritten before read)
-["pdflatex"] 1701276518 "temp.tex" "temp.pdf" "temp" 1701276519 0
+["pdflatex"] 1701830664 "temp.tex" "temp.pdf" "temp" 1701830665 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -294,11 +294,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684207353 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684207278 7883455 c07dcb3f638da73dc1a9d744117c6e60 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "temp.aux" 1701276519 4828 2876b884f15365a41fbb574846e1e8cc "pdflatex"
-  "temp.ind" 1701276462 1182 91bf86864793d1605f071dfa99bac9ec "makeindex temp.idx"
-  "temp.out" 1701276519 2101 c438b8dab53e688f774b988194b1a4d3 "pdflatex"
-  "temp.tex" 1701276517 29734 53e1f272bd193be94391f1b376d0e8ce ""
-  "temp.toc" 1701276519 1110 a32fc9c54433feaa1e661bad6e99751b "pdflatex"
+  "img/domain.png" 1701715730 1699121 d8088eb85a7c46765a4bbba9731fbe5f ""
+  "temp.aux" 1701830665 4700 4077dcf22e6f28b8a25fc34bb338a179 "pdflatex"
+  "temp.ind" 1701817548 1182 91bf86864793d1605f071dfa99bac9ec "makeindex temp.idx"
+  "temp.out" 1701830665 2101 c438b8dab53e688f774b988194b1a4d3 "pdflatex"
+  "temp.tex" 1701830662 38704 366933d11e87a84652fea6792ac24b4f ""
+  "temp.toc" 1701830665 1110 dbee71f11e2758a69d9ad076af260a76 "pdflatex"
   (generated)
   "temp.aux"
   "temp.idx"
