@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%% Page Setup %%%%%%%%%%%%%%%
+
+\documentclass{beamer}
+\usepackage[framemethod=tikz]{mdframed}
+\setlength\parindent{0pt}
+\setlength{\parskip}{\baselineskip}%
+\usepackage{graphicx}
+\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\usetheme{Pittsburgh}
+\usepackage{gradient-text}
+\setbeamerfont{title}{size=\bfseries\huge}
+
+%%%%%%%%%%%%%%% Math Stuff %%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tkz-euclide}
+\usepackage{pgf-pie}
+\usepackage{cancel}
+
+%%%%%%%%%%%%%%% Quotation Stuff %%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+
+%%%%%%%%%%%%%%% Color %%%%%%%%%%%%%%%
+
+\definecolor{p}{rgb}{0.9118, 0.4961, 0.6804}
+\definecolor{p1}{rgb}{1, 0.92, 0.963}
+\definecolor{g}{rgb}{0.023, 0.477, 0.219}
+\definecolor{g1}{rgb}{0.03, 0.75, 0.20}
+\definecolor{g2}{rgb}{0.95, 1, 0.95}
+\definecolor{b}{rgb}{0.02, 0.02, 0.02}
+
+
+%%%%%%%%%%%%%%% Link Setup %%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=g, filecolor=g, urlcolor=g,}
+
+%%%%%%%%%%%%%%% Box %%%%%%%%%%%%%%%
+
+\newmdenv[innerlinewidth=2pt, roundcorner=4pt,linecolor=g1,innerleftmargin=20pt,
+innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor = g2]{mybox}
+
+
+%%%%%%%%%%%%%%% Bug Fix Adjustments %%%%%%%%%%%%%%%
+
+\setlength{\headheight}{14pt}
+\setlength{\footskip}{55pt}
+
+%%%%%%%%%%%%%%% Index %%%%%%%%%%%%%%%
+
+\usepackage{makeidx}
+\makeindex
+
+%%%%%%%%%%%%%%% Custom Commands %%%%%%%%%%%%%%%
+
+\def\greenlozenge{\mathbin{\color{g}\blacklozenge}}
+
+\newcommand{\emphasis}[1]{\underline{\textbf{#1}} }
+\newcommand{\vocab}[1]{\underline{\textbf{#1}}\index{#1}}
+
+
+%%%%%%%%%%%%%%% Math Operators %%%%%%%%%%%%%%%
+\DeclareMathOperator{\A}{\mathbb{A}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\C}{\mathbb{C}}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\cod}{cod}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Free}{Free}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
+
+\begin{document}
+    \begin{frame}
+        \begin{center}
+            {\bfseries\huge\gradientRGB{Transcendental Numbers}{20,220,100}{50,200,200}} \par
+        Vincent Lin \par
+        \today
+        \end{center}
+    \end{frame}
+    \begin{frame}
+        \frametitle{Introduction}
+    \begin{mybox}
+           \end{mybox}
+    \end{frame}
+\end{document}
