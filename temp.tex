@@ -134,7 +134,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \maketitle
 \tableofcontents
 \chapter{Preface}
-This uses the background information from 21441 and algebra and reviews it in order to discuss transcendental numbers. Then, it will introduce methods of explicitly constructing, finding, and detecting transcendental numbers. Several classes of transcendental numbers will be named and the methods of finding them will be discussed, including the Lindemann-Weierstrass theorem, Gelfond-Schneider theorem, and Baker's theorem. It concludes with a discussion of Schanuel's conjecture. The main sequence of theorems is primarily related to determining the transcendence of complex numbers using auxiliary functions, but there are many ways of finding transcendental numbers.
+\indent Starting from the background information from 21441 and algebra, we will discuss transcendental numbers. Then, we will introduce methods of explicitly constructing, finding, and detecting transcendental numbers. We will talk about some addition algebra preliminaries and theorems from complex analysis. We will name several classes of transcendental numbers, and the specific methods of finding them will be discussed. The main theorems include the Lindemann-Weierstrass theorem, Gelfond-Schneider theorem, and Baker's theorem. Then, we conclude with a discussion of Schanuel's conjecture and its consequences. The main sequence of theorems is primarily related to determining the transcendence of complex numbers using auxiliary functions.
 \mainmatter{}
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
@@ -218,7 +218,7 @@ Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m
 \[ \greenlozenge \]}
 
 
-\defn{The square \vocab{Vandermonde matrix} of size $n$ is the matrix $V = V(x_1, \ldots, x_n)$ is the $n \times n$ matrix 
+\defn{The square \vocab{Vandermonde matrix} of size $n$, \[V = V(x_1, \ldots, x_n)\] is the $n \times n$ matrix 
 \[
     \begin{pmatrix}
         1 & x_1 & x_{1}^2 & \cdots & x_{1}^{n-1} \\
@@ -594,20 +594,75 @@ From the conclusion of Siegel's lemma, the system of equations has a nontrivial 
 
 \proof{Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$. Let $\gamma$ be a value of ${\alpha}^{\beta} = \exp(\beta \log \alpha)$. Since we are assuming for contradiction that $\alpha, \beta$, and $\gamma$ are all algebraic, we will assume there is a number field $K$ of finite degree $h$ over $\Q$ which contains $\alpha, \beta$, and $\gamma$. Using $h$, we will describe the following constants $m,q,n,t$ with the following properties:
 
-    \begin{itemize}
-        \item{$m = 2h+3$}
-        \item{}
-    \end{itemize}
+    \begin{enumerate}
+        \item{Define $m := 2h+3$.}
+        \item{Find $q > 4m^2$ such that $q^2$ is a multiple of $2m$.}
+        \item{Since $q^2$ is a multiple of $2m$, let their ratio be the integer $n := \frac{q^2}{2m}$}
+        \item{We will also let $t := q^2 = 2mn$ since $q^2$ is ubiquitous.}
+    \end{enumerate}
+
+    These will be selected so that bounds will work out later. Note that $n > q$. This is because 
+    \begin{align*}
+        \frac{n}{q} &= \frac{\frac{q^2}{2m}}{q} & \text{(by property 3)}\\
+                    &= \frac{q}{2m} \\
+                    &> \frac{4m^2}{2m} &\text{(by property 2)}\\
+                    &= 2m \\
+                    &= 2(2h+3) &\text{(by property 1)}\\
+                    &= 4h+6 \\
+                    &> 1 &\text{(degree of field extension is positive)} 
+    \end{align*}
+
+    Since $\frac{n}{q} > 1$, $n > q$.\par 
+    Now, consider the set $\left\{(r + k\beta)(\log \alpha) : r = 1, \ldots, q, k = 1, \ldots, q\right\}$. This set has $q^2 = t$ elements so arbitrarily name the distinct elements $\rho_1, \ldots, \rho_t$ (order of assignment does not matter). We wish to construct an auxiliary function so that we get a contradiction. Therefore, consider the entire function of the form $F: \C \to \C$ via 
+
+\[F(z) = \sum\limits_{j=1}^{t}\eta_{j}\exp(z\rho_j)\]
+where $\eta_j$'s are in $\mathcal{O}_K$. We will specify the $\eta_j$'s later to completely define this function. Now, find integer $c_1 > 0$ such that $c_1 \alpha, c_1 \beta, c_1 \gamma \in \mathcal{O}_K$. To select the $\eta_j$'s, we need the following system of equations to have a nontrivial zero: 
+    \[{c_1}^{m + 2nq} {(\log \alpha)}^{-a}F^{(a)}(b) = 0\]
+    for $a = 0, \ldots, n-1$ and $b = 1, \ldots, m$. Intuitively, this is so that we can get a zero of high multiplicity. Note that this system has $mn$ equations with $t = 2mn$ unknowns $\eta_j$. We want to use lemma 3.1.2, the generalized version of Siegel's lemma. Therefore, we must satisfy the hypotheses of that lemma. First, we need to bound the coefficients of the $\eta_j$'s and show they are in $\mathcal{O}_K$. Note that \[F^{(a)}(z) = \sum\limits_{i=1}^{t}(\eta_j){\rho_j}^{a}\exp(z\rho_j).\] Thus, \[F^{(a)}(b) = \sum\limits_{i=1}^{t}(\eta_j){\rho_j}^{a}\exp(b\rho_j).\] Thus, the coefficient of $\eta_j$ in the system \[{c_1}^{m + 2nq} {(\log \alpha)}^{-a}F^{(a)}(b) = 0\] is \[{c_1}^{m + 2nq} {\log(\alpha)}^{-\alpha}{\rho_j}^{a}\exp(b\rho_j)\] for each $a, b$. Substituting $\rho_j$ as $(r+k\beta)(\log \alpha)$, we get 
+\begin{align*}
+    {c_1}^{n+2mq}{(\log \alpha)}^{-a}\rho_j^{a}\exp(b\rho_j) &= {c_1}^{n+2mq}{(r + k\beta)}^{a}\exp\left(b(r+k\beta)(\log \alpha)\right) \\
+                                                                &= {c_1}^{n+2mq}{(r+k\beta)}^{a}{\alpha}^{rb}\gamma^{kb}
+\end{align*}
+
+We therefore need to show that for all $a, b$, ${c_1}^{n+2mq}{(r+k\beta)}^{a}{\alpha}^{rb}\gamma^{kb} \in \mathcal{O}_K$. In order to do this, note that we have selected $c_1$ to make $c_1\alpha, c_1\beta, c_1\gamma \in \mathcal{O}_K$. Note that we have $a$ factors of $(r + k \beta)$, where $r, k \in \Z$ so we need $a$ factors of $c_1$ to make it in $\mathcal{O}_K$. Furthermore, we have $rb$ factors of $\alpha$ and $kb$ factors of $\gamma$. Thus, this is equivalent to determining whether the $n + 2mq$ factors of $c_1$ that we have will cover the $a + rb + kb$ terms. Note that $a, b, r, k$ are each bounded by $n-1, m, q, q$ respectively. Thus $a + rb + kb \leq n-1 + mq + q < n-1 + 2mq < n + 2mq$.\par
+
+Now that we know ${c_1}^{n+2mq}{(r+k\beta)}^{a}{\alpha}^{rb}\gamma^{kb} \in \mathcal{O}_K$, we will find an integer upper bound on $\left\| {c_1}^{n+2mq}{(r+k\beta)}^{a}{\alpha}^{rb}\gamma^{kb} \right\|$ to apply the lemma. First, note that 
+
+\begin{align*}
+    \| r + k\beta \| &\leq \| r \| + \| k \| \| \beta \| \\
+                     &\leq q + q \| \beta \| \\
+                     &= q\left(1 + \| \beta \|\right)
+\end{align*}
+
+Now let $c_2 = \max\left\{\| \alpha \|, 1 + \|\beta\|, \| \gamma \|\right\}$. We will now bound the absolute values of the all conjugates of the coefficients: 
+\begin{align*}
+    \left\|{c_1}^{n+2mq}{(r+k\beta)}^{a}{\alpha}^{rb}\gamma^{kb}\right\| &\leq \left\| {c_1}^{n+2mq} \right\| \cdot \left\| {(r + k\beta)}^{a} \right\| \cdot \left\| {\alpha}^{rb} \right\| \cdot \left\| {\gamma}^{kb} \right\| \\
+                                                              &\leq c_1^{n+2mq} \cdot {\left(q\left(1 + \| \beta \|\right)\right)}^{a} \cdot {\| \alpha \|}^{rb} \cdot {\| \gamma \|}^{kb} \\
+                                                              &\leq c_1^{n+2mq} {\left({qc_2}\right)}^{a} \left({c_2}^{rb}\right) \left({c_2}^{kb}\right) \\
+                                                              &\leq c_1^{n+2mq} {\left({qc_2}\right)}^{n} \left({c_2}^{2mq}\right) \\
+                                                              &= {\left(c_{1}c_{2}\right)}^{n} {\left(c_{1}c_{2}\right)}^{2mq}q^{n} \\
+                                                              &=  {\left(c_{1}c_{2}\right)}^{n} {\left(c_{1}c_{2}\right)}^{2mq}{\left(\sqrt{2mn}\right)}^{n} \\
+                                                              &= {\left(c_{1}c_{2}\right)}^{n} {\left(c_{1}c_{2}\right)}^{2mq}{\left(\sqrt{2m}\right)}^{n}n^{\frac{n}{2}}
+\end{align*}
+
+Now, we will further bound this using the constant $c_3 := {\left(c_{1}c_{2}\right)}^{2m+1}\sqrt{2m}$. Therefore, recalling that $n > q$, 
+
+\begin{align*}
+    {\left(c_{1}c_{2}\right)}^{n} {\left(c_{1}c_{2}\right)}^{2mq}{\left(\sqrt{2m}\right)}^{n}n^{\frac{n}{2}} &< {(c_{1}c_{2})}^{n}{(c_{1}c_{2})}^{2mn}{\left(\sqrt{2m}\right)}^{n}n^{\frac{n}{2}} \\
+                                                                                                             &= {\left({(c_{1}c_{2})}^{2m+1}\right)}^{n}{\left(\sqrt{2m}\right)}^{n}n^{\frac{n}{2}} \\
+                                                                                                             &= {\left({(c_{1}c_{2})}^{2m+1}\sqrt{2m}\right)}^{n}{n}^{\frac{n}{2}} \\
+                                                                                                             &= {c_3}^{n}n^{\frac{n}{2}}
+\end{align*}
+
+Now, we are ready to apply the lemma. We get that we can find nontrivial $\| \eta_j \|$ such that for every $j$, 
+
+\begin{align*}
+    \| \eta_j \| &< c + c{\left(c\left(2qa\right){c_3}^{n}n^{\frac{n}{2}}\right)}^{\frac{mn}{2mn - mn}} \\
+                 &= c + 2c^{2}mn{c_{3}}^{n}n^{\frac{n}{2}}
+\end{align*}
 
 }
-\begin{center}
-\begin{tikzpicture} 
-\begin{scope}
-    \clip [rounded corners=.4cm] (0,0) rectangle coordinate (centerpoint) (10,10cm); 
-    \node [inner sep=0pt] at (centerpoint) {\includegraphics[scale=0.5]{img/domain.png}}; 
-\end{scope}
-\end{tikzpicture} 
-\end{center}
+
 \section{Consequences}
 
 \chapter{Baker's Theorem}

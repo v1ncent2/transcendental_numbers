@@ -1348,11 +1348,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT ./img/domain.png
-INPUT ./img/domain.png
-INPUT img/domain.png
-INPUT ./img/domain.png
-INPUT ./img/domain.png
 INPUT ./temp.ind
 INPUT temp.ind
 INPUT ./temp.ind

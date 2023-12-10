@@ -10,6 +10,6 @@
 \contentsline {chapter}{\numberline {3}Gelfond-Schneider Theorem}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Background}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Main Theorem}{19}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Consequences}{19}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Baker's Theorem}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{23}{chapter.5}%
+\contentsline {section}{\numberline {3.3}Consequences}{21}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Baker's Theorem}{23}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{25}{chapter.5}%
