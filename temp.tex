@@ -611,7 +611,7 @@ From the conclusion of Siegel's lemma, the system of equations has a nontrivial 
         \item{We will also let $t := q^2 = 2mn$ since $q^2$ is ubiquitous.}
     \end{enumerate}
 
-    These will be selected so that bounds will work out later. Note that $n > q$. This is because 
+    These will be selected so that bounds will work out later. First, note that $q$, and as a consequence, $n$, can be selected to be arbitrarily large. We will use this later to exceed bounds. However, note that it will always be the case that $n > q$. This is because 
     \begin{align*}
         \frac{n}{q} &= \frac{\frac{q^2}{2m}}{q} & \text{(by property 3)}\\
                     &= \frac{q}{2m} \\
@@ -685,9 +685,9 @@ where $c_4 := \left(4{c}^{2}\right)\left(4c_3\right)$. Note  that $c_4$ is still
 for all $a,b$ with $\| \eta_j \| < {c_4}^{n}n^{\frac{n}{2}}$ for all algebraic integers $\eta_j$ in the system.
 
 \subsection{Analysis of Auxiliary Function}
-First, we will show that the function's derivatives will not always vanish from $1$ to $m$ past a certain number of derivatives. More specifically, there are $p, B \in \Z$ where $p \geq n$ and $1 \leq B \leq m$ such that $F^{(a)}(B) = 0$ for $a = 1, \ldots, p-1$ and $b = 1, \ldots, m$ but $F^{(p)}(B) \neq 0$.\par
+First, we will show that the function's derivatives will not always vanish from $1$ to $m$ past a certain number of derivatives. More specifically, there are $p, B \in \Z$ where $p \geq n$ and $1 \leq B \leq m$ such that $F^{(a)}(b) = 0$ for $a = 1, \ldots, p-1$ and $b = 1, \ldots, m$ but $F^{(p)}(B) \neq 0$.\par
 
-To see this, suppose for contradiction that for all $a = 0, \ldots, t-1$, the derivative vanishes. We will reach a contradiction at $B = 1$. Note that \[F^{(a)}(B) = \sum\limits_{j=1}^{t} \eta_{j}{\rho_{j}}^{a}\exp(b\rho_j).\] Plugging in $B = 1$, we get the system of $a$ equations \[F^{(a)}(1) = \sum\limits_{j = 1}^{t} \eta_{j}{\left(\rho_j\right)}^{a}\exp(\rho_j) = 0.\]
+To see this, suppose for contradiction that for all $a = 0, \ldots, t-1$, the derivative vanishes. Note that \[F^{(a)}(B) = \sum\limits_{j=1}^{t} \eta_{j}{\rho_{j}}^{a}\exp(B\rho_j).\] We therefore get the system of $a$ equations \[F^{(a)}(B) = \sum\limits_{j = 1}^{t} \eta_{j}{\left(\rho_j\right)}^{a}\exp(B\rho_j) = 0.\]
 
 In matrix form, we can write this system as 
 
@@ -699,10 +699,10 @@ In matrix form, we can write this system as
         {\rho_{1}}^{t-1} & {\rho_{2}}^{t-1} & \hdots & {\rho_t}^{t-1}
     \end{pmatrix} 
     \begin{pmatrix}
-        \exp(\rho_1) & 0 & \hdots & 0 \\
-        0 & \exp(\rho_2) & \hdots & 0 \\
+        \exp(B\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(B\rho_2) & \hdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
-        0 & 0 & \hdots & \exp(\rho_t) 
+        0 & 0 & \hdots & \exp(B\rho_t) 
     \end{pmatrix} 
     \begin{pmatrix}
         \eta_1 \\ \eta_2 \\ \vdots \\ \eta_t
@@ -722,21 +722,21 @@ Note that since our auxiliary function was constructed so that the $\eta_j$'s we
         {\rho_{1}}^{t-1} & {\rho_{2}}^{t-1} & \hdots & {\rho_t}^{t-1}
     \end{pmatrix} 
     \begin{pmatrix}
-        \exp(\rho_1) & 0 & \hdots & 0 \\
-        0 & \exp(\rho_2) & \hdots & 0 \\
+        \exp(B\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(B\rho_2) & \hdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
-        0 & 0 & \hdots & \exp(\rho_t) 
+        0 & 0 & \hdots & \exp(B\rho_t) 
     \end{pmatrix}\] 
 
 is not full rank. Therefore, its determinant is $0$. Note that the determinant of the diagonal matrix
 
 \[\begin{pmatrix}
-        \exp(\rho_1) & 0 & \hdots & 0 \\
-        0 & \exp(\rho_2) & \hdots & 0 \\
+        \exp(B\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(B\rho_2) & \hdots & 0 \\
         \vdots & \vdots & \ddots & \vdots \\
-        0 & 0 & \hdots & \exp(\rho_t) 
+        0 & 0 & \hdots & \exp(B\rho_t) 
     \end{pmatrix}\]
-is the product of the entries along its diagonal: $\prod\limits_{j=1}^{t}\exp(\rho_{j})$, which cannot be zero. Therefore, it must be the case that the determinant of 
+is the product of the entries along its diagonal: $\prod\limits_{j=1}^{t}\exp(B\rho_{j})$, which cannot be zero. Therefore, it must be the case that the determinant of 
 
 \[\begin{pmatrix}
         1 & 1 & \hdots & 1 \\
@@ -752,7 +752,7 @@ is the product of the entries along its diagonal: $\prod\limits_{j=1}^{t}\exp(\r
     \end{align*}
 for integers $r_1, r_2, k_1, k_2$, which would be a contradiction since that would imply $\beta \in \Q$.\par
 
-From this we confirmed that the auxiliary function vanishes at some $B$ for the first $n$ derivatives, but there is $p$ such that $F^{(p)}(B) \neq 0$. Let 
+From this we confirmed that the auxiliary function vanishes at $B$ for the first $n$ derivatives, but there is $p$ such that $F^{(p)}(B) \neq 0$. Let 
 
 \begin{align*}
     \zeta &:= {(\log \alpha)}^{(-p)}F^{(p)}(B) \\
@@ -769,7 +769,8 @@ To see this, recall that $c_1$ is the positive integer constant which makes $c_1
 
 \begin{align*}
     1 &\leq \vert N_K({c_5}^{p}\zeta) \vert \\
-      &= \vert N_K({c_5}^{p}) \vert \vert N_K(\zeta) \vert \\
+      &= \vert N_K({c_5}^{p}) N_K(\zeta) \vert \\
+      &\leq \vert N_K({c_5}^{p}) \vert \cdot \vert N_K(\zeta) \vert \\
       & \leq C^{p}\vert N_K(\zeta) \vert
 \end{align*}
 
@@ -784,8 +785,44 @@ To get this bound, note that
                 &\leq \sum\limits_{j=1}^{t} \left\| \eta_{j} \right\| \cdot {\left\| r_j + k_j \beta \right\|}^{p} \cdot  {\left\| \alpha \right\|}^{Br_{j}}  \cdot  {\left\| \gamma \right\|}^{Bk_{j}}  \\
                 &\leq t \cdot \max_{j} \left\{ \left\| \eta_{j} \right\| \cdot {\left\| r_j + k_j \beta \right\|}^{p} \cdot  {\left\| \alpha \right\|}^{Br_{j}}  \cdot  {\left\| \gamma \right\|}^{Bk_{j}} \right\}
 \end{align*}
-\section{Consequences}
 
+To further bound this, first note that $q < n \leq p$. Then, $t = 2mn < 2^{n}$ for sufficiently large $n$. Now, $r, k, b, \| \alpha \|, 1 + \| \beta \|, \gamma$ can be upper bounded by $q,q,m,c_2, c_2, c_2$ respectively. Also, recall that $\| \eta_j \| < {c_4}^{n}n^{\frac{n}{2}}$ so
+\begin{align*}
+    t \cdot \max_{j} \left\{ \left\| \eta_{j} \right\| \cdot {\left\| r_j + k_j \beta \right\|}^{p} \cdot  {\left\| \alpha \right\|}^{Br_{j}}  \cdot  {\left\| \gamma \right\|}^{Bk_{j}} \right\} &< 2^{n}\left({c_4}^{n}n^{\frac{n}{2}}\right){\left(qc_2\right)}^{p}\left({{c_{2}}}^{mq}\right)\left({{c_{2}}}^{mq}\right) \\
+                                                                                                                                                                                                  &\leq {\left(2c_{4}{c_{2}}^{1+2m}\right)}^{p}{n}^{\frac{n}{2}}{q}^{p}
+\end{align*}
+
+Note that
+\begin{align*}
+    q^p &= {\left(\sqrt{2mn}\right)}^{p} \\ 
+        &= {\left(\sqrt{2m}\right)}^{p}{n}^{\frac{p}{2}} \\
+        &\leq {\left(\sqrt{2m}\right)}^{p}{p}^{\frac{p}{2}}
+\end{align*}
+and as a result of $n \leq p$, \[n^{\frac{n}{2}} \leq p^{\frac{p}{2}}.\]
+
+Putting this all together, we get that
+\begin{align*}
+    \| \zeta \| &< {\left(2c_{4}{c_{2}}^{1+2m}\right)}^{p}{n}^{\frac{n}{2}}{q}^{p} \\
+                &\leq {\left(2c_{4}{c_{2}}^{1+2m}\right)}^{p}\left({p}^{\frac{p}{2}}\right){\left(\sqrt{2m}\right)}^{p}\left({p}^{\frac{p}{2}}\right) \\
+                &= {\left(2c_{4}{c_{2}}^{1+2m}\sqrt{2m}\right)}^{p}{p}^{p} \\
+                &= {c}^{p}{p}^{p}
+\end{align*}
+For $c := 2c_{4}{c_{2}}^{1+2m}\sqrt{2m}$, which is a constant independent of $n$ and $p$.\par
+
+We will now define another function $S : \C \to \C$ via (the analytic continuation of)
+\[S(z) = p! F(z) \left(\prod\limits_{b=1}^{m} {(z - b)}^{-p}\right)\left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right).\]
+
+Note that $S$ is also entire because the function $F(z)$ is entire and the multiplicity of the zeroes at $z = 1, \ldots, m$ is at least $p$. We are using the analytic continuation of the function written above so that it can still be defined at $z = B$ even though there is a ${(B-B)}^{p}$ in the denominator. By the Taylor series expansion of $F$ at $B$, we get that 
+\[F(z) = \sum\limits_{k = p}^{\infty} \frac{{(z-B)}^{k}F^{(k)}(B)}{k!}.\]
+
+Therefore, substituting, we get that
+
+\[S(z) = p! \left(\sum\limits_{k = p}^{\infty} \frac{{(z-B)}^{k}F^{(k)}(B)}{k!}\right) \left(\prod\limits_{b=1}^{m} {(z - b)}^{-p}\right)\left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right).\]
+
+Therefore, \[S(B) = F^{(p)}(B)\] as the ${(B-B)}^{p}$ term is only in the denominator when $k = p$. Furthermore, this gives us that \[\zeta = {(\log \alpha)}^{-p}F^{(p)}(B) = {(\log \alpha)}^{-p}S(B).\]
+
+Take a simple closed curved around $z = B$, specifically, the circle $\mathcal{C} := \left\{z : \vert z \vert = \frac{p}{q}\right\}$. Note that this circle contains $B$ because \[\frac{p}{q} > \] By Cauchy's Residue theorem, we get that \[S(B) = \frac{1}{2 \pi i}\oint_{\mathcal{C}} \frac{S(z)}{z-B} dz.\]
+\section{Consequences}
 \chapter{Baker's Theorem}
 \begin{mybox}
     \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }

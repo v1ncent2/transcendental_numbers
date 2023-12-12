@@ -12,6 +12,6 @@
 \contentsline {section}{\numberline {3.2}Main Theorem}{19}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Existence of Auxiliary Function}{19}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Analysis of Auxiliary Function}{22}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Consequences}{24}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Baker's Theorem}{25}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{27}{chapter.5}%
+\contentsline {section}{\numberline {3.3}Consequences}{26}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Baker's Theorem}{27}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{29}{chapter.5}%
