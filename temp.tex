@@ -331,6 +331,14 @@ Now we will introduce some concepts from complex analysis. Consider the set of c
 
 \defn{Let $f : \C \to \C$ be a function and let $U \subseteq \C$ be an open subset of $\C$. Then, $f$ is \vocab{holomorphic} on $U$ if it is complex differentiable on every point in $U$. Furthermore, if $U = \C$, then $f$ is an \vocab{entire} function.}
 
+We let the function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=1}^{\infty} \frac{x^{n}}{n!}.\] Sometimes, we will write this as $e^{z}$ and it will be equivalent to $\exp(z)$. Note that from Euler's identity, $e^{iz} = \cos z + i \sin z$.
+
+\begin{mybox}
+    \lemma{$\exp(z)$ has no zeroes. That is, for all $z \in \C$, $\exp(z) \neq 0$.}
+\end{mybox}
+\proof{Write $z \in \C$ as $x + yi$ for $x,y \in \R$. Then, $e^{x+yi} = e^{x}e^{yi} = e^{x}\left(\cos y + i \sin y\right)$. $e^{x} > 0$ so it is nonzero. Furthermore, $\cos y + i \sin y$ lies on the unit circle on the complex plane so $\left\vert e^{yi} \right\vert = 1$. Thus, it is also nonzero. This means their product, $e^{z}$ is nonzero.\par
+\[\greenlozenge\]}
+\newpage
 \begin{mybox}
     \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
 \end{mybox}
@@ -592,7 +600,9 @@ From the conclusion of Siegel's lemma, the system of equations has a nontrivial 
     \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \C \setminus \Q$. Then, any value of ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
 
-\proof{Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$. Let $\gamma$ be a value of ${\alpha}^{\beta} = \exp(\beta \log \alpha)$. Since we are assuming for contradiction that $\alpha, \beta$, and $\gamma$ are all algebraic, we will assume there is a number field $K$ of finite degree $h$ over $\Q$ which contains $\alpha, \beta$, and $\gamma$. Using $h$, we will describe the following constants $m,q,n,t$ with the following properties:
+\proof{We will break this proof into two main parts.
+
+    \subsection{Existence of Auxiliary Function} Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$. Let $\gamma$ be a value of ${\alpha}^{\beta} = \exp(\beta \log \alpha)$. Since we are assuming for contradiction that $\alpha, \beta$, and $\gamma$ are all algebraic, we will assume there is a number field $K$ of finite degree $h$ over $\Q$ which contains $\alpha, \beta$, and $\gamma$. Using $h$, we will describe the following constants $m,q,n,t$ with the following properties:
 
     \begin{enumerate}
         \item{Define $m := 2h+3$.}
@@ -657,12 +667,123 @@ Now, we will further bound this using the constant $c_3 := {\left(c_{1}c_{2}\rig
 Now, we are ready to apply the lemma. We get that we can find nontrivial $\| \eta_j \|$ such that for every $j$, 
 
 \begin{align*}
-    \| \eta_j \| &< c + c{\left(c\left(2qa\right){c_3}^{n}n^{\frac{n}{2}}\right)}^{\frac{mn}{2mn - mn}} \\
-                 &= c + 2c^{2}mn{c_{3}}^{n}n^{\frac{n}{2}}
+    \| \eta_j \| &< c + c{\left(c\left(2mn\right){c_3}^{n}n^{\frac{n}{2}}\right)}^{\frac{mn}{2mn - mn}} \\
+                 &= c + 2c^{2}mn{c_{3}}^{n}n^{\frac{n}{2}} \\
+                 &< 3{c}^{2}mn{c_{3}}^{n}{n}^{\frac{n}{2}} 
 \end{align*}
-
 }
 
+From the lemma, $c$ is dependent only on $K$ and is independent of $n$. Also, note this is also the case with $c_3$ because it was defined independently of $n$ and only in terms of other constants related to $\alpha, \beta$ and $\gamma$. Note that $2^{n} > n > q > m$ so $4^{n} > mn$. Thus, continuing the inequality, we get,
+
+\begin{align*}
+    3{c}^{2}mn{c_{3}}^{n}{n}^{\frac{n}{2}} &< 3{c}^{2}{(4c_3)}^{n}n^{\frac{n}{2}} \\ 
+                                           &< {c_4}^{n}n^{\frac{n}{2}}
+\end{align*}
+
+where $c_4 := \left(4{c}^{2}\right)\left(4c_3\right)$. Note  that $c_4$ is still independent of $n$. We will use this as the final bound for $\| \eta_j \|$. We therefore know that there exists an auxiliary function $F$ with a nontrivial zero of high multiplicity such that it solves the system of equations 
+\[{c_1}^{m + 2nq} {(\log \alpha)}^{-a}F^{(a)}(b) = 0\]
+for all $a,b$ with $\| \eta_j \| < {c_4}^{n}n^{\frac{n}{2}}$ for all algebraic integers $\eta_j$ in the system.
+
+\subsection{Analysis of Auxiliary Function}
+First, we will show that the function's derivatives will not always vanish from $1$ to $m$ past a certain number of derivatives. More specifically, there are $p, B \in \Z$ where $p \geq n$ and $1 \leq B \leq m$ such that $F^{(a)}(B) = 0$ for $a = 1, \ldots, p-1$ and $b = 1, \ldots, m$ but $F^{(p)}(B) \neq 0$.\par
+
+To see this, suppose for contradiction that for all $a = 0, \ldots, t-1$, the derivative vanishes. We will reach a contradiction at $B = 1$. Note that \[F^{(a)}(B) = \sum\limits_{j=1}^{t} \eta_{j}{\rho_{j}}^{a}\exp(b\rho_j).\] Plugging in $B = 1$, we get the system of $a$ equations \[F^{(a)}(1) = \sum\limits_{j = 1}^{t} \eta_{j}{\left(\rho_j\right)}^{a}\exp(\rho_j) = 0.\]
+
+In matrix form, we can write this system as 
+
+\[
+    \begin{pmatrix}
+        1 & 1 & \hdots & 1 \\
+        \rho_{1} & \rho_{2} & \hdots & {\rho_t} \\ 
+        \vdots & \vdots & \ddots & \vdots \\
+        {\rho_{1}}^{t-1} & {\rho_{2}}^{t-1} & \hdots & {\rho_t}^{t-1}
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \exp(\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(\rho_2) & \hdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \hdots & \exp(\rho_t) 
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \eta_1 \\ \eta_2 \\ \vdots \\ \eta_t
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 \\ 0 \\ \vdots \\ 0
+    \end{pmatrix} 
+\]
+
+Note that since our auxiliary function was constructed so that the $\eta_j$'s were not all zero (nontrivial solution), it must be the case that 
+
+\[
+    \begin{pmatrix}
+        1 & 1 & \hdots & 1 \\
+        \rho_{1} & \rho_{2} & \hdots & {\rho_t} \\ 
+        \vdots & \vdots & \ddots & \vdots \\
+        {\rho_{1}}^{t-1} & {\rho_{2}}^{t-1} & \hdots & {\rho_t}^{t-1}
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \exp(\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(\rho_2) & \hdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \hdots & \exp(\rho_t) 
+    \end{pmatrix}\] 
+
+is not full rank. Therefore, its determinant is $0$. Note that the determinant of the diagonal matrix
+
+\[\begin{pmatrix}
+        \exp(\rho_1) & 0 & \hdots & 0 \\
+        0 & \exp(\rho_2) & \hdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \hdots & \exp(\rho_t) 
+    \end{pmatrix}\]
+is the product of the entries along its diagonal: $\prod\limits_{j=1}^{t}\exp(\rho_{j})$, which cannot be zero. Therefore, it must be the case that the determinant of 
+
+\[\begin{pmatrix}
+        1 & 1 & \hdots & 1 \\
+        \rho_{1} & \rho_{2} & \hdots & {\rho_t} \\ 
+        \vdots & \vdots & \ddots & \vdots \\
+        {\rho_{1}}^{t-1} & {\rho_{2}}^{t-1} & \hdots & {\rho_t}^{t-1}
+    \end{pmatrix}\] 
+
+    is zero. Note that this is the transpose of the Vandermonde matrix $V(\rho_1, \ldots, \rho_t)$. Therefore, it must be the case that there is $\rho_i = \rho_j$ where $i \neq j$. This would mean there is $\left(r_1 + k_1 \beta \right)\log \alpha = \left(r_2 + k_2 \beta\right) \log \alpha$ for $r_1, r_2, k_1, k_2 \in \{1, \ldots, q\}$. Note that since $\alpha \neq 0, 1$ it must be the case that $\log \alpha \neq 0$. Thus, we can say that $r_1 + k_1 \beta = r_2 + k_2 \beta$. It cannot be the case that $k_1 = k_2$ since that would force $r_1 = r_2$ and the two terms would be equal. Therefore, $k_2 - k_1 \neq 0$. From this, we can deduce that  
+    \begin{align*}
+        r_1 + k_1 \beta = r_2 + k_2 \beta &\implies r_1 - r_2 = (k_2 - k_1) \beta \\
+                                          &\implies \frac{r_1 - r_2}{k_2 - k_1} = \beta
+    \end{align*}
+for integers $r_1, r_2, k_1, k_2$, which would be a contradiction since that would imply $\beta \in \Q$.\par
+
+From this we confirmed that the auxiliary function vanishes at some $B$ for the first $n$ derivatives, but there is $p$ such that $F^{(p)}(B) \neq 0$. Let 
+
+\begin{align*}
+    \zeta &:= {(\log \alpha)}^{(-p)}F^{(p)}(B) \\
+          &= \sum\limits_{j=1}^{t}\eta_{j}{\left(\log(\alpha)\right)}^{-p}{\rho_{j}}^{p}\exp(B\rho_j) \\
+          &= \sum\limits_{j=1}^{t} \eta_{j}{\left(r_j + k_j \beta\right)}^{p}{\alpha}^{Br_{j}}{\gamma}^{Bk_{j}} \\
+\end{align*}
+where $r_j, k_j$ are in $\{1, \ldots, q\}$. Note that $\zeta \neq 0$ because we showed $F^{(p)}(B) \neq 0$.\par
+
+Next, there is $C > 0$ independent of $n$ and $p$ such that 
+
+\[\vert N_{K}(\zeta) \vert \geq C^{-p}.\]
+
+To see this, recall that $c_1$ is the positive integer constant which makes $c_1\alpha, c_1\beta, c_1\gamma \in \mathcal{O}_K$. Using a similar argument from before, ${c_1}^{p+2mq} \zeta = {c_1}^{p + 2mq}\sum\limits_{j=1}^{t}{\eta_{j}\left(r_j + k_j \beta\right)}^{p}{\alpha}^{Br_{j}}{\gamma}^{Bk_{j}} \in \mathcal{O}_K$ as $m$ upper bounds $B$ and $q$ upper bounds $r_j$ and $k_j$. This helps us verify that we have enough factors of $c_1$ to make $\zeta$ an algebraic integer. We can let $c_5 := {c_1}^{2m+1}$ so ${c_5}^p = {c_1}^{2mp + p}$ upper bounds ${c_1}^{p + 2mq}$ from the fact that $q < n \leq p$. Thus, ${c_5}^{p}\zeta \in \mathcal{O}_K$ so its norm in $K$ is an integer. Furthermore, its norm is nonzero because $\zeta$ is nonzero.  We can conclude from this that $\vert N_K({c_5}^{p}\zeta) \vert \geq 1$. Thus,
+
+\begin{align*}
+    1 &\leq \vert N_K({c_5}^{p}\zeta) \vert \\
+      &= \vert N_K({c_5}^{p}) \vert \vert N_K(\zeta) \vert \\
+      & \leq C^{p}\vert N_K(\zeta) \vert
+\end{align*}
+
+Thus, we get that $\vert N_K(\zeta) \vert \leq C^{-p}$ for some constant $C = {c_5}^{h}$ independent of $n$ and $p$.\par
+
+Next, we will establish that there is another constant $c$, independent of $n$ and $p$ such that \[\| \zeta \| < c^{p}p^{p}.\]
+
+To get this bound, note that 
+\begin{align*}
+    \| \zeta \| &= \left\| \sum\limits_{j=1}^{t} \eta_{j}{\left(r_j + k_j \beta\right)}^{p}{\alpha}^{Br_{j}}{\gamma}^{Bk_{j}} \right\| \\
+                &\leq \sum\limits_{j=1}^{t} \left\| \eta_{j}{\left(r_j + k_j \beta\right)}^{p}{\alpha}^{Br_{j}}{\gamma}^{Bk_{j}} \right\| \\
+                &\leq \sum\limits_{j=1}^{t} \left\| \eta_{j} \right\| \cdot {\left\| r_j + k_j \beta \right\|}^{p} \cdot  {\left\| \alpha \right\|}^{Br_{j}}  \cdot  {\left\| \gamma \right\|}^{Bk_{j}}  \\
+                &\leq t \cdot \max_{j} \left\{ \left\| \eta_{j} \right\| \cdot {\left\| r_j + k_j \beta \right\|}^{p} \cdot  {\left\| \alpha \right\|}^{Br_{j}}  \cdot  {\left\| \gamma \right\|}^{Bk_{j}} \right\}
+\end{align*}
 \section{Consequences}
 
 \chapter{Baker's Theorem}

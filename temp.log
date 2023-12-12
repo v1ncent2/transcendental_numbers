@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  10 DEC 2023 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  12 DEC 2023 05:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,58 +911,59 @@ Package mdframed Info: Not enough space on this page on input line 204.
 Package mdframed Info: mdframed works in twoside mode on input line 235.
 Package mdframed Info: Not enough space on this page on input line 236.
  [6] [7]
-Package mdframed Info: mdframed works in twoside mode on input line 335.
-Package mdframed Info: mdframed works in twoside mode on input line 347.
-Package mdframed Info: Not enough space on this page on input line 348.
+Package mdframed Info: mdframed works in twoside mode on input line 337.
  [8]
-Package mdframed Info: Not enough space on this page on input line 348.
-Package mdframed Info: mdframed works in twoside mode on input line 361.
- [9] [10
-
-]
+Package mdframed Info: mdframed works in twoside mode on input line 343.
+Package mdframed Info: Not enough space on this page on input line 344.
+Package mdframed Info: mdframed works in twoside mode on input line 355.
+ [9]
+Package mdframed Info: mdframed works in twoside mode on input line 369.
+ [10]
 Chapter 2.
-Package mdframed Info: mdframed works in twoside mode on input line 368.
-[11] [12
+Package mdframed Info: mdframed works in twoside mode on input line 376.
+[11
+
+] [12
 
 ]
 Chapter 3.
-Package mdframed Info: mdframed works in twoside mode on input line 377.
+Package mdframed Info: mdframed works in twoside mode on input line 385.
 [13] [14]
-Package mdframed Info: mdframed works in twoside mode on input line 427.
+Package mdframed Info: mdframed works in twoside mode on input line 435.
  [15] [16] [17] [18]
-Package mdframed Info: mdframed works in twoside mode on input line 592.
- [19] [20] [21] [22
-
-]
+Package mdframed Info: mdframed works in twoside mode on input line 600.
+ [19] [20] [21] [22] [23] [24]
 Chapter 4.
-Package mdframed Info: mdframed works in twoside mode on input line 670.
-[23] [24
+Package mdframed Info: mdframed works in twoside mode on input line 791.
+[25
+
+] [26
 
 ]
 Chapter 5.
-Package mdframed Info: mdframed works in twoside mode on input line 674.
-[25] [26
+Package mdframed Info: mdframed works in twoside mode on input line 795.
+[27] [28
 
-] (./temp.ind [27
+] (./temp.ind [29
 
 
 ]) (./temp.aux)
 Package rerunfilecheck Info: File `temp.out' has not changed.
-(rerunfilecheck)             Checksum: C438B8DAB53E688F774B988194B1A4D3;2101.
+(rerunfilecheck)             Checksum: ED8ACB2ECBD5025964070EE2FD386B6E;2548.
  ) 
 Here is how much of TeX's memory you used:
- 30093 strings out of 476025
- 611404 string characters out of 5790017
+ 30105 strings out of 476025
+ 611583 string characters out of 5790017
  1875388 words of memory out of 5000000
- 49809 multiletter control sequences out of 15000+600000
- 537826 words of font info for 102 fonts, out of 8000000 for 9000
+ 49815 multiletter control sequences out of 15000+600000
+ 538603 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,18n,126p,1577b,1212s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on temp.pdf (33 pages, 396730 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on temp.pdf (35 pages, 425859 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 436 PDF objects out of 1000 (max. 8388607)
+ 344 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
