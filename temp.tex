@@ -331,13 +331,20 @@ Now we will introduce some concepts from complex analysis. Consider the set of c
 
 \defn{Let $f : \C \to \C$ be a function and let $U \subseteq \C$ be an open subset of $\C$. Then, $f$ is \vocab{holomorphic} on $U$ if it is complex differentiable on every point in $U$. Furthermore, if $U = \C$, then $f$ is an \vocab{entire} function.}
 
-We let the function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=1}^{\infty} \frac{x^{n}}{n!}.\] Sometimes, we will write this as $e^{z}$ and it will be equivalent to $\exp(z)$. Note that from Euler's identity, $e^{iz} = \cos z + i \sin z$.
+We let the function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=0}^{\infty} \frac{x^{n}}{n!}.\] Sometimes, we will write this as $e^{z}$ and it will be equivalent to $\exp(z)$. Note that from Euler's identity, $e^{iz} = \cos z + i \sin z$.
 
 \begin{mybox}
     \lemma{$\exp(z)$ has no zeroes. That is, for all $z \in \C$, $\exp(z) \neq 0$.}
 \end{mybox}
+
 \proof{Write $z \in \C$ as $x + yi$ for $x,y \in \R$. Then, $e^{x+yi} = e^{x}e^{yi} = e^{x}\left(\cos y + i \sin y\right)$. $e^{x} > 0$ so it is nonzero. Furthermore, $\cos y + i \sin y$ lies on the unit circle on the complex plane so $\left\vert e^{yi} \right\vert = 1$. Thus, it is also nonzero. This means their product, $e^{z}$ is nonzero.\par
 \[\greenlozenge\]}
+
+\begin{mybox}
+    \theorem{For all $z \in \C$, $\vert \exp(z) \vert \leq \exp(\vert z \vert)$.}
+\end{mybox}
+\proof{We write the $k$-th partial sum for $\vert \exp(z) \vert$ and $\exp\left(\vert z \vert\right)$ and note by the triangle inequality that \[\left\vert \frac{z^{0}}{0!} + \cdots + \frac{z^{k}}{k!} \right\vert \leq \frac{{\vert z \vert}^{0}}{0!} + \cdots + \frac{{\vert z \vert}^{k}}{k!}.\] Taking the limit of both sides as $k \to \infty$ gets the desired conclusion.\par \[\greenlozenge\]
+}
 \newpage
 \begin{mybox}
     \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
@@ -600,7 +607,7 @@ From the conclusion of Siegel's lemma, the system of equations has a nontrivial 
     \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \C \setminus \Q$. Then, any value of ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
 
-\proof{We will break this proof into two main parts.
+\proof{We will break this proof into two main parts. In the first part, we will find an auxiliary function with high a multiplicity root based off of the contradictory assumption that $\alpha, \beta, \gamma$ are all algebraic. We will not explicitly construct the function with such a property but show that it exists, using the generalized version of Siegel's lemma for number fields. In the second part, we will find a $\zeta$ that does not vanish past a high number of derivatives of the auxiliary function, such that $\zeta$ has a bounded norm. However, we will show that we can set that norm arbitarily large, independent of the underlying number field, and dependent only on the auxiliary function we started with. This will lead to a contradiction and imply $\gamma$ cannot be algebraic.
 
     \subsection{Existence of Auxiliary Function} Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$. Let $\gamma$ be a value of ${\alpha}^{\beta} = \exp(\beta \log \alpha)$. Since we are assuming for contradiction that $\alpha, \beta$, and $\gamma$ are all algebraic, we will assume there is a number field $K$ of finite degree $h$ over $\Q$ which contains $\alpha, \beta$, and $\gamma$. Using $h$, we will describe the following constants $m,q,n,t$ with the following properties:
 
@@ -821,8 +828,102 @@ Therefore, substituting, we get that
 
 Therefore, \[S(B) = F^{(p)}(B)\] as the ${(B-B)}^{p}$ term is only in the denominator when $k = p$. Furthermore, this gives us that \[\zeta = {(\log \alpha)}^{-p}F^{(p)}(B) = {(\log \alpha)}^{-p}S(B).\]
 
-Take a simple closed curved around $z = B$, specifically, the circle $\mathcal{C} := \left\{z : \vert z \vert = \frac{p}{q}\right\}$. Note that this circle contains $B$ because \[\frac{p}{q} > \] By Cauchy's Residue theorem, we get that \[S(B) = \frac{1}{2 \pi i}\oint_{\mathcal{C}} \frac{S(z)}{z-B} dz.\]
+Take a simple closed curved around $z = B$, specifically, the circle $\mathcal{C} := \left\{z : \vert z \vert = \frac{p}{q}\right\}$. Note that this circle contains $B$ because \[\frac{p}{q} > \frac{p}{2q} \geq \frac{n}{2q} = \frac{q}{4m} > m \geq B.\] By Cauchy's Residue theorem, we get that \[S(B) = \frac{1}{2 \pi i}\oint_{\mathcal{C}} \frac{S(z)}{z-B} dz.\]
+
+Recall that $\vert \eta_j \vert < {c_4}^{n}{n}^{\frac{n}{2}}$ and note that for all $z$, $\vert \exp(z\rho_j) \vert \leq  \exp(\vert z\rho_j \vert)$. Our goal is to eventually find a bound on $\vert F(z) \vert$. First, we will complete bounding $\vert \exp(z\rho_j) \vert$:
+
+\begin{align*}
+    \vert \exp(z\rho_j) \vert &\leq \exp(\vert z\rho_j \vert) \\
+                              &= \exp\left(\vert z \vert \cdot \vert \rho_j \vert\right) \\
+                              &\leq \exp\left(\frac{p}{q}\left(q + q \vert \beta \vert\right) \log \alpha\right) \\
+                              &= \exp(p(1 + \vert \beta \vert) \log \alpha) \\
+                              &= {c_6}^{p}
+\end{align*}
+for $c_6 := \exp((1 + \vert \beta \vert) \log \alpha)$. Now, we will bound $\vert F(z) \vert$.
+\begin{align*}
+    \vert F(z) \vert &= \left\vert \sum\limits_{j=1}^{t} \eta_{j}\exp(z\rho_j)\right\vert \\
+                     &\leq t \cdot \max_{j} \left\vert \eta_j \exp(z\rho_j) \right\vert \\
+                     &= t \cdot \max_{j} \left\vert \eta_j \right\vert \cdot \left\vert \exp(z\rho_j) \right\vert \\
+                     &< t{c_4}^{n}{n}^{\frac{n}{2}}{c_6}^{p} \\
+                     &< 2^{n}{c_4}^{n}{c_6}^{p}{n}^{\frac{n}{2}} \\
+                     &\leq 2^{p}{c_4}^{p}{c_6}^{p}{n}^{\frac{n}{2}} \\
+                     &= {\left(2c_{4}c_{6}\right)}^{p}{n}^{\frac{n}{2}} \\
+                     &={c_7}^{p}{p}^{\frac{p}{2}} 
+\end{align*}
+
+for $c_7 := 2c_{4}c_{6}$.\par
+
+Next, we will bound ${\vert z - b \vert}^{-p}$. Recall that \[\frac{p}{2q} > m.\] Then,
+\begin{align*}
+    \vert z - b \vert &\geq \vert z \vert - \vert b \vert \\
+                      &\geq \frac{p}{q} - m \\
+                      &\geq \frac{p}{2q}
+\end{align*}
+Therefore, \[{\vert z - b \vert}^{-p} \leq {\left(\frac{2q}{p}\right)}^{p}.\] Now, we can bound $\vert S(z) \vert$.
+\begin{align*}
+    \vert S(z) \vert &= \left\vert p! F(z) \left(\prod\limits_{b=1}^{m} {(z - b)}^{-p}\right)\left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right) \right\vert \\
+                     &\leq \left\vert p!\right\vert \cdot \left\vert F(z)\right\vert \cdot \left\vert \left(\prod\limits_{b=1}^{m} {(z - b)}^{-p}\right)\right\vert \cdot \left\vert \left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right) \right\vert \\
+                     &< (p!)\left({c_7}^{p}{p}^{\frac{p}{2}}\right){\left(\frac{2q}{p}\right)}^{mp}\left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right) \\
+                     &= (p!)\left({c_7}^{p}{p}^{\frac{p}{2}}\right){\left(\frac{2\sqrt{2mn}}{p}\right)}^{mp}\left(\prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right) \\
+                     &= {\left(c_{7}2^{m}{(2m)}^{\frac{m}{2}} \prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right)}^{p}(p!)\left(p^{\frac{p}{2}}\right){\left(\frac{\sqrt{n}}{p}\right)}^{mp} \\
+                     &= {c_8}^{p}(p!)p^{\frac{p}{2}}{\left(\frac{\sqrt{n}}{p}\right)}^{mp} 
+\end{align*}
+for \[c_8 := \left(c_{7}2^{m}{(2m)}^{\frac{m}{2}} \prod\limits_{\substack {b = 1 \\ b \neq B}}^{m} {(B - b)}^{p}\right).\] To further bound this, note that $p! < p^{p}$ and as $n \leq p$, \[\frac{\sqrt{n}}{p} = \frac{\frac{\sqrt{n}}{\sqrt{p}}}{\sqrt{p}} \leq \frac{1}{\sqrt{p}}.\]
+
+Therefore, for $z$ on $\mathcal{C}$,
+\begin{align*}
+    {c_8}^{p}(p!)p^{\frac{p}{2}}{\left(\frac{\sqrt{n}}{p}\right)}^{mp} &\leq {c_8}^{p}(p^{p})p^{\frac{p}{2}}{\left(\frac{1}{p}\right)}^{mp} \\
+                                                                       &= {c_8}^{p}p^{\frac{p(3-m)}{2}}
+\end{align*}
+
+Now, we will bound $\vert \zeta \vert$.
+\begin{align*}
+    \vert \zeta \vert &= \left\vert {(\log \alpha)}^{-p} S(B) \right\vert \\
+                      &\leq {\vert \log \alpha \vert}^{-p} \cdot \vert S(B) \vert \\
+                      &= {\vert \log \alpha \vert}^{-p} \cdot \left\vert \frac{1}{2 \pi i} \oint_{\mathcal{C}} \frac{S(z)}{z-B} dz \right\vert \\
+                      &= \frac{1}{2\pi} \cdot {\vert \log \alpha \vert}^{-p} \cdot \left\vert\oint_{\mathcal{C}} \frac{S(z)}{z-B} dz \right\vert 
+\end{align*}
+
+To compute a bound on \[\left\vert \oint_{\mathcal{C}} \frac{S(z)}{z-B} dz\right\vert,\] note that the path of integration along $\mathcal{C}$ has length $\frac{2 \pi p}{q}$ and since $\vert S(z) \vert \leq {c_8}^{p}p^{\frac{p(3-m)}{2}}$, and $\vert z - b \vert \geq \frac{p}{2q}$, the maximum of $\left\vert \frac{S(z)}{z-B} \right\vert$ is bounded by $\frac{{c_8}^{p}p^{\frac{p(3-m)}{2}}}{\frac{p}{2q}}$. By the maximum modulus principle, we get that \[\left\vert \oint_{\mathcal{C}} \frac{S(z)}{z-B} dz\right\vert \leq \frac{2 \pi p}{q} \left(\frac{{c_8}^{p}p^{\frac{p(3-m)}{2}}}{\frac{p}{2q}}\right)\]
+
+Therefore, 
+\begin{align*}
+    \vert \zeta \vert &< \frac{1}{2\pi} \cdot {\vert \log \alpha \vert}^{-p} \cdot \frac{2 \pi p}{q} \left(\frac{{c_8}^{p}p^{\frac{p(3-m)}{2}}}{\frac{p}{2q}}\right)\\
+                      &= {\vert \log \alpha \vert}^{-p} \cdot \frac{p}{q} \cdot {c_8}^{p}p^{\frac{p(3-m)}{2}} \cdot \frac{2q}{p} \\
+                      &< {\left(2c_8 {\vert \log \alpha \vert}^{-1}\right)}^{p}p^{\frac{p(3-m)}{2}} \\
+                      &= {c_9}^{p}{p}^{\frac{p(3-m)}{2}} 
+\end{align*}
+
+For $c_9 := 2c_8 {\vert \log \alpha \vert}^{-1}$. Recall that $\| \zeta \| < c^{p}p^{p}$. We know $\vert \zeta \vert < {c_9}^{p}{p}^{\frac{p(3-m)}{2}}$ so we know that $\vert N_K(\zeta) \vert$ cannot exceed $\vert \zeta \vert \cdot {\| \zeta \|}^{h-1}$ as we know at least one of the $h$ embeddings goes to $\zeta$ and the remaining $h-1$ cannot have absolute value exceeding $\| \zeta \|$. Therefore, 
+
+\begin{align*}
+    \vert N_K(\zeta) \vert &\leq \vert \zeta \vert \cdot {\| \zeta \|}^{h-1} \\
+                           &< \left({c_9}^{p}{p}^{\frac{p(3-m)}{2}}\right){\left(c^{p}p^{p}\right)}^{h-1} \\
+                           &= {(c_{9}c^{h-1})}^{p}p^{-p} \\
+                           &= {c_{10}^{p}p^{-p}}
+\end{align*}
+
+for $c_{10} := c_{9}c^{h-1}$. Note that $c_{10}$ is also independent of $n$ and $p$. However, recall that $\vert N_K(\zeta) \vert \geq C^{-p}$. Therefore,
+
+\[{c_{10}^{p}p^{-p}} > \vert N_K(\zeta) \vert \geq C^{-p}\]
+
+so \[{c_{10}}^{p}p^{-p} > C^{-p}.\] Rearranging terms and canceling out the powers, we get \[Cc_{10} > p,\] where $C, c_{10}$ are independent of $n, p$ and only depend on $K$. However, since $n \leq p$, we can choose $n$ and therefore $p$ arbitrarily large, which is a contradiction.\par
+
+This proves the Gelfond-Schneider theorem because it implies that it cannot be the case that all $\alpha, \beta, \gamma \in \A$. By the hypothesis $\alpha, \beta \in \A$ so it must be the case that $\gamma$, any value of $\alpha^{\beta}$ is transcendental.\par
+
+\[\greenlozenge\]
+
 \section{Consequences}
+
+\begin{mybox}
+    \theorem{The Gelfond-Schneider constant $2^{\sqrt{2}}$ and Gelfond's constant $e^{\pi}$ are transcendental.}
+\end{mybox}
+
+\proof{Showing $2^{\sqrt{2}}$ is transcendental is a direct application of the main theorem and is shown by verifying that $2$ is algebraic, not $0$ nor $1$, and also that $\sqrt{2} \notin \Q$.\par
+
+Note, we cannot use the direct application of the Gelfond-Schneider theorem for $e^{\pi}$ because we have shown that $e$ is transcendental by the Lindemann-Weierstrass theorem. However, using Euler's identity, we can rewrite (noting that $\frac{1}{i} = -i$) it via \[e^{\pi} = {e^{\pi i}}^{\frac{1}{i}} = {e^{\pi i}}^{-i} = {(-1)}^{-i}.\] Since $-1$ is neither $0$ nor $1$ and is algebraic, $i$ is algebraic but not in $\Q$, we know $e^{\pi}$ must be transcendental. Since we cannot do the same trick for $\pi^{e}$, the transcendence of $\pi^{e}$ is still unknown.\par \[\greenlozenge\]}
+
+
 \chapter{Baker's Theorem}
 \begin{mybox}
     \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }
