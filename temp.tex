@@ -124,7 +124,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers (Draft)}
+\title{Transcendental Numbers}
 \author{Vincent Lin}
 \date{Last Updated: \today}
 
@@ -916,14 +916,20 @@ This proves the Gelfond-Schneider theorem because it implies that it cannot be t
 \section{Consequences}
 
 \begin{mybox}
-    \theorem{The Gelfond-Schneider constant $2^{\sqrt{2}}$ and Gelfond's constant $e^{\pi}$ are transcendental.}
+    \theorem{The Gelfond-Schneider constant $2^{\sqrt{2}}$, Gelfond's constant $e^{\pi}$, and $e^{-\frac{\pi}{2}}$ are transcendental.}
 \end{mybox}
 
 \proof{Showing $2^{\sqrt{2}}$ is transcendental is a direct application of the main theorem and is shown by verifying that $2$ is algebraic, not $0$ nor $1$, and also that $\sqrt{2} \notin \Q$.\par
 
-Note, we cannot use the direct application of the Gelfond-Schneider theorem for $e^{\pi}$ because we have shown that $e$ is transcendental by the Lindemann-Weierstrass theorem. However, using Euler's identity, we can rewrite (noting that $\frac{1}{i} = -i$) it via \[e^{\pi} = {e^{\pi i}}^{\frac{1}{i}} = {e^{\pi i}}^{-i} = {(-1)}^{-i}.\] Since $-1$ is neither $0$ nor $1$ and is algebraic, $i$ is algebraic but not in $\Q$, we know $e^{\pi}$ must be transcendental. Since we cannot do the same trick for $\pi^{e}$, the transcendence of $\pi^{e}$ is still unknown.\par \[\greenlozenge\]}
+Note, we cannot use the direct application of the Gelfond-Schneider theorem for $e^{\pi}$ because we have shown that $e$ is transcendental by the Lindemann-Weierstrass theorem. However, using Euler's identity, we can rewrite (noting that $\frac{1}{i} = -i$) it via \[e^{\pi} = {\left(e^{\pi i}\right)}^{\frac{1}{i}} = {\left(e^{\pi i}\right)}^{-i} = {(-1)}^{-i}.\] Since $-1$ is neither $0$ nor $1$ and is algebraic, $i$ is algebraic but not in $\Q$, we know $e^{\pi}$ must be transcendental. Since we cannot do the same trick for $\pi^{e}$, the transcendence of $\pi^{e}$ is still unknown.\par 
 
+For $e^{-\frac{\pi}{2}}$, we can use Euler's identity as before to get ${\left(e^{-\frac{\pi i}{2}}\right)}^{i} = i^i$. Therefore, this is also transcendental. We can also use the fact that $e^{\pi}$ is transcendental and the function $x \mapsto x^{-\frac{1}{2}}$ is an algebraic function. Therefore, $e^{-\frac{\pi}{2}}$ must be transcendental.\par
+\[\greenlozenge\]}
 
+\begin{mybox}
+    \theorem{Let $a, b \in \Z$ be positive such that they are not powers of the same positive integer and $a \neq 1$. Then $\log_{b}(a)$ is transcendental.}
+\end{mybox}
+\proof{Let $c = \log_b(a)$. Then, ${b}^{c} = a$. Note that since $a \neq 1$ and is positive, $b$ is neither $0$ nor $1$. Then, we know that since $a \in \Z$, it cannot be transcendental. Thus, the hypothesis of the Gelfond-Schneider theorem fails. We know that $b$ is an integer not in $\{0, 1\}$ so it must be the case that either $c \in \Q$ or $c \notin \A$. Suppose for contradiction that $c \in \Q$ so $c = \frac{p}{q}$ for integers $p, q$ and $q$ is nonzero. Then, since $\log_{b}(a) = \frac{p}{q}$, we know $b^{\frac{p}{q}} = a$ so $b^{p} = a^{q}$. From this, we can tell that $p$ must also be nonzero since $a \neq 1$ and $q \neq 0$. However, since $a$ and $b$ are not powers of the same positive integer, there is prime $r$ such that $r \mid a$, but $r \nmid b$. Thus, $\nu_{r}(a^{p}) > 0$, but $\nu_{r}(b^{q}) = 0$, which is a contradiction. This means $c = \log_{b}(a)$ must be transcendental.\par \[ \greenlozenge \]}
 \chapter{Baker's Theorem}
 \begin{mybox}
     \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }
