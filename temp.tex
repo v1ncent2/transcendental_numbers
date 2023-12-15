@@ -126,8 +126,6 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 
 \title{Transcendental Numbers}
 \author{Vincent Lin}
-\date{Last Updated: \today}
-
 
 \begin{document}
 \frontmatter
@@ -139,7 +137,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
 
-\defn{An \vocab{algebraic number} is $\alpha \in \C$ which is the root of a nonzero polynomial in $\Q[x]$. A \vocab{transcendental number} is a complex number that is not algebraic.}\par
+\defn{An \vocab{algebraic number} is $\alpha \in \C$ which is the root of a nonzero polynomial in $\Q[x]$ (equivalently the root of a nonzero polynomial in $\Z[x]$). A \vocab{transcendental number} is a complex number that is not algebraic.}\par
 
 \note{We will use $\A$ to denote the set of algebraic numbers and we will use $\C \setminus \A$ to denote the set transcendental numbers. We will use $\R \setminus \A$ to denote the set of real transcendental numbers.}\par
 
@@ -153,7 +151,12 @@ What about transcendental numbers? Do they exist?\par
 
 \proof{Consider the set of algebraic numbers, which we will denote by $\A$. This set is countable. We will show this by forming a surjection  \[\phi : \left(\N \times \bigcup\limits_{n \in \N} \Q^{n}\right) \to \A.\] Note that $\N \times \bigcup\limits_{n \in \N} {\Q}^{n}$ is countable because it is the Cartesian product of a countable set with a countable union of countable sets. By the fundamental theorem of algebra, we know that a polynomial of degree $k$ has $k$ (not necessarily distinct) roots. Therefore, we can number the $k$ roots from $1$ to $k$ for each polynomial. Thus, if we specify the nonzero rational coefficients $(a_0, \ldots, a_k)$ and an index $i$ for $i \in [k]$ to be the $i$-th root of the polynomial $a_k x^k + \cdots + a_0$, we get an algebraic number. We define the map $\phi(i, (a_0, \ldots, a_k))$ to be the $i$-th root of $a_k x^k + \cdots + a_0$ if it exists. Otherwise, we map the input to zero. From the definition, we know that every algebraic number can be encoded this way since it is one of the roots of a nonzero rational polynomial. Thus, for all $a \in \A$, there must be an input $x$ such that $\phi(x) = a$, making this a surjective map from a countable set to $\A$. This makes $\A$ countable. However, since $\C$ is uncountable, it cannot be the case that all complex numbers are algebraic. Thus, if a complex number is not algebraic, it must be transcendental. Furthermore, $\R$ is uncountable so there must be real transcendental numbers as well.\[ \greenlozenge \]}
 
-If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we just have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining transcendence.\par
+If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining transcendence.\par
+
+Luckily, uncountability tells us a lot of information about transcendental numbers already. Using the fact that the set of transcendental numbers are uncountable, we can use diagonalization of the algebraic numbers to construct transcendental numbers. For example, we find some way to enumerate the algebraic numbers ${\{\alpha_{i}\}}_{i \in \N}$ strictly between $0$ and $1$. Then, we construct the transcendental number $t$ between $0$ and $1$ as follows: for $\alpha_i$, we change the $i$-th digit to the right of the decimal and append the $i$-th digit to $t$. This way, we have defined all of the digits in $t$ and since it differs from every algebraic number between $0$ and $1$ in at least one digit so $t \notin {\{\alpha_{i}\}}_{i \in \N}$, which means it is transcendental. Furthermore, since the algebraic numbers are countable, they have measure zero in $\C$, which means almost every complex number is transcendental.\par
+
+Now, we will move onto some preliminary information, theorems, and lemmas to be used throughout the remainder of the text.
+
 
 \section{Algebra Preliminaries}
 
@@ -168,7 +171,25 @@ Before that, we will generalize the concept of transcendence to other fields. In
     \item{An \vocab{algebraic closure} of $K$ is an algebraic extension of $K$ that is algebraically closed.}
     \end{itemize}}
 \par
+
+Using this information, we will introduce the notion of a transcendence basis.\par
+
+\defn{For a field extension $L/K$, $S \subseteq L$ is a \vocab{transcendence basis} if $S$ is a maximal (subsets ordered by inclusion) algebraically independent subset of $L$ over $K$. By Zorn's lemma, this always exists.}
+
+\begin{mybox}
+    \theorem{For a field extension $L/K$, all transcendence bases have the same cardinality.}
+\end{mybox}
+
+\proof{Suppose $B$ and $B'$ were two transcendence bases for the field extension $L/K$. Then, assume without loss of generality that $\vert B' \vert \leq \vert B \vert$. We will consider the case where $B$ is finite and the case where $B$ is infinite separately.\par
+
+    First, suppose $B$ is finite. Then $B'$ is also finite. Thus, suppose $B = \{v_1, \ldots, v_n\}$ and $B' = \{w_1, \ldots, w_m\}$ where $m \leq n$. Now, we will induct on $m$. If $m = 0$, then the field extension must be algebraic since this means there are no elements of $L$ that are not roots of a nonzero polynomial in $K$. Thus, it must also be the case that $n = 0$. Now suppose $m > 0$. Now since we know that $B$ is a maximal algebraically independent subset of $L$, we can find a nonzero polynomial in $f \in K[x, y_1, \ldots, y_n]$ such that $f(w_1, v_1, \ldots, v_n) = 0$ as adding $x$ to $B$ would make the set algebraically dependent. Furthermore, we can assume that in the polynomial $f$, the coefficients of $x$ and some $y_i$ are nonzero because adding $w_1$ to $B$ removes algebraic independence so the polynomial must relate $w_1$ to some variables used to represent elements in $B$ in some way. Without loss of generality, we can assume that the coefficients of $x$ and $y_1$ are nonzero in $f$. Then, let $B'' = \{w_1, v_2, \ldots, v_n\}$. $B''$ is a transcendence basis for $L/K$. To see this, consider the tower of field extensions $L/K(B'', v_1)/K(B'')/K$. First, $B''$ must be algebraically independent over $K$. Otherwise we can find some irreducible, nonzero polynomial $g \in K[x, y_2, \ldots, y_n]$ such that $g(w_1, v_2, \ldots, v_n) = 0$ with nonzero $x$ coefficient. This means $w_1$ would be algebraic over $K(v_2, \ldots, v_n)$, which from substituting $w_1$ using $f$ would make $v_1$ algebraic over $v_2, \ldots, v_n$ which contradicts $B$ being a transcendence basis. This means that $\{v_2, \ldots, v_n\}$ and $\{w_2, \ldots, w_m\}$ are transcendence bases for $L$ over $K(w_1)$. Thus, by induction, we get that $m = n$.\par
+
+Next, we will handle the case where the sets have infinite cardinality. We again assume that $\vert B' \vert \leq \vert B \vert$ without loss of generality. Pick $w \in B'$. We know that 
+
+\par \[\greenlozenge\]}
+
 Now we will consider some important facts about number fields:\par
+
 \recall{\begin{itemize}
     \item{An \vocab{algebraic number field} or \vocab{number field} is an algebraic extension of $\Q$.}
     \item{An \vocab{algebraic integer} is $\alpha \in \C$ such that it is the root of a monic polynomial in $\Z[x]$.}
@@ -362,7 +383,7 @@ Essentially, Liouville numbers are real numbers that can be approximately really
     \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$, we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{1}{q^n}\]}
 \end{mybox}
 
-\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Furthermore, $f$ is irreducible in $\mathbb{R}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
+\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Otherwise, if $f()$ Furthermore, $f$ is irreducible in $\mathbb{R}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
 \begin{align*}
     f\left(\frac{p}{q}\right) &= a_n{\left(\frac{p}{q}\right)}^n + a_{n-1}{\left(\frac{p}{q}\right)}^{n-1}+ \cdots + a_0 \\
                               &= \frac{C}{q^n}
@@ -781,7 +802,7 @@ To see this, recall that $c_1$ is the positive integer constant which makes $c_1
       & \leq C^{p}\vert N_K(\zeta) \vert
 \end{align*}
 
-Thus, we get that $\vert N_K(\zeta) \vert \leq C^{-p}$ for some constant $C = {c_5}^{h}$ independent of $n$ and $p$.\par
+Thus, we get that $\vert N_K(\zeta) \vert \geq C^{-p}$ for some constant $C = {c_5}^{h}$ independent of $n$ and $p$.\par
 
 Next, we will establish that there is another constant $c$, independent of $n$ and $p$ such that \[\| \zeta \| < c^{p}p^{p}.\]
 
