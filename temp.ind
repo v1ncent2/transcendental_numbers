@@ -3,40 +3,40 @@
   \item algebraic, \hyperpage{2}
   \item algebraic closure, \hyperpage{3}
   \item algebraic extension, \hyperpage{3}
-  \item algebraic integer, \hyperpage{4}
+  \item algebraic integer, \hyperpage{5}
   \item algebraic number, \hyperpage{1}
-  \item algebraic number field, \hyperpage{4}
+  \item algebraic number field, \hyperpage{5}
   \item algebraically closed, \hyperpage{3}
   \item algebraically independent, \hyperpage{3}
 
   \indexspace
 
-  \item complex differentiable, \hyperpage{9}
+  \item complex differentiable, \hyperpage{10}
   \item conjugates, \hyperpage{3}
 
   \indexspace
 
   \item degree, \hyperpage{3}
-  \item derivative, \hyperpage{9}
-  \item differentiable, \hyperpage{9}
+  \item derivative, \hyperpage{10}
+  \item differentiable, \hyperpage{10}
 
   \indexspace
 
-  \item entire, \hyperpage{9}
+  \item entire, \hyperpage{10}
 
   \indexspace
 
-  \item holomorphic, \hyperpage{9}
+  \item holomorphic, \hyperpage{10}
 
   \indexspace
 
-  \item integral basis, \hyperpage{4}
+  \item integral basis, \hyperpage{5}
 
   \indexspace
 
-  \item lattice point, \hyperpage{15}
-  \item limit, \hyperpage{9}
-  \item Liouville number, \hyperpage{11}
+  \item lattice point, \hyperpage{17}
+  \item limit, \hyperpage{10}
+  \item Liouville number, \hyperpage{12}
 
   \indexspace
 
@@ -44,20 +44,22 @@
 
   \indexspace
 
-  \item number field, \hyperpage{4}
+  \item number field, \hyperpage{5}
 
   \indexspace
 
-  \item ring of integers, \hyperpage{4}
+  \item ring of integers, \hyperpage{5}
 
   \indexspace
 
   \item transcendence basis, \hyperpage{3}
+  \item transcendence degree, \hyperpage{4}
+  \item transcendence dimension, \hyperpage{4}
   \item transcendental, \hyperpage{2}
   \item transcendental number, \hyperpage{1}
 
   \indexspace
 
-  \item Vandermonde matrix, \hyperpage{6}
+  \item Vandermonde matrix, \hyperpage{7}
 
 \end{theindex}

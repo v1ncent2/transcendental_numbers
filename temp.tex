@@ -121,6 +121,7 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
@@ -184,10 +185,26 @@ Using this information, we will introduce the notion of a transcendence basis.\p
 
     First, suppose $B$ is finite. Then $B'$ is also finite. Thus, suppose $B = \{v_1, \ldots, v_n\}$ and $B' = \{w_1, \ldots, w_m\}$ where $m \leq n$. Now, we will induct on $m$. If $m = 0$, then the field extension must be algebraic since this means there are no elements of $L$ that are not roots of a nonzero polynomial in $K$. Thus, it must also be the case that $n = 0$. Now suppose $m > 0$. Now since we know that $B$ is a maximal algebraically independent subset of $L$, we can find a nonzero polynomial in $f \in K[x, y_1, \ldots, y_n]$ such that $f(w_1, v_1, \ldots, v_n) = 0$ as adding $x$ to $B$ would make the set algebraically dependent. Furthermore, we can assume that in the polynomial $f$, the coefficients of $x$ and some $y_i$ are nonzero because adding $w_1$ to $B$ removes algebraic independence so the polynomial must relate $w_1$ to some variables used to represent elements in $B$ in some way. Without loss of generality, we can assume that the coefficients of $x$ and $y_1$ are nonzero in $f$. Then, let $B'' = \{w_1, v_2, \ldots, v_n\}$. $B''$ is a transcendence basis for $L/K$. To see this, consider the tower of field extensions $L/K(B'', v_1)/K(B'')/K$. First, $B''$ must be algebraically independent over $K$. Otherwise we can find some irreducible, nonzero polynomial $g \in K[x, y_2, \ldots, y_n]$ such that $g(w_1, v_2, \ldots, v_n) = 0$ with nonzero $x$ coefficient. This means $w_1$ would be algebraic over $K(v_2, \ldots, v_n)$, which from substituting $w_1$ using $f$ would make $v_1$ algebraic over $v_2, \ldots, v_n$ which contradicts $B$ being a transcendence basis. This means that $\{v_2, \ldots, v_n\}$ and $\{w_2, \ldots, w_m\}$ are transcendence bases for $L$ over $K(w_1)$. Thus, by induction, we get that $m = n$.\par
 
-Next, we will handle the case where the sets have infinite cardinality. We again assume that $\vert B' \vert \leq \vert B \vert$ without loss of generality. Pick $w \in B'$. We know that 
+    Next, we will handle the case where the sets have infinite cardinality. We again assume that $\vert B' \vert \leq \vert B \vert$ without loss of generality. Pick $w \in B'$. We know that there is a finite set $B_{w} \subset B$ such that $w$ is algebraic over $K(B_{w})$, as polynomials only have a finite number of indeterminates. Let \[B'' := \bigcup\limits_{w \in B'} B_{w}.\] We therefore know that $B'' \subseteq B$. However, we will also show that $B \subseteq B''$. Suppose for contradiction that there was $v \in B \setminus B''$. Since $v$ is algebraic over $K(B')$ which is algebraic over $K(B'')$, $v$ is algebraic over $K(B'')$. However, that is a contradiction as $B'' \subseteq B$, contradicting maximality. Therefore, $\vert B \vert \leq \vert B'' \vert$. Also note that by construction, if $B'$ is finite, this means $B''$ must be finite as well since every $B_w$ is finite. This means $B$ must be finite. This was handled in the previous case. Therefore, assume that $B'$ is infinite. However, since $B''$ is a union of finite sets indexed by $w \in B'$, it must be the case that the cardinality of $B''$ is the same as the cardinality of $B'$. Thus, $\vert B \vert \leq \vert B'' \vert \leq \vert B' \vert$ as desired.\par 
+\[\greenlozenge\]}
 
-\par \[\greenlozenge\]}
+\defn{Let $L/K$ be a field extension. The cardinality of a transcendence basis is called the \vocab{transcendence degree} or \vocab{transcendence dimension}. By the previous theorem, this is well defined since all transcendence bases have the same cardinality. This is denoted $\trdeg(L/K)$.}
 
+\begin{mybox}
+    \theorem{(Tower law for transcendence bases) Suppose $L/K/F$ are field extensions. Then, $\trdeg(L/F) = \trdeg(L/K) + \trdeg(K/F)$.}
+\end{mybox}
+
+\proof{Note that if $B$ is a transcendence basis for $L/K$ and $B'$ is a transcendence basis for $K/F$, then $B \cup B'$ is a transcendence basis for $L/F$. To verify that this is algebraically independent, suppose some polynomial relationship $p$ of the terms in $B \cup B'$ with coefficients in $F$ evaluates to zero (thus there are either terms from $B$ or $B'$ with nonzero coefficients). Then, if the polynomial $p$ is a nonzero polynomial containing terms with $B$, we can turn all terms from $B$ into indeterminates. This new nonzero multivariable polynomial $p'$ has coefficients in $K$, which when when evaluated at the values $B$, is zero, so that contradicts $B$ being algebraically independent over $K$. Otherwise if $p$ has no terms containing $B$, we can construct $p'$ by turning all elements in $B'$ into indeterminates and then we get a multivariable polynomial with coefficients in $F$ which which when evaluated at $B'$ is zero. This contradicts $B'$ being algebraically independent over $F$.\par
+
+To verify that this is maximal, pick $v \in L$ but not in $B$ or $B'$. If $v \in F$, then its minimal polynomial over $F$ shows that $B \cup B' \cup \{v\}$ is not algebraically independent over $F$. Now, if $v \in K \setminus F$, then we know by maximality of $B'$, $B \cup B' \cup \{v\}$ is not algebraically independent over $F$ since $B' \cup \{v\}$ is not algebraically independent over $F$. Finally, if $v \in L \setminus K$, then, for any nonzero polynomial relationship between $B \cup B' \cup \{v\}$ with coefficients in $F$, we can convert all terms in $B \cup \{v\}$ into indeterminates. Noting that coefficients in $F$ are also coefficients in $K$, we contradict algebraic independence of $B$ over $K$. Thus, $B \cup B'$ is maximal.\par
+
+Finally, we need to show that $B$ and $B'$ are disjoint. Note that $B' \subseteq K$. $B \subseteq L \setminus K$, that is, it cannot have elements in $K$, or else $B$ would have elements algebraic over $K$. From this, we know that $\vert B \cup B' \vert = \vert B \vert + \vert B' \vert$ so $\trdeg(L/F) = \trdeg(L/K) + \trdeg(K/F)$.\par \[\greenlozenge\]} 
+
+\begin{mybox}
+    \theorem{If $\Q(\alpha_1, \ldots, \alpha_n)/\Q$ is a field extension with transcendence degree $k \leq n$ for some positive integer $k$, then at least $k$ of $\alpha_1, \ldots, \alpha_n$ are transcendental.\par}
+\end{mybox}
+
+\proof{Otherwise, any size $k$ set $B := \{\beta_1, \ldots, \beta_k\} \subseteq \{\alpha_1, \ldots, \alpha_n\}$ will contain an algebraic number so it cannot be algebraically independent over $\Q$.\par \[\greenlozenge\]}
 Now we will consider some important facts about number fields:\par
 
 \recall{\begin{itemize}

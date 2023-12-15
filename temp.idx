@@ -10,17 +10,19 @@
 \indexentry{algebraically closed|hyperpage}{3}
 \indexentry{algebraic closure|hyperpage}{3}
 \indexentry{transcendence basis|hyperpage}{3}
-\indexentry{algebraic number field|hyperpage}{4}
-\indexentry{number field|hyperpage}{4}
-\indexentry{algebraic integer|hyperpage}{4}
-\indexentry{ring of integers|hyperpage}{4}
-\indexentry{integral basis|hyperpage}{4}
-\indexentry{Vandermonde matrix|hyperpage}{6}
-\indexentry{limit|hyperpage}{9}
-\indexentry{derivative|hyperpage}{9}
-\indexentry{complex differentiable|hyperpage}{9}
-\indexentry{differentiable|hyperpage}{9}
-\indexentry{holomorphic|hyperpage}{9}
-\indexentry{entire|hyperpage}{9}
-\indexentry{Liouville number|hyperpage}{11}
-\indexentry{lattice point|hyperpage}{15}
+\indexentry{transcendence degree|hyperpage}{4}
+\indexentry{transcendence dimension|hyperpage}{4}
+\indexentry{algebraic number field|hyperpage}{5}
+\indexentry{number field|hyperpage}{5}
+\indexentry{algebraic integer|hyperpage}{5}
+\indexentry{ring of integers|hyperpage}{5}
+\indexentry{integral basis|hyperpage}{5}
+\indexentry{Vandermonde matrix|hyperpage}{7}
+\indexentry{limit|hyperpage}{10}
+\indexentry{derivative|hyperpage}{10}
+\indexentry{complex differentiable|hyperpage}{10}
+\indexentry{differentiable|hyperpage}{10}
+\indexentry{holomorphic|hyperpage}{10}
+\indexentry{entire|hyperpage}{10}
+\indexentry{Liouville number|hyperpage}{12}
+\indexentry{lattice point|hyperpage}{17}

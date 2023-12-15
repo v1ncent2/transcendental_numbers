@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  15 DEC 2023 07:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.15)  15 DEC 2023 10:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -796,24 +796,24 @@ Package csquotes Info: ... found 'babel' package.
 (./temp.aux)
 \openout1 = `temp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count334
@@ -867,16 +867,16 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 130.
+Package hyperref Info: Link coloring ON on input line 131.
 (./temp.out) (./temp.out)
 \@outlinefile=\write5
 \openout5 = `temp.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 133.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 133.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -895,73 +895,75 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
-Package mdframed Info: mdframed works in twoside mode on input line 149.
+Package mdframed Info: mdframed works in twoside mode on input line 150.
 [1
 
 ] [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Package mdframed Info: mdframed works in twoside mode on input line 180.
+Package mdframed Info: mdframed works in twoside mode on input line 181.
  [3]
-Package mdframed Info: mdframed works in twoside mode on input line 201.
-Package mdframed Info: mdframed works in twoside mode on input line 209.
-
-Underfull \vbox (badness 1648) has occurred while \output is active []
-
+Package mdframed Info: mdframed works in twoside mode on input line 194.
  [4]
-Package mdframed Info: mdframed works in twoside mode on input line 216.
+Package mdframed Info: mdframed works in twoside mode on input line 204.
+Package mdframed Info: mdframed works in twoside mode on input line 218.
+Package mdframed Info: mdframed works in twoside mode on input line 226.
+Package mdframed Info: Not enough space on this page on input line 227.
  [5]
-Package mdframed Info: mdframed works in twoside mode on input line 224.
-Package mdframed Info: Not enough space on this page on input line 225.
+Package mdframed Info: Not enough space on this page on input line 227.
+Package mdframed Info: mdframed works in twoside mode on input line 233.
  [6]
-Package mdframed Info: mdframed works in twoside mode on input line 256.
-Package mdframed Info: Not enough space on this page on input line 257.
- [7] [8]
-Package mdframed Info: mdframed works in twoside mode on input line 358.
-Package mdframed Info: mdframed works in twoside mode on input line 365.
- [9] [10]
-Package mdframed Info: mdframed works in twoside mode on input line 371.
-Package mdframed Info: Not enough space on this page on input line 372.
-Package mdframed Info: mdframed works in twoside mode on input line 383.
- [11]
-Package mdframed Info: mdframed works in twoside mode on input line 397.
+Package mdframed Info: mdframed works in twoside mode on input line 241.
+Package mdframed Info: Not enough space on this page on input line 242.
+ [7]
+Package mdframed Info: mdframed works in twoside mode on input line 273.
+Package mdframed Info: Not enough space on this page on input line 274.
+ [8] [9]
+Package mdframed Info: mdframed works in twoside mode on input line 375.
+Package mdframed Info: mdframed works in twoside mode on input line 382.
+ [10] [11]
+Package mdframed Info: mdframed works in twoside mode on input line 388.
+Package mdframed Info: Not enough space on this page on input line 389.
+Package mdframed Info: mdframed works in twoside mode on input line 400.
  [12]
-Chapter 2.
-Package mdframed Info: mdframed works in twoside mode on input line 404.
-[13
+Package mdframed Info: mdframed works in twoside mode on input line 414.
+ [13] [14
 
-] [14
+]
+Chapter 2.
+Package mdframed Info: mdframed works in twoside mode on input line 421.
+[15] [16
 
 ]
 Chapter 3.
-Package mdframed Info: mdframed works in twoside mode on input line 413.
-[15] [16]
-Package mdframed Info: mdframed works in twoside mode on input line 463.
- [17] [18] [19] [20]
-Package mdframed Info: mdframed works in twoside mode on input line 628.
+Package mdframed Info: mdframed works in twoside mode on input line 430.
+[17] [18]
+Package mdframed Info: mdframed works in twoside mode on input line 480.
+ [19] [20] [21] [22]
+Package mdframed Info: mdframed works in twoside mode on input line 645.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21] [22] [23] [24] [25]
+ [23] [24] [25] [26] [27]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26] [27] [28]
+ [28] [29] [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29] [30] [31]
-Package mdframed Info: mdframed works in twoside mode on input line 940.
-Package mdframed Info: mdframed works in twoside mode on input line 951.
- [32] [33] [34
+ [31] [32] [33]
+Package mdframed Info: mdframed works in twoside mode on input line 957.
+Package mdframed Info: mdframed works in twoside mode on input line 968.
+ [34] [35] [36
 
 ]
 Chapter 4.
-Package mdframed Info: mdframed works in twoside mode on input line 956.
-[35] [36
+Package mdframed Info: mdframed works in twoside mode on input line 973.
+[37] [38
 
 ]
 Chapter 5.
-Package mdframed Info: mdframed works in twoside mode on input line 960.
-[37] [38
+Package mdframed Info: mdframed works in twoside mode on input line 977.
+[39] [40
 
-] (./temp.ind [39
+] (./temp.ind [41
 
 
 ]) (./temp.aux)
@@ -969,18 +971,18 @@ Package rerunfilecheck Info: File `temp.out' has not changed.
 (rerunfilecheck)             Checksum: ED8ACB2ECBD5025964070EE2FD386B6E;2548.
  ) 
 Here is how much of TeX's memory you used:
- 30131 strings out of 476025
- 611957 string characters out of 5790017
+ 30143 strings out of 476025
+ 612134 string characters out of 5790017
  1879388 words of memory out of 5000000
- 49827 multiletter control sequences out of 15000+600000
+ 49835 multiletter control sequences out of 15000+600000
  538603 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,18n,126p,1794b,1212s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrb2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on temp.pdf (45 pages, 455554 bytes).
+Output written on temp.pdf (47 pages, 462653 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 385 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 396 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
