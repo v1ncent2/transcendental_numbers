@@ -1,45 +1,56 @@
 \begin{theindex}
 
-  \item algebraic, \hyperpage{2}
+  \item algebraic, \hyperpage{3}
   \item algebraic closure, \hyperpage{3}
   \item algebraic extension, \hyperpage{3}
-  \item algebraic integer, \hyperpage{5}
+  \item algebraic integer, \hyperpage{6}
   \item algebraic number, \hyperpage{1}
   \item algebraic number field, \hyperpage{5}
   \item algebraically closed, \hyperpage{3}
   \item algebraically independent, \hyperpage{3}
+  \item analytic continuation, \hyperpage{13}
+  \item analytic function, \hyperpage{13}
+  \item auxiliary function, \hyperpage{21}
 
   \indexspace
 
-  \item complex differentiable, \hyperpage{10}
+  \item complex differentiable, \hyperpage{13}
+  \item complex logarithm, \hyperpage{14}
   \item conjugates, \hyperpage{3}
+  \item curve, \hyperpage{16}
 
   \indexspace
 
   \item degree, \hyperpage{3}
-  \item derivative, \hyperpage{10}
-  \item differentiable, \hyperpage{10}
+  \item derivative, \hyperpage{13}
+  \item differentiable, \hyperpage{13}
 
   \indexspace
 
-  \item entire, \hyperpage{10}
+  \item entire, \hyperpage{13}
 
   \indexspace
 
-  \item holomorphic, \hyperpage{10}
+  \item gamma function, \hyperpage{14}
 
   \indexspace
 
-  \item integral basis, \hyperpage{5}
+  \item holomorphic, \hyperpage{13}
 
   \indexspace
 
-  \item lattice point, \hyperpage{17}
-  \item limit, \hyperpage{10}
-  \item Liouville number, \hyperpage{12}
+  \item integral basis, \hyperpage{6}
 
   \indexspace
 
+  \item Lambert $W$ function, \hyperpage{14}
+  \item lattice point, \hyperpage{9}
+  \item limit, \hyperpage{13}
+  \item Liouville number, \hyperpage{19}
+
+  \indexspace
+
+  \item meromorphic, \hyperpage{13}
   \item minimal polynomial, \hyperpage{3}
 
   \indexspace
@@ -48,18 +59,29 @@
 
   \indexspace
 
-  \item ring of integers, \hyperpage{5}
+  \item path, \hyperpage{16}
+  \item path-homotopic, \hyperpage{16}
+
+  \indexspace
+
+  \item rectifiable, \hyperpage{16}
+  \item residue, \hyperpage{17}
+  \item ring of integers, \hyperpage{6}
+
+  \indexspace
+
+  \item simply connected domain, \hyperpage{16}
 
   \indexspace
 
   \item transcendence basis, \hyperpage{3}
   \item transcendence degree, \hyperpage{4}
   \item transcendence dimension, \hyperpage{4}
-  \item transcendental, \hyperpage{2}
+  \item transcendental, \hyperpage{3}
   \item transcendental number, \hyperpage{1}
 
   \indexspace
 
-  \item Vandermonde matrix, \hyperpage{7}
+  \item Vandermonde matrix, \hyperpage{10}
 
 \end{theindex}

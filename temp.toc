@@ -2,16 +2,29 @@
 \contentsline {chapter}{Preface}{v}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Preliminaries}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Algebraic and Transcendental Numbers}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Algebra Preliminaries}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Analysis Preliminaries}{9}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Liouville Numbers}{12}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Transcendence of $e$ and $\pi $}{13}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Lindemann-Weierstrass Theorem}{15}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Gelfond-Schneider Theorem}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Background}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Main Theorem}{23}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Existence of Auxiliary Function}{23}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Analysis of Auxiliary Function}{26}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Consequences}{34}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Baker's Theorem}{37}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{39}{chapter.5}%
+\contentsline {subsection}{\numberline {1.1.1}Definitions and Motivation}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Diagonalization}{2}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Algebra Preliminaries}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Transcendence Basis}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Number Fields}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Polynomials}{7}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Linear Algebra}{8}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Analysis Preliminaries}{13}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Meromorphic and Entire Functions}{13}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Integration}{16}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Liouville Numbers}{19}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Minimal Polynomial as Auxiliary Function}{20}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}Lindemann-Weierstrass Theorem}{23}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Background}{23}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Main Theorem}{28}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Consequences}{29}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Transcendence of $e$ and $\pi $}{29}{subsection.2.3.1}%
+\contentsline {chapter}{\numberline {3}Gelfond-Schneider Theorem}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Background}{31}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Siegel's Lemma Generalized for Number Fields}{31}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Main Theorem}{36}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Existence of Auxiliary Function}{36}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Analysis of Auxiliary Function}{39}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Consequences}{48}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Baker's Theorem}{49}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Schanuel's Conjecture}{51}{chapter.5}%

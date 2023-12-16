@@ -1,7 +1,7 @@
 \indexentry{algebraic number|hyperpage}{1}
 \indexentry{transcendental number|hyperpage}{1}
-\indexentry{algebraic|hyperpage}{2}
-\indexentry{transcendental|hyperpage}{2}
+\indexentry{algebraic|hyperpage}{3}
+\indexentry{transcendental|hyperpage}{3}
 \indexentry{algebraically independent|hyperpage}{3}
 \indexentry{minimal polynomial|hyperpage}{3}
 \indexentry{degree|hyperpage}{3}
@@ -14,15 +14,28 @@
 \indexentry{transcendence dimension|hyperpage}{4}
 \indexentry{algebraic number field|hyperpage}{5}
 \indexentry{number field|hyperpage}{5}
-\indexentry{algebraic integer|hyperpage}{5}
-\indexentry{ring of integers|hyperpage}{5}
-\indexentry{integral basis|hyperpage}{5}
-\indexentry{Vandermonde matrix|hyperpage}{7}
-\indexentry{limit|hyperpage}{10}
-\indexentry{derivative|hyperpage}{10}
-\indexentry{complex differentiable|hyperpage}{10}
-\indexentry{differentiable|hyperpage}{10}
-\indexentry{holomorphic|hyperpage}{10}
-\indexentry{entire|hyperpage}{10}
-\indexentry{Liouville number|hyperpage}{12}
-\indexentry{lattice point|hyperpage}{17}
+\indexentry{algebraic integer|hyperpage}{6}
+\indexentry{ring of integers|hyperpage}{6}
+\indexentry{integral basis|hyperpage}{6}
+\indexentry{lattice point|hyperpage}{9}
+\indexentry{Vandermonde matrix|hyperpage}{10}
+\indexentry{limit|hyperpage}{13}
+\indexentry{derivative|hyperpage}{13}
+\indexentry{complex differentiable|hyperpage}{13}
+\indexentry{differentiable|hyperpage}{13}
+\indexentry{holomorphic|hyperpage}{13}
+\indexentry{entire|hyperpage}{13}
+\indexentry{meromorphic|hyperpage}{13}
+\indexentry{analytic function|hyperpage}{13}
+\indexentry{analytic continuation|hyperpage}{13}
+\indexentry{complex logarithm|hyperpage}{14}
+\indexentry{Lambert $W$ function|hyperpage}{14}
+\indexentry{gamma function|hyperpage}{14}
+\indexentry{path|hyperpage}{16}
+\indexentry{curve|hyperpage}{16}
+\indexentry{rectifiable|hyperpage}{16}
+\indexentry{simply connected domain|hyperpage}{16}
+\indexentry{path-homotopic|hyperpage}{16}
+\indexentry{residue|hyperpage}{17}
+\indexentry{Liouville number|hyperpage}{19}
+\indexentry{auxiliary function|hyperpage}{21}

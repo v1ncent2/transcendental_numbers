@@ -121,14 +121,54 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\trdeg}{trdeg}
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 %%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%
 
-\title{Transcendental Numbers (Draft)}
+\title{Transcendental Numbers}
 \author{Vincent Lin}
-\date{Last Updated: \today}
-
 
 \begin{document}
-                     &= q\left(1 + \| \beta \|\right)
+\defn{Let $z \in \C$. The \vocab{Lambert $W$ function} is a multivalued function denoted $W(z)$ and is equal to all $w \in \C$ where $we^{w} = z$.\par}
+
+Let the function $\Gamma: \{z : \mathfrak{R}(z) > 0\} \to \C$ via \[\Gamma(z) = \int_{0}^{\infty} t^{z-1}e^{-t} dt.\] 
+
+\defn{The meromorphic \vocab{gamma function} is the analytic continuation of $\Gamma$ defined above and its poles are zero and the negative integers.}
+
+\begin{mybox}
+    \theorem{For $z \in \C$ with $\mathfrak{R}(z) > 0$, $\Gamma(z+1) = z\Gamma(z)$.}
+\end{mybox}
+
+\proof{Using integration by parts, we get that 
+\begin{align*}
+    \Gamma(z+1) &= \int_{0}^{\infty} t^{z}e^{-t} dt \\
+                &= {\left[-t^{z}{e}^{-t}\right]}_{0}^{\infty} + \int_{0}^{\infty} z{t}^{z-1}e^{-t} dt \\
+                &= \lim\limits_{t \to \infty} (-t^{z}e^{-t}) + z\int_{0}^{\infty} t^{z-1}e^{-t} dt \\
+                &= 0 + z\int_{0}^{\infty} t^{z-1}e^{-t} dt \\
+                &= z\Gamma(z)
+\end{align*} \[\greenlozenge\]}
+
+\note{Note that at $z = 1$, the function evaluates to \[\int_{0}^{\infty} e^{-t} dt = 1.\] Using this and the recurrence relation from before, we know \[\Gamma(n) = (n-1)!\] for positive integers $n$. Also, note that $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. This is because using $u$ substitution, we get
+    \begin{align*}
+        \Gamma\left(\frac{1}{2}\right) &= \int_{0}^{\infty} t^{-\frac{1}{2}}e^{-t} dt \\
+                                       &= \int_{0}^{\infty} u^{-1}e^{-u^2}2u du \\
+                                       &= 2 \int_{0}^{\infty} e^{-u^2} du \\
+                                       &= \int_{-\infty}^{\infty} e^{-u^2} du.
+    \end{align*} To evaluate the last integral, we will change to polar coordinates:
+    \begin{align*}
+        {\left(\int_{-\infty}^{\infty} e^{-u^2} du\right)}^{2} &= \left(\int_{-\infty}^{\infty} e^{-x^2} dx\right)\left(\int_{-\infty}^{\infty} e^{-y^2} dy\right) \\
+                                                               &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{-(x^2+y^2)} dx dy \\
+                                                               &= \int_{0}^{2 \pi}\int_{0}^{\infty} e^{-r^2}r dr d\theta \\
+                                                               &= 2 \pi \int_{0}^{\infty} re^{-r^2} dr \\
+                                                               &= 2 \pi \int_{-\infty}^{0} \frac{1}{2} e^{s} ds \\
+                                                               &= \lim\limits_{x \to -\infty} \pi(e^0 - e^{x}) \\
+                                                               &= \pi.
+    \end{align*} Therefore, our original integral evaluates to $\sqrt{\pi}$.
+}
+\newpage
+\begin{mybox}
+    \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
+\end{mybox}
+
+\newpage
 \end{document}

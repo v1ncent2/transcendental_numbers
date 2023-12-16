@@ -127,17 +127,17 @@ innerrightmargin=20pt,innertopmargin=20pt,innerbottommargin=20pt,backgroundcolor
 
 \title{Transcendental Numbers}
 \author{Vincent Lin}
-
+\date{December 15, 2023}
 \begin{document}
 \frontmatter
 \maketitle
 \tableofcontents
 \chapter{Preface}
-\indent Starting from the background information from 21441 and algebra, we will discuss transcendental numbers. Then, we will introduce methods of explicitly constructing, finding, and detecting transcendental numbers. We will talk about some addition algebra preliminaries and theorems from complex analysis. We will name several classes of transcendental numbers, and the specific methods of finding them will be discussed. The main theorems include the Lindemann-Weierstrass theorem, Gelfond-Schneider theorem, and Baker's theorem. Then, we conclude with a discussion of Schanuel's conjecture and its consequences. The main sequence of theorems is primarily related to determining the transcendence of complex numbers using auxiliary functions.
+\indent Starting from the background information from 21441 and algebra, we will discuss transcendental numbers. Then, we will introduce methods of explicitly constructing, finding, and detecting transcendental numbers. We will talk about some additional algebra preliminaries and theorems from complex analysis. We will name several classes of transcendental numbers, and the specific methods of finding them will be discussed. The main theorems include the Lindemann-Weierstrass theorem, Gelfond-Schneider theorem, and Baker's theorem. Then, we conclude with a discussion of Schanuel's conjecture and its consequences. The main sequence of theorems is primarily related to determining the transcendence of complex numbers using auxiliary functions.
 \mainmatter{}
 \chapter{Preliminaries}
 \section{Algebraic and Transcendental Numbers}
-
+\subsection{Definitions and Motivation}
 \defn{An \vocab{algebraic number} is $\alpha \in \C$ which is the root of a nonzero polynomial in $\Q[x]$ (equivalently the root of a nonzero polynomial in $\Z[x]$). A \vocab{transcendental number} is a complex number that is not algebraic.}\par
 
 \note{We will use $\A$ to denote the set of algebraic numbers and we will use $\C \setminus \A$ to denote the set transcendental numbers. We will use $\R \setminus \A$ to denote the set of real transcendental numbers.}\par
@@ -154,11 +154,12 @@ What about transcendental numbers? Do they exist?\par
 
 If transcendental numbers exist, then can we find an example? To show that a number is algebraic, we have to find a nonzero rational polynomial that it is a root of, evaluate that polynomial at that number, and verify that we get zero. However, checking if a number is transcendental is a very hard problem. The rest of this paper will discuss the transcendence of a large class of numbers and methods for determining transcendence.\par
 
+\subsection{Diagonalization}
 Luckily, uncountability tells us a lot of information about transcendental numbers already. Using the fact that the set of transcendental numbers are uncountable, we can use diagonalization of the algebraic numbers to construct transcendental numbers. For example, we find some way to enumerate the algebraic numbers ${\{\alpha_{i}\}}_{i \in \N}$ strictly between $0$ and $1$. Then, we construct the transcendental number $t$ between $0$ and $1$ as follows: for $\alpha_i$, we change the $i$-th digit to the right of the decimal and append the $i$-th digit to $t$. This way, we have defined all of the digits in $t$ and since it differs from every algebraic number between $0$ and $1$ in at least one digit so $t \notin {\{\alpha_{i}\}}_{i \in \N}$, which means it is transcendental. Furthermore, since the algebraic numbers are countable, they have measure zero in $\C$, which means almost every complex number is transcendental.\par
 
 Now, we will move onto some preliminary information, theorems, and lemmas to be used throughout the remainder of the text.
 
-
+\newpage
 \section{Algebra Preliminaries}
 
 Before that, we will generalize the concept of transcendence to other fields. In order to do this, we will list several definitions. Let $K, L$ be fields and let $L/K$ be a field extension. We will introduce a few definitions for recall.\par
@@ -173,6 +174,7 @@ Before that, we will generalize the concept of transcendence to other fields. In
     \end{itemize}}
 \par
 
+\subsection{Transcendence Basis}
 Using this information, we will introduce the notion of a transcendence basis.\par
 
 \defn{For a field extension $L/K$, $S \subseteq L$ is a \vocab{transcendence basis} if $S$ is a maximal (subsets ordered by inclusion) algebraically independent subset of $L$ over $K$. By Zorn's lemma, this always exists.}
@@ -205,41 +207,58 @@ Finally, we need to show that $B$ and $B'$ are disjoint. Note that $B' \subseteq
 \end{mybox}
 
 \proof{Otherwise, any size $k$ set $B := \{\beta_1, \ldots, \beta_k\} \subseteq \{\alpha_1, \ldots, \alpha_n\}$ will contain an algebraic number so it cannot be algebraically independent over $\Q$.\par \[\greenlozenge\]}
+
+\subsection{Number Fields}
+
 Now we will consider some important facts about number fields:\par
 
 \recall{\begin{itemize}
-    \item{An \vocab{algebraic number field} or \vocab{number field} is an algebraic extension of $\Q$.}
+        \item{An \vocab{algebraic number field} or \vocab{number field} is an algebraic extension of $\Q$. There are many important and useful theorems associated with number fields for this text from 21441 including but not limited to:
+            \begin{enumerate}
+            \item{$\{1, \alpha, \ldots, \alpha^{n-1}\}$ form a $\Q$-basis for $\Q(\alpha)/\Q$ for $\alpha \in \A$}
+            \item{tower law}
+            \item{primitive element theorem}
+            \item{discriminant of basis}
+    \end{enumerate}}
     \item{An \vocab{algebraic integer} is $\alpha \in \C$ such that it is the root of a monic polynomial in $\Z[x]$.}
     \item{If $K$ is a number field, $\mathcal{O}_K$ is the \vocab{ring of integers} of $K$ and is the ring of all algebraic integers in $K$. It is a free $\Z$-module of rank $[K : \Q]$. If $\alpha \in K$, there is a positive $c \in \Z$ such that $c\alpha \in \mathcal{O}_K$.}
     \item{Let $K$ be a number field. An \vocab{integral basis} is a $\Q$-basis for $K$ that is also a $\Z$-basis for $\mathcal{O}_K$.}
     \end{itemize}}
 
+Now, we will introduce some additional facts about number fields.\par
+
 \begin{mybox}
-    \lemma{Let $K$ be a number field and let $\alpha \in K$. The degree of $\alpha$ over $\Q$ divides the degree of $K$.\par}
+    \theorem{Let $K$ be a number field and let $\alpha \in K$. The degree of $\alpha$ over $\Q$ divides the degree of $K$.\par}
 \end{mybox}
 \proof{By the tower law, $[K : \Q(\alpha)][\Q(\alpha) : \Q] = [K:\Q]$. Thus, $[\Q(\alpha):\Q] \mid [K:\Q]$.\par\[\greenlozenge\]}
 
 
-\note{Let $K$ be a number field of degree $n$ over $\Q$ and let $\alpha \in K$. Then, let $\sigma_1, \ldots, \sigma_n$ be the $\Q$-fixing embeddings $K \hookrightarrow \C$. We write $\| \alpha \|$ to denote $\max\limits_{i \in \{1, \ldots ,n\}} \vert \sigma_i(\alpha) \vert$.\par}
+\note{Let $K$ be a number field of degree $n$ over $\Q$ and let $\alpha \in K$. Then, let $\sigma_1, \ldots, \sigma_n$ be the $\Q$-fixing embeddings $K \hookrightarrow \C$. We write $\| \alpha \|$ to denote $\max\limits_{i \in \{1, \ldots ,n\}} \vert \sigma_i(\alpha) \vert$. This will be a convenient way to convert information about algebraic numbers into integers, which help with calculations later.\par}
 
 \begin{mybox}
-    \lemma{Let $\alpha, \beta \in K$, a number field. Then, $\|\alpha + \beta\| \leq \| \alpha \| + \| \beta \|$ and $\| \alpha\beta \| \leq \| \alpha \| \| \beta \|$.}
+    \theorem{Let $\alpha, \beta \in K$, a number field. Then, $\|\alpha + \beta\| \leq \| \alpha \| + \| \beta \|$ and $\| \alpha\beta \| \leq \| \alpha \| \| \beta \|$.}
 \end{mybox}
 
-\proof{We first show this for addition. 
+\proof{We first show this for addition. Note that we are using field homomorphism properties. 
     \begin{align*}\| \alpha + \beta \| &= \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha + \beta) \vert \\ &= \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) + \sigma_i(\beta) \vert \\ &\leq \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) \vert + \vert \sigma_i(\beta) \vert \\ &\leq \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) \vert + \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\beta) \vert \\ &= \| \alpha \| + \| \beta \| \end{align*} 
-The proof for multiplication is similar by replacing $+$ with $\cdot$ instead.\[ \greenlozenge \]}
+The proof for multiplication is similar by replacing $+$ with $\cdot$ instead.
+\begin{align*}\| \alpha \cdot \beta \| &= \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha \cdot \beta) \vert \\ &= \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) \cdot \sigma_i(\beta) \vert \\ &\leq \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) \vert \cdot \vert \sigma_i(\beta) \vert \\ &\leq \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\alpha) \vert \cdot \max\limits_{i \in \{1, \ldots, n\}} \vert \sigma_i(\beta) \vert \\ &= \| \alpha \| \cdot \| \beta \| \end{align*} 
+
+\[ \greenlozenge \]}
 \begin{mybox}
-    \lemma{If $K$ is a number field, it has an integral basis.\par}
+    \theorem{If $K$ is a number field, it has an integral basis.\par}
 \end{mybox}
 \proof{We know that $\mathcal{O}_K$ is a free $\Z$-module of rank $n := [K : \Q]$ so let $\{\beta_1, \ldots, \beta_n\}$ be a basis for $\mathcal{O}_K$ as a $\Z$-module. To show that this is a basis for $K$, we will show that this set $\Q$-spans $K$ and is $\Q$-linearly independent.\par
 
 First, we will show it is spanning. Let $\alpha \in K$. Then, find positive $c \in \Z$  such that $c\alpha \in \mathcal{O}_K$. Now, for $\lambda_1, \ldots, \lambda_n \in \Z$, we can write \[c\alpha = \lambda_1 \beta_1 + \cdots + \lambda_n \beta_n.\] Therefore, since $c > 0$, and is an integer, we can divide by $c$ to get \[\alpha = \frac{\lambda_1}{c} \beta_1 + \cdots + \frac{\lambda_n}{c} \beta_n.\] Since $\frac{\lambda_i}{c} \in \Q$, we know that the basis $\Q$-spans $K$. Now, we will show it is $\Q$-linearly independent. Suppose for contradiction \[0 = \lambda_1\beta_1 + \cdots + \lambda_n\beta_n,\] where $\lambda_i \in \Q$ but there is a nonzero $\lambda_i$. Then, we can multiply both sides by the least common multiple of the demoninators of the $\lambda_i$ to get that the $\lambda_i$'s are not $\Z$-linearly independent, which is a contradiction.\par \[ \greenlozenge \]}
 
-\newpage
+\subsection{Polynomials}
+Now, we will talk about (formal) derivatives of polynomials and how it relates to the multiplicity of a root.\par
+
 \begin{mybox}
     \lemma{For any nonzero polynomial $p(x) \in \C[x]$ with a root at $x = \alpha$ of multiplicity $m > 0$, $p'(x)$, has the root $\alpha$ with multiplicity $m-1$. More generally, if $R$ is an integral domain and $p \in R[x]$ has $\alpha$ with multiplicity $m$, $p'$, the formal derivative, has root $\alpha$ with multiplicity $m-1$ if $\characteristic (R)$ is not a factor of $m$.}
 \end{mybox}
+
 
 \proof{We can write $p(x)$ as ${(x-\alpha)}^{m}q(x)$ where $(x-\alpha) \nmid q(x)$. Now, taking the derivatives of both sides and using the product rule, we get
 \begin{align*}
@@ -254,6 +273,60 @@ Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $
 
 Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. We need to show that $x-\alpha$ does not divide $\left(mq(x) + (x-\alpha)q'(x)\right)$. We can take this expression modulo $(x-\alpha)$ to get that it is equivalent to $mq(x)$. Note that $(x-\alpha) \nmid q(x)$, so we need $m > 0$. This is true when $\characteristic(R)$ is not a factor of $m$ (otherwise the entire expression is zero). Therefore, we have multiplicity at most $m-1$. Since $\characteristic(\C) = 0$, we know this rule applies to complex polynomials.\par
 \[ \greenlozenge \]}
+
+\subsection{Linear Algebra}
+Now, we will introduce some facts from linear algebra.\par
+
+First, we will introduce Siegel's lemma, which uses the pigeonhole principle to find a bound for the solution to a system of equations. This is used by Alexander Gelfond, Theodor Schneider, and Alan Baker to \enquote{construct} their auxiliary functions. The functions are not constructed explicitly, but this lemma is used to show there exists an auxiliary function with certain desirable properties. For example, it may be used to construct a function with a zero of very high multiplicity.\par
+
+\newpage
+\begin{mybox}
+    \lemma{(Siegel's Lemma) Consider the following system of $m$ equations with $n$ unknowns with $0 < m < n$: 
+    \[\begin{pmatrix}
+        a_{1,1} & \cdots & a_{1,n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m,1} & \cdots & a_{m,n} 
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\ \vdots \\ 0
+    \end{pmatrix},
+\] and $a_{i,j} \in \Z$. We write this compactly as $A\mathbf{x} = \mathbf{0}$. Let $a \in \Z$, $a > 0$, and $a \geq \vert a_{i,j} \vert$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$. Then, the system of equations has a nontrivial solution in ${\Z}^n$ for $\mathbf{x}$, such that for all $x_j$, \[\vert x_j \vert < 1 + {(na)}^{\frac{m}{n-m}}.\]} 
+\end{mybox}
+
+\proof{Let $\mathbf{x}$ be a column vector of height $n$ and let $\mathbf{y}$ be a column vector of height $m$ where $A\mathbf{x} = \mathbf{y}$. Let the entries of $\mathbf{y}$ be $y_k$ where $1 \leq k \leq m$. A solution corresponds to finding an $\mathbf{x}$ such that $\mathbf{y}$ is the zero vector.\par
+
+
+\defn{$\mathbf{x}$ is a \vocab{lattice point} if it is in $\Z^{n}$.}\par
+
+Note that if $\mathbf{x}$ is a lattice point, then since the entries of $A = (a_{i,j})$ are integers, $\mathbf{y}$ will also be a lattice point.\par
+
+Let $q$ be any positive integer. Let $C$ be the $n$-dimensional hypercube centered at the origin of side length $2q$. Equivalently, this is all points with coordinates in $[-q, q]$ or points whose coordinate's absolute values are upper bounded by $q$. Now, let $\mathbf{x}$ range through all the ${(2q+1)}^{n}$ lattice points in $C$ (each of the $n$ coordinates is in $\{-q, -q + 1, \ldots, 0, \ldots, q-1, q\}$, which is a set of $2q+1$ options). We can now upper bound each of the $y_k$ coordinates in $\mathbf{y}$ via
+
+\begin{align*}
+    \vert y_k \vert &= \left\vert \sum_{i=1}^{n} a_{k,j}x_j \right\vert \\
+                    &\leq \sum_{i=1}^{n} \vert a_{k,j}x_j \vert \\
+                    &= \sum_{i=1}^{n} \vert a_{k,j} \vert \vert x_j \vert \\
+                    &\leq \sum_{i=1}^{n} aq \\
+                    &= naq
+\end{align*}
+
+Therefore, we know that the coordinates of $\mathbf{y}$ are in $\{-naq, -naq+1, \ldots, 0, \ldots, naq-1, naq+1\}$ and so there are ${(2naq + 1)}^{n}$ possible lattice points $\mathbf{y}$ could be as $\mathbf{x}$ ranges through the lattice points of $C$.\par
+
+As of now, we selected $q$ to be any positive integer. However, to finish the proof of this lemma, we would like to use the pigeonhole principle to say that two of the inputs $\mathbf{x'}, \mathbf{x''}$ in $C$ correspond to outputs that coincide. That is to say, the ${(2q+1)}^{n}$ input points outnumber the ${(2naq+1)}^{m}$ possible output locations. In order to do this, we select $q$ to be the unique integer such that: \[{(na)}^{\frac{m}{n-m}}-1 \leq 2q < {(na)}^{\frac{m}{n-m}} + 1.\] This means $2q$ is the even integer in the interval of length $2$. From the left inequality, we get ${(na)}^{m} \leq {(2q+1)}^{n-m}$. Now, 
+\begin{align*}
+    {(2naq + 1)}^{m} &= {\left(na \cdot \frac{2naq + 1}{na}\right)}^{m} \\
+                     &= {(na)}^{m}{\left(2q + \frac{1}{na}\right)}^{m} \\
+                     &< {(na)}^{m}{\left(2q + 1\right)}^{m} \\
+                     &\leq {(2q+1)}^{n-m}{(2q+1)}^{m} \\
+                     &= {(2q+1)}^{n}.
+\end{align*}
+
+Thus, we get that there are solutions $\mathbf{x'} \neq \mathbf{x''}$ such that $A\mathbf{x'} = A\mathbf{x''}$. Thus, $A(\mathbf{x'} - \mathbf{x''}) = \mathbf{0}$. Note that if we let $x'_j, x''_j$ denote the $j$-th coordinate of $\mathbf{x'}, \mathbf{x''}$ respectively, \[\vert x'_j - x''_j \vert \leq \vert x'_j \vert + \vert x''_j \vert \leq q + q = 2q < {(na)}^{\frac{m}{m-n}} + 1,\]
+so $\mathbf{x'} - \mathbf{x''}$ is a nontrivial solution to $A\mathbf{x} = 0$ we were looking for.\par
+
+\[\greenlozenge\]}
 
 
 \defn{The square \vocab{Vandermonde matrix} of size $n$, \[V = V(x_1, \ldots, x_n)\] is the $n \times n$ matrix 
@@ -270,7 +343,7 @@ Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m
 with nonzero complex elements $x_i^{j}$ in the $i$-th row and $j+1$-th column column where $0 \leq j \leq n-1$ and $1 \leq i \leq n$.\par
 \newpage
 \begin{mybox}
-    \lemma{Let $V = V(x_1, \ldots, x_n)$ be the square Vandermonde matrix of size $n$. Then, the determinant of the square Vandermonde matrix is \[\prod\limits_{1 \leq i < j \leq n} (x_j - x_i).\] Therefore, the determinant vanishes if and only if $x_i = x_j$ for any $i \neq j$.} 
+    \theorem{Let $V = V(x_1, \ldots, x_n)$ be the square Vandermonde matrix of size $n$. Then, the determinant of the square Vandermonde matrix is \[\prod\limits_{1 \leq i < j \leq n} (x_j - x_i).\] Therefore, the determinant vanishes if and only if $x_i = x_j$ for any $i \neq j$.} 
 \end{mybox}
 
 \proof{For $1 \leq i \leq n$, let $E := {\{e_i\}}$ be the canonical basis for ${\C}^{n}$.\par
@@ -357,9 +430,11 @@ Plugging what we know about $\det(L)$ and $\det(U)$ into $\det(V)\det(U) = \det(
 \[\greenlozenge\]
 }
 
+\newpage
 \section{Analysis Preliminaries}
 Now we will introduce some concepts from complex analysis. Consider the set of complex numbers $\C$ as a normed space equipped with the absolute value function $\vert \cdot \vert : \C \to \R$ via $\vert z \vert = \sqrt{z\bar{z}}$, where $\bar{z}$ is the complex conjugate of $z$. This norm induces a metric space, so we can define the distance between $x$ and $y$ as $d(x,y) := \vert x - y \vert$. Furthermore, this metric space induces a topological space so we can define open sets $U \subseteq \C$ such that all points $z \in U$ are contained in a ball within $U$ centered at $z$. In other words, for all $z \in U$, there is $\varepsilon > 0$ such that for all $y$ where $d(z,y) < \varepsilon$, $y \in U$.\par
 
+\subsection{Meromorphic and Entire Functions}
 \defn{Let $f : \C \to \C$ be a function. The \vocab{limit} of $f$ as $z \to z_0$ is $L$ if and only if for all $\varepsilon > 0$, there is $\delta > 0$ such that $0 < \vert z - z_0 \vert < \delta \implies \vert f(x) - L \vert < \varepsilon$. We write $L$ as \[\lim\limits_{z \to z_0} f(z).\]\par}
 
 \defn{Let $U \subseteq \C$ be an open subset. Let $f : U \to \C$ be a function. The \vocab{derivative} of $f$ at a point $z_0 \in \C$ is defined as 
@@ -369,10 +444,20 @@ Now we will introduce some concepts from complex analysis. Consider the set of c
 
 \defn{Let $f : \C \to \C$ be a function and let $U \subseteq \C$ be an open subset of $\C$. Then, $f$ is \vocab{holomorphic} on $U$ if it is complex differentiable on every point in $U$. Furthermore, if $U = \C$, then $f$ is an \vocab{entire} function.}
 
-We let the function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=0}^{\infty} \frac{x^{n}}{n!}.\] Sometimes, we will write this as $e^{z}$ and it will be equivalent to $\exp(z)$. Note that from Euler's identity, $e^{iz} = \cos z + i \sin z$.
+\defn{Let $U$ be an open subset of $\C$ and let $f : U \to \C$. If $f$ is holomorphic on $U$ except on a set of isolated points $\{z_1, \ldots, z_n\}$ (there is an epsilon ball around every point with no other points of the set contained in the ball) called poles, then $f$ is \vocab{meromorphic} on $U$.\par}
+
+\defn{An \vocab{analytic function} is a function that is locally given by a convergent power series.}
+
+\note{Holomorphic functions are analytic functions. Also, if a function is infinitely differentiable, we can use its Taylor series as the convergent power series.\par}
+
+\defn{If a function is analytic, we can use a technique called \vocab{analytic continuation} to extend its domain.\par}
+
+\note{If there is a removable singularity on a holomorphic function, we can fill in that point with its limit and get another holomorphic function.\par}
+
+We let the entire function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=0}^{\infty} \frac{x^{n}}{n!}.\] Sometimes, we will write this as $e^{z}$ and it will be equivalent to $\exp(z)$. Note that from Euler's identity, $e^{iz} = \cos z + i \sin z$.
 
 \begin{mybox}
-    \lemma{$\exp(z)$ has no zeroes. That is, for all $z \in \C$, $\exp(z) \neq 0$.}
+    \theorem{$\exp(z)$ has no zeroes. That is, for all $z \in \C$, $\exp(z) \neq 0$.}
 \end{mybox}
 
 \proof{Write $z \in \C$ as $x + yi$ for $x,y \in \R$. Then, $e^{x+yi} = e^{x}e^{yi} = e^{x}\left(\cos y + i \sin y\right)$. $e^{x} > 0$ so it is nonzero. Furthermore, $\cos y + i \sin y$ lies on the unit circle on the complex plane so $\left\vert e^{yi} \right\vert = 1$. Thus, it is also nonzero. This means their product, $e^{z}$ is nonzero.\par
@@ -383,11 +468,81 @@ We let the function $\exp: \C \to \C$ via \[\exp(z) = \sum\limits_{i=0}^{\infty}
 \end{mybox}
 \proof{We write the $k$-th partial sum for $\vert \exp(z) \vert$ and $\exp\left(\vert z \vert\right)$ and note by the triangle inequality that \[\left\vert \frac{z^{0}}{0!} + \cdots + \frac{z^{k}}{k!} \right\vert \leq \frac{{\vert z \vert}^{0}}{0!} + \cdots + \frac{{\vert z \vert}^{k}}{k!}.\] Taking the limit of both sides as $k \to \infty$ gets the desired conclusion.\par \[\greenlozenge\]
 }
-\newpage
+
+\note{In polar form, if $z = re^{i \theta}$, where $r > 0$ and $\theta \in \R$, then $\log z$ is $\{\ln r + i(2 \pi k) : k \in \Z\}$. In general, for complex numbers $\alpha, \beta$, ${\alpha}^{\beta}$ may refer to $\exp(\beta \log \alpha)$, which is multivalued.\par}
+
+\defn{The \vocab{complex logarithm} is the generalization of the natural logarithm to nonzero complex numbers. A complex logarithm of $z \in \C$ is a collection of values $w$ such that $\exp(w) = z$. This is denoted $\log(z)$.\par}
+
+\defn{Let $z \in \C$. The \vocab{Lambert $W$ function} is a multivalued function denoted $W(z)$ and is equal to all $w \in \C$ where $we^{w} = z$.\par}
+
+Let the function $\Gamma: \{z : \mathfrak{R}(z) > 0\} \to \C$ via \[\Gamma(z) = \int_{0}^{\infty} t^{z-1}e^{-t} dt.\] 
+
+
+\defn{The meromorphic \vocab{gamma function} is the analytic continuation of $\Gamma$ defined above and its poles are zero and the negative integers.}
+
+\begin{mybox}
+    \theorem{For $z \in \C$ with $\mathfrak{R}(z) > 0$, $\Gamma(z+1) = z\Gamma(z)$.}
+\end{mybox}
+
+\proof{Using integration by parts, we get that 
+\begin{align*}
+    \Gamma(z+1) &= \int_{0}^{\infty} t^{z}e^{-t} dt \\
+                &= {\left[-t^{z}{e}^{-t}\right]}_{0}^{\infty} + \int_{0}^{\infty} z{t}^{z-1}e^{-t} dt \\
+                &= \lim\limits_{t \to \infty} (-t^{z}e^{-t}) + z\int_{0}^{\infty} t^{z-1}e^{-t} dt \\
+                &= 0 + z\int_{0}^{\infty} t^{z-1}e^{-t} dt \\
+                &= z\Gamma(z)
+\end{align*} \[\greenlozenge\]}
+
+\note{Note that at $z = 1$, the function evaluates to \[\int_{0}^{\infty} e^{-t} dt = 1.\] Using this and the recurrence relation from before, we know \[\Gamma(n) = (n-1)!\] for positive integers $n$. Also, note that $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. This is because using $u$ substitution, we get
+    \begin{align*}
+        \Gamma\left(\frac{1}{2}\right) &= \int_{0}^{\infty} t^{-\frac{1}{2}}e^{-t} dt \\
+                                       &= \int_{0}^{\infty} u^{-1}e^{-u^2}2u du \\
+                                       &= 2 \int_{0}^{\infty} e^{-u^2} du \\
+                                       &= \int_{-\infty}^{\infty} e^{-u^2} du.
+    \end{align*} To evaluate the last integral, we will change to polar coordinates:
+    \begin{align*}
+        {\left(\int_{-\infty}^{\infty} e^{-u^2} du\right)}^{2} &= \left(\int_{-\infty}^{\infty} e^{-x^2} dx\right)\left(\int_{-\infty}^{\infty} e^{-y^2} dy\right) \\
+                                                               &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{-(x^2+y^2)} dx dy \\
+                                                               &= \int_{0}^{2 \pi}\int_{0}^{\infty} e^{-r^2}r dr d\theta \\
+                                                               &= 2 \pi \int_{0}^{\infty} re^{-r^2} dr \\
+                                                               &= 2 \pi \int_{-\infty}^{0} \frac{1}{2} e^{s} ds \\
+                                                               &= \lim\limits_{x \to -\infty} \pi(e^0 - e^{x}) \\
+                                                               &= \pi.
+    \end{align*} Therefore, our original integral evaluates to $\sqrt{\pi}$.
+}
+\subsection{Integration}
+We will make use of the following facts:
+
+\defn{A \vocab{path} in the complex plane can be parameterized by a continuous function $\gamma: I \to \C$ where $I$ (usually $[0, 1]$) is an interval in the real numbers. If the path does not intersect with itself except at the endpoints, we call the path a \vocab{curve}. If the parameterization is injective and continously differentiable, then the curve is called \vocab{rectifiable} and has a finite length.}
+
+\defn{A \vocab{simply connected domain} $D$ is a domain of a complex valued function where all paths with the same initial and final points are \vocab{path-homotopic}, that is, there is a continuous deformation from one path to the other.}
+
+\begin{mybox}
+    \theorem{(Cauchy's integral formula) Let $U$ be an open subset of $\C$ and suppose a disk $D$ is $\{z : \vert z - z_0 \vert \leq r\}$ is a subset of $U$. If $f : U \to \C$ is holomorphic, then for each $a$ in the interior of $D$, \[f(a) = \frac{1}{2 \pi i} \oint_{\partial D} \frac{f(z)}{z-a} dz.\] where $\partial D$ is the boundary of $D$ and is traversed (via the parameterization) in the counterclockwise direction.}
+\end{mybox}
+
+\note{The proof of this theorem uses the fact that the integral over a closed rectifiable curve is equal to the integral over a very small circle. In this case, for a circle $\mathcal{C}$ in the complex plane centered at $a$, \[\oint_{\mathcal{C}} \frac{1}{z-a} dz = 2\pi i.\] Then, the proof considers the value \[\left\vert \frac{1}{2\pi i} \oint_{\mathcal{C}} \frac{f(z)}{z-a} dz - f(a) \right\vert,\] while shrinking the radius of the circle and shows that this goes to zero.\par}
+
+
+\defn{The \vocab{residue} of $f$ at a point is defined to be \[\Res(f, a_k) = \frac{1}{2\pi i} \oint_{\gamma} f(z) dz.\] for some (positively oriented) curve $\gamma$ around $a_k$.}
+
 \begin{mybox}
     \theorem{(Cauchy's Residue Theorem) Let $U \subseteq \C$ be a simply connected open set containing a finite number of points $\{a_1, \ldots, a_n\}$. Then, let $U_0$ be $U \setminus \{a_1, \ldots, a_n\}$. Let $f : U_0 \to \C$ be holomorphic on $U_0$. Furthermore, let $\gamma$ be a closed rectifiable curve in $U_0$, $\Res(f, a_i)$ denote the residue of $f$ at each $a_k$, and $I(\gamma, a_k)$ be the winding number of $\gamma$ around $a_k$. Then, \[\oint_{\gamma} f(z) dz = 2 \pi i \sum\limits_{k=1}^{n}I(\gamma, a_k)\Res(f, a_k).\]}
 \end{mybox}
 
+\note{This is a generalization of the previous statement.}
+
+\begin{mybox}
+    \lemma{Let $f(z)$ be an analytic function in the disk $D \subseteq \C$. Here, we define $D = \{z : \vert z \vert < d\}$ for some positive real $d$. Suppose $f$ is continuous on the closure of $D$, $\overline{D} = \{z : \vert z \vert \leq d\}$. Furthermore, let $\vert f \vert_d = \max\limits_{z \in \overline{D}, \vert z \vert = d} f(z)$. Then, for every $z \in \overline{D}$, $\vert f(z) \vert \leq \vert f \vert_d$.}
+\end{mybox}
+
+\note{This comes from the maximum modulus principle. For some $r > 0$, we can find a ball $B_r(z)$ around $z \in \C$. Now for a holomorphic function, there is an analogous version of the mean value theorem: \[f(z) = \frac{1}{2\pi} \int_{0}^{2 \pi} f(z + re^{i \theta}) d\theta.\] Then we can use it to show that
+
+\begin{align*}
+    \vert f(z) \vert &\leq \frac{1}{2 \pi} \int_{0}^{2\pi} \vert f(z + re^{i \theta}) \vert d\theta \\
+                     &\leq \max\limits_{\theta} \vert f(z + re^{i \theta}) \vert
+\end{align*}} Therefore, there must be a point on the circle that has modulus at least the modulus of a point in the open region.
+\newpage
 \section{Liouville Numbers}
 Now we will start looking for our first transcendental number!\par
 
@@ -397,84 +552,238 @@ Now we will start looking for our first transcendental number!\par
 Essentially, Liouville numbers are real numbers that can be approximately really, really closely by a sequence of rationals of the form $\left\{\frac{p_i}{q_i}\right\}$, where $q_i > 1$, and the distance between $x$ and $\frac{p_i}{q_i}$ is nonzero, but less than $\frac{1}{{(q_i)}^{i}}$.\par
 
 \begin{mybox}
-    \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$, we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{1}{q^n}\]}
+    \theorem{(Liouville's Approximation Theorem) Let $\alpha \in \R \setminus \Q$ be an algebraic number of degree $n$. Then, for any rational approximation $\frac{p}{q}$ to $\alpha$ there is a constant $C(\alpha)$ dependent on $\alpha$ such that $0 < C(\alpha) \leq 1$, where we have \[\left\vert \alpha - \frac{p}{q} \right\vert \geq \frac{C(\alpha)}{q^n}.\]}
 \end{mybox}
 
-\proof{Let $f$ be the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Otherwise, if $f()$ Furthermore, $f$ is irreducible in $\mathbb{R}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
+\proof{Let $f$ be the integer polynomial obtained after clearing denominators of the minimal polynomial of $\alpha$ over $\Q$. Note that $f'(\alpha) \neq 0$. This is because $\deg(f') < \deg(f)$ and $f$ is the minimal polynomial. Furthermore, $f$ is irreducible in $\mathbb{Q}[x]$, so it cannot be the case that $(x-r) \mid f$ for a rational $r$. In other words, $f$ has no rational roots. Now let $\frac{p}{q}$ be a rational number which we will use to approximate $\alpha$ and plug it into $f(x) = a_{n}x^n + a_{n-1}x^{n-1} + \cdots + a_0$.
 \begin{align*}
     f\left(\frac{p}{q}\right) &= a_n{\left(\frac{p}{q}\right)}^n + a_{n-1}{\left(\frac{p}{q}\right)}^{n-1}+ \cdots + a_0 \\
                               &= \frac{C}{q^n}
 \end{align*}
-for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Also, note that since we want a good approximation of $\alpha$ that is close to $\frac{1}{q^n}$ away, this rational must be at most distance $1$ away from $\alpha$.
-    \[\greenlozenge\]
+for some constant $C \neq 0$ as $\frac{p}{q}$ is not a root of $f$. Now, by the mean value theorem, there is $\xi$ between $\alpha$ and $\frac{p}{q}$ such that 
+
+\[f(\alpha) - f\left(\frac{p}{q}\right) = \vert f'(\xi) \vert \cdot \left\vert \alpha - \frac{p}{q} \right\vert.\]
+
+First, note that $f(\alpha) = 0$. Then, we may assume that without loss of generality that $q > 0$, we can take the absolute value of both sides of the evaluated expression to get \[ \frac{C}{q^{n}} = f'(\xi) \left\vert \alpha - \frac{p}{q} \right\vert.\] Since $\frac{p}{q}$ is a rational approximation, we may assume that the distance between $\frac{p}{q}$ and $\alpha$ is at most $1$. Therefore, we now $\xi$ is at most distance $1$ from $\alpha$. As a consequence, we can consider $M(\alpha) := \max\limits_{x \in (\alpha - 1, \alpha + 1)}\left\vert f'(x) \right\vert$, and we know it is at least $\left\vert f'(\xi) \right\vert$. This is because $\xi$ lies in the interval $(\alpha - 1, \alpha + 1)$ as it is between $\alpha$ and $\frac{p}{q}$. Now, we get the inequality, 
+
+\[ \frac{C}{q^{n}} \leq M(\alpha) \left\vert \alpha - \frac{p}{q} \right\vert.\]
+
+Rearranging terms we can let $C(\alpha) = \min\left\{1, \frac{C}{M(\alpha)}\right\} > 0$ to get the desired conclusion. Note, this makes all Liouville numbers transcendental.\par
+\[\greenlozenge\]
 }
 
-\section{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}} 
+\begin{mybox}
+    \theorem{The Liouville constant \[L := \sum\limits_{n=0}^{\infty} {10}^{-n!}\] is a Liouville number. In particular, it is transcendental.}
+\end{mybox}
+
+\proof{Let $\frac{p_k}{q_k}$ be the rational partial sums \[\sum_{n=1}^{k} {10}^{-n!}.\] Then, 
+
+\begin{align*}
+    \left\vert L - \frac{p_k}{q_k} \right\vert &= {10}^{-(k+1)!} + 10^{-(k+2)!} + \cdots \\
+                                               &< 2 \cdot {10}^{-(n+1)!} \\
+                                               &< {\left(10^{n!}\right)}^{-n} \\
+                                               & = \frac{1}{{\left(q_k\right)}^{k}}
+\end{align*} \[\greenlozenge\]}
+
+\subsection{Minimal Polynomial as Auxiliary Function}
+
+In the previous subsection, we found a particular Liouville number. However, we can use similar proof to show that 
+
+\[\sum\limits_{n=0}^{\infty} {a_n}{b}^{-n!}\] is transcendental for some integer $b \geq 2$ and a sequence of $(a_n)$ where each $a_n \in \{0, \ldots, b-1\}$. In the previous example $b$ was $10$ and $(a_n)$ was a sequence of $1$'s.\par
+
+Note this uses an \vocab{auxiliary function}, the minimal polynomial of an algebraic number, to determine conditions for transcendence. The notion of an auxiliary function is not well defined but in general, it is a function that has some desirable properties (like having zeroes of high multiplicity) to show transcendence.\par
+
+
+We will show in the next chapter a powerful theorem for determining the transcendence of well known constants $e$ and $\pi$.\par
+
+\chapter{Lindemann-Weierstrass Theorem}
+
+\section{Background}
+In this chapter, we will prove the Lindemann-Weierstrass theorem. This proof is based off of the works of Ferdinand von Lindemann.\par
+
+First, we will start by proving a weaker version of the theorem.
+
+\begin{mybox}
+    \theorem{Suppose $\{\alpha_1, \ldots, \alpha_m\} \subseteq \A$. Then, $e^{\alpha_1}, \ldots, e^{\alpha_m}$ are $\Q$-linearly independent.} 
+\end{mybox}
+
+\proof{Suppose for contradiction that 
+
+    \[\sum\limits_{j=1}^{m} a_j\exp(\alpha_j) = 0\] 
+
+    but some of the coefficients $a_j$ are nonzero. Clearing denominators, we can assume that the $a_j$'s are integers. Now, by the primitive element theorem, we know there is $\theta$ such that $\Q(\theta)$ which contains $\alpha_1, \ldots, \alpha_m$. Then, by choosing a splitting field extension if the field is not normal, we can assume that $\Q(\theta)/\Q(\theta)$ is a Galois extension which contains all $\alpha_1, \ldots, \alpha_m$. Let the degree of the extension be $n$. Since $\{1, \theta, \ldots, \theta^{n-1}\}$ forms a $\Q$-basis for the number field, we can suppose 
+
+    \[\alpha_j = \sum\limits_{i=0}^{n-1} r_{j,i}\theta^{i}\]
+
+    for $j = 1, \ldots, m$ and $r_{j,i} \in \Q$. We can denote the conjugates of $\theta$ (images of the $n$, $\Q$-fixing embeddings $\sigma_{i}(\theta)$) as $\theta^{(i)}$ for $i = 1, \ldots, n$. Now, 
+
+    \[{a_j}^{(k)} = \sum\limits_{i=0}^{n-1}r_{j,i}{\left(\theta^{(k)}\right)}^{i},\]
+    
+    for $j = 1,\ldots, m$ and $k = 1,\ldots, n$.
+
+    Note that each $\theta^{(k)}$ has degree $n$ so this representation of $\alpha_j^{(k)}$ is unique. Also, note that since the $\alpha_j$'s are distinct, for each $k$, ${\alpha_j}^{(k)}$ is distinct. Now, consider the product 
+
+    \[\prod\limits_{k=1}^{n} \sum\limits_{j=1}^{n} a_j \exp({\alpha_j}^{(k)}).\]
+
+    Note that since $\alpha_j = \id(\alpha_j)$, it is one of the conjugates and recall that since 
+
+    \[\sum\limits_{j=1}^{m} a_j\exp(\alpha_j) = 0,\] the entire product must also be $0$.\par
+
+    Collect like terms and rewrite the product as 
+
+    \[\prod\limits_{k=1}^{n} \sum\limits_{j=1}^{n} a_j \exp({\alpha_j}^{(k)}) = \sum\limits_{j=0}^{r} c_j \exp(\beta_j).\] 
+
+    Also, since the $a_j \in \Z$, it must be the case that $c_j \in \Z$. Furthermore, since it is the case that not all of the $a_j$'s are zero, it must be the case that there is a nonzero $c_j$. Therefore, without loss of generality, let $c_0$ be nonzero. Note that by substituting $\theta^{(i)}$ for $\theta$, the conjugates ${\alpha_j}^{(k)}$ are permuted. Therefore, by replacing $\theta$ with $\theta^{(i)}$, the original product does not change. As a consequence, it replaces $\beta_j$ by the conjugate ${\beta_j}^{(i)}$. Thus, we know that 
+
+    \[\sum\limits_{j=0}^{r}c_j \exp({\beta_j}^{(x)}) = \sum\limits_{j=0}^{r}c_j \exp({\beta_j}^{(y)}) = 0\]
+
+    for all $x, y \in \{1, \ldots, n\}$.\par 
+
+    Also, note that since $\beta_j$ are distinct, we know for all $i$, the ${\beta_{j}}^{(i)}$ are distinct. For each $\sum\limits_{j=0}^{r}c_j \exp({\beta_j}^{(x)})$, multiply it by $\exp(-{\beta_0}^{(x)})$ and for $i = 1, \ldots, n$ and $j = 1, \ldots, r$, let 
+
+    \[{\gamma_j}^{(i)} = {\beta_j}^{(i)} - {\beta_0}^{(i)}.\]
+
+    Note that since $\beta_j$'s are distinct, it must be the case that all of the $\gamma_j$ are nonzero. Therefore, after multiplying, we get for all $x, y$,
+
+    \[c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(x)}) = c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(y)}) = 0.\]
+
+    Now, note that the conjugates ${\gamma_j}^{(i)}$ are the roots of an integer polynomial after clearing the denominator of the minimal polynomial. Let the polynomial be 
+
+    \[g_j(z) = b_j \cdot \prod\limits_{i=1}^{n} \left(z - {\gamma_j}^{(i)}\right)\] for $j = 1,\ldots, r$ for some leading coefficient $b_j > 0$. Since none of the ${\gamma_j}^{(i)} = 0$, it must be the case that the constant term, $g_j(0) \neq 0$.\par
+
+    Now consider a polynomial $f(z)$ and let $F(z)$ be 
+
+    \[f(z) + \sum\limits_{k=1}^{\infty} \frac{d^k}{dz^k}f(z).\]
+
+    Therefore, we get that 
+
+    \[\frac{d}{dz} F(z) \exp(-z) = -f(z) \exp(-z)\]
+
+    and 
+
+    \[F(b) - F(0)\exp(b) = -\exp(b) \int_{0}^{b}f(z)\exp(-z) dz.\]
+
+    For $b$ above, we will substitute ${\gamma_j}^{(i)}$ and multiply each equation by $c_j$ to get
+
+\begin{align*}
+    &\sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j F({\gamma_j}^{(i)}) - F(0) \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \\
+    &= - \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz
+\end{align*}
+
+    Recall that for all $x, y$,
+
+    \[c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(x)}) = c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(y)}) = 0.\]
+
+    We can use this to say that
+
+    \begin{align*}
+    &\sum\limits_{j=1}^{r}c_j\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right) + nc_0F(0) \\
+    &= - \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz.
+    \end{align*}
+
+    Let $p$ be a prime. We will now define the polynomial $f$ as 
+    \[f(z) = \frac{{(b_1\cdots b_r)}^{prn}z^{p-1}{\left(g_j(z)\right)}^{p}}{(p-1)!}.\]
+
+    We will now try to find $p$ such that there is a contradiction. Note that since $z^{p-1}$ is in the numerator, 
+
+    \[0 = f(0) = f'(0) = \cdots = f^{(p-1)}(0) = {(b_1b_2\cdots b_r)}^{prn}\prod\limits_{j=1}^{r} {\left(g_j(0)\right)}^{p}.\]
+
+    Pick $p$ such that $p > b_j$ amd $p > g_j(0)$ constant terms for all $j = 1, \ldots, r$. This means that $p$ does not divide the nonzero integer $f^{(p-1)}(0)$. However, for $t \geq p$, $f^{(t)}(0)$ is divisible by $p$. Note that this is because $f(z)$ is a sum of powers of $z$ and the coefficient of each term in $f^{(t)}(z)$ has $t$ consecutive integers as factors from the differentiation process. For $t \geq p$, the product of $t$ consecutive integers is divisible by ${p!}$ (we can think of the quotient of the product of $t$ consecutive integers and ${p!}$ as a binomial coefficient, which is an integer). Therefore, the ${(p-1)!}$ in $f(z)$ is canceled.\par
+
+    Now, we know 
+
+    \[f^{(t)}(z) = p{(b_1\ldots b_r)}^{prn} G_t(z),\]
+
+    for some polynomial $G_t(z) \in \Z[x]$ with degree at most $prn-1$. Now, we have established that $p \mid f^{(t)}(0)$. We also therefore know that $p \nmid F(0)$. Now, if necessary, select $p$ even larger so that $p > n$ and $p > c_0$. This ensures that $p \nmid nc_0F(0)$. Recall the expression 
+
+    \[\sum\limits_{j=1}^{r}c_j\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right) + nc_0F(0) \]
+
+    and consider the term
+
+    \[\sum\limits_{j=1}^{r}c_j\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right).\] 
+
+    We will now show this term must be an integer divisible by $p$. Namely, we will show that $p$ divides
+
+    \[\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right).\]
+
+    Expanding it using the definition of $F$, we get that this is
+
+    \[\sum\limits_{i=1}^{n}f({\gamma_j}^{(i)}) + \sum\limits_{i=1}^{n}f^{(1)}({\gamma_j}^{(i)}) + \sum\limits_{i=1}^{n}f^{(2)}({\gamma_j}^{(i)}) + \cdots.\]
+
+    Note that since $f(z)$ has the factor ${\{g_j(z)\}}^{p}$, 
+
+    \[f({\gamma_j}^{(i)}) = 0, f^{(1)}({\gamma_j}^{(i)}) = 0, \ldots, f^{(p-1)}({\gamma_j}^{(i)}) = 0.\]
+
+    For the derivatives of order at least $p$, recall that 
+
+    \[f^{(t)}(z) = p{(b_1\ldots b_r)}^{prn} G_t(z),\]
+
+    so we get that 
+
+    \[\sum\limits_{i=1}^{n}{f^{(t)}}({\gamma_j}^{(i)}) = p \sum\limits_{i=1}^{n} {(b_1\ldots b_r)}^{prn} G_t({\gamma_{j}}^{(i)})\]
+
+    for $t \geq p$. Also, recall that the degree of $G_t(z)$ is at most $prn-1$ so we can conclude that each ${b_j}^{prn}$ is an integer divisible by $p$. We therefore now know that  
+
+    \[\sum\limits_{j=1}^{r}c_j\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right) + nc_0F(0) \]
+
+    are the sum of two integers, one divisible by $p$ and the other not divisible by $p$. Taking absolute values of both sides of the equation
+
+    \[
+    \sum\limits_{j=1}^{r}c_j\left(\sum\limits_{i=1}^{n} F({\gamma_j}^{(i)})\right) + nc_0F(0) \\
+= - \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz,\]
+
+    we therefore know that 
+
+    \[1 \leq \left\vert \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz\right\vert.\]
+
+    Now, we will define the following constants:
+
+    \begin{itemize}
+        \item{$m_1 := \max \vert c_j \vert$}
+        \item{$m_2 := \max \vert \exp({\gamma_{j}}^{(i)}) \vert$}
+        \item{$m_3 := \max \vert {\gamma_{j}}^{(i)} \vert$}
+    \end{itemize}
+
+    Now the follow constants will be defined as the max over the straight line path $P$ on the complex plane from $0$ to ${\gamma_{j}}^{(i)}$.
+
+    \begin{itemize}
+        \item{$m_4 := \max\limits_{z \in P} \vert \exp(-z) \vert$}
+        \item{$m_5 := \max\limits_{z \in P} \left\vert \prod\limits_{j=1}^{r} g_j(z) \right\vert$}
+    \end{itemize}
+
+    Note from these constants that ${m_3}^{p-1}$ is the maximum of $\vert z^{p-1} \vert$ over $P$. Using these constants, we will bound 
+
+    \[1 \leq \left\vert \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz\right\vert.\]
+
+    Thus, we get
+
+    \begin{align*}
+        1 \leq rnm_1m_2
+    \end{align*}
+
+\[\greenlozenge\]}
+
+\section{Main Theorem}
+\begin{mybox}
+    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
+\end{mybox}
+
+
+
+\section{Consequences}
+
+\subsection{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}}
 \begin{mybox}
     \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
         I(t) = \int_{0}^{t} e^{t-x}f(x) dx.\] Then, \[I(t) = e^t\sum\limits_{j=0}^{m}f^{(j)}(0) - \sum\limits_{j=0}^{m} f^{(j)}(t).\] where $f^{(j)}(t)$ is the $j$-th derivative of $f$ with respect to $x$ evaluated at $t$.}\par
 \end{mybox}
 
-\proof{Probably induction and integration by parts. I will fill this in later.}
-\chapter{Lindemann-Weierstrass Theorem}
-\begin{mybox}
-    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
-\end{mybox}
-\proof{}
-
 \chapter{Gelfond-Schneider Theorem}
 \section{Background}
-In this chapter, we will prove the Gelfond-Schneider Theorem. We will introduce two lemmas to help prove this.\par
+David Hilbert posed 23 unsolved problems in 1900. The seventh problem asks whether an algebraic number $\alpha \neq 0, 1$ raised to an irrational algebraic $\beta$ is transcendental. The Gelfond-Schneider theorem, proved in 1934 by Alexander Gelfond and 1935 by Theodor Schneider independently, affirmatively answers this problem. Furthermore, they showed that $\beta$ need not be irrational; it can be any complex number not in $\Q$. Carl Ludwig Siegel's simplification of Gelfond's proof is recorded in the book \enquote{Transcendental Numbers} pages 75--84 and the proof in this text is roughly based off of that.\par 
 
-\begin{mybox}
-    \lemma{(Siegel's Lemma) Consider the following system of $m$ equations with $n$ unknowns with $0 < m < n$: 
-    \[\begin{pmatrix}
-        a_{1,1} & \cdots & a_{1,n} \\
-        \vdots & \ddots & \vdots \\
-        a_{m,1} & \cdots & a_{m,n} 
-    \end{pmatrix}
-    \begin{pmatrix}
-        x_1 \\ \vdots \\ x_n
-    \end{pmatrix} = \begin{pmatrix}
-        0 \\ \vdots \\ 0
-    \end{pmatrix},
-\] and $a_{i,j} \in \Z$. We write this compactly as $A\mathbf{x} = \mathbf{0}$. Let $a \in \Z$, $a > 0$, and $a \geq \vert a_{i,j} \vert$ for all $1 \leq i \leq m$ and $1 \leq j \leq n$. Then, the system of equations has a nontrivial solution in ${\Z}^n$ for $\mathbf{x}$, such that for all $x_j$, \[\vert x_j \vert < 1 + {(na)}^{\frac{m}{n-m}}.\]} 
-\end{mybox}
-
-\proof{Let $\mathbf{x}$ be a column vector of height $n$ and let $\mathbf{y}$ be a column vector of height $m$ where $A\mathbf{x} = \mathbf{y}$. Let the entries of $\mathbf{y}$ be $y_k$ where $1 \leq k \leq m$. A solution corresponds to finding an $\mathbf{x}$ such that $\mathbf{y}$ is the zero vector.\par
-
-
-\defn{$\mathbf{x}$ is a \vocab{lattice point} if it is in $\Z^{n}$.}\par
-
-Note that if $\mathbf{x}$ is a lattice point, then since the entries of $A = (a_{i,j})$ are integers, $\mathbf{y}$ will also be a lattice point.\par
-
-Let $q$ be any positive integer. Let $C$ be the $n$-dimensional hypercube centered at the origin of side length $2q$. Equivalently, this is all points with coordinates in $[-q, q]$ or points whose coordinate's absolute values are upper bounded by $q$. Now, let $\mathbf{x}$ range through all the ${(2q+1)}^{n}$ lattice points in $C$ (each of the $n$ coordinates is in $\{-q, -q + 1, \ldots, 0, \ldots, q-1, q\}$, which is a set of $2q+1$ options). We can now upper bound each of the $y_k$ coordinates in $\mathbf{y}$ via
-
-\begin{align*}
-    \vert y_k \vert &= \left\vert \sum_{i=1}^{n} a_{k,j}x_j \right\vert \\
-                    &\leq \sum_{i=1}^{n} \vert a_{k,j}x_j \vert \\
-                    &= \sum_{i=1}^{n} \vert a_{k,j} \vert \vert x_j \vert \\
-                    &\leq \sum_{i=1}^{n} aq \\
-                    &= naq
-\end{align*}
-
-Therefore, we know that the coordinates of $\mathbf{y}$ are in $\{-naq, -naq+1, \ldots, 0, \ldots, naq-1, naq+1\}$ and so there are ${(2naq + 1)}^{n}$ possible lattice points $\mathbf{y}$ could be as $\mathbf{x}$ ranges through the lattice points of $C$.\par
-
-As of now, we selected $q$ to be any positive integer. However, to finish the proof of this lemma, we would like to use the pigeonhole principle to say that two of the inputs $\mathbf{x'}, \mathbf{x''}$ in $C$ correspond to outputs that coincide. That is to say, the ${(2q+1)}^{n}$ input points outnumber the ${(2naq+1)}^{m}$ possible output locations. In order to do this, we select $q$ to be the unique integer such that: \[{(na)}^{\frac{m}{n-m}}-1 \leq 2q < {(na)}^{\frac{m}{n-m}} + 1.\] This means $2q$ is the even integer in the interval of length $2$. From the left inequality, we get ${(na)}^{m} \leq {(2q+1)}^{n-m}$. Now, 
-\begin{align*}
-    {(2naq + 1)}^{m} &= {\left(na \cdot \frac{2naq + 1}{na}\right)}^{m} \\
-                     &= {(na)}^{m}{\left(2q + \frac{1}{na}\right)}^{m} \\
-                     &< {(na)}^{m}{\left(2q + 1\right)}^{m} \\
-                     &\leq {(2q+1)}^{n-m}{(2q+1)}^{m} \\
-                     &= {(2q+1)}^{n}.
-\end{align*}
-
-Thus, we get that there are solutions $\mathbf{x'} \neq \mathbf{x''}$ such that $A\mathbf{x'} = A\mathbf{x''}$. Thus, $A(\mathbf{x'} - \mathbf{x''}) = \mathbf{0}$. Note that if we let $x'_j, x''_j$ denote the $j$-th coordinate of $\mathbf{x'}, \mathbf{x''}$ respectively, \[\vert x'_j - x''_j \vert \leq \vert x'_j \vert + \vert x''_j \vert \leq q + q = 2q < {(na)}^{\frac{m}{m-n}} + 1,\]
-so $\mathbf{x'} - \mathbf{x''}$ is a nontrivial solution to $A\mathbf{x} = 0$ we were looking for.\par
-
-\[\greenlozenge\]}
-
-Now, we will generalize the previous lemma.\par
+\subsection{Siegel's Lemma Generalized for Number Fields}
+Now, we will generalize Siegel's lemma to help prove the Gelfond-Schneider theorem.\par
 
 \begin{mybox}
  \lemma{Consider the following system of $p$ equations with $q$ unknowns with $0 < p < q$: 
@@ -951,6 +1260,7 @@ This proves the Gelfond-Schneider theorem because it implies that it cannot be t
 
 \[\greenlozenge\]
 
+\newpage
 \section{Consequences}
 
 \begin{mybox}
