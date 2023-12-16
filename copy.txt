@@ -1,0 +1,26 @@
+\begin{frame}
+        \frametitle{Baker's Theorem}
+        \begin{center}
+        \begin{mybox}
+            \textbf{Baker's Theorem:} Let nonzero $\alpha_1, \ldots, \alpha_n \in \A$. Then, if $2\pi i, \log(\alpha_1), \ldots, \log(\alpha_{n})$ are $\Q$-linearly independent, they are also $\A$-linearly independent.
+        \end{mybox}
+        Alan Baker later showed it the statement is still true without $2 \pi i$. Auxiliary function was \[F(z_1, \ldots, z_n) = \] \[\sum\limits_{\lambda_1 = 0}^{L}\sum\limits_{\lambda_2=0}^{L} \cdots \sum\limits_{\lambda_n = 0}^{L}p(\lambda_1, \lambda_2, \ldots, \lambda_n)\alpha_1^{(\lambda_1 + \lambda_n\beta)z_1}\cdots \alpha_{n-1}^{(\lambda_{n-1}+\lambda_{n}\beta)z_{n-1}}\]
+        \end{center}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Corollary}
+        Baker's theorem generalizes the Lindemann-Weierstrass and Gelfond-Schneider theorems. For $a_1, \ldots, a_n \in \A$ not $0$ or $1$, and $\beta_1, \ldots, \beta_n \in \A \setminus \Q$ and $\Q$-linearly independent, ${a_1}^{\beta_1}\cdots {a_n}^{\beta_n}$ is transcendental.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Schanuel's Conjecture}
+        \begin{center}
+        \begin{mybox}
+            \textbf{Schanuel's Conjecture:} If $z_1, \ldots, z_n$ be $\Q$-linearly independent, $\trdeg(\Q(z_1, \ldots, z_n, e^{z_1}, \ldots, e^{z_n})/\Q) \geq n$. 
+        \end{mybox}
+        No progress for 60 years. Setting $z_1 = 1, z_2 = \pi i$ shows algebraic independence of $e$ and $\pi$. Setting $z_1 = 1$, $z_2 = e$ shows transcendence of $e^{e}$.
+        Setting $z_1 = \log \log \pi, z_2 = 1 + \log \log \pi, z_3 = \log \pi, z_4 = e \log \pi, z_5 = i \pi$, one can show $\pi^{e}$ is transcendental. 
+        \end{center}
+    \end{frame}
+

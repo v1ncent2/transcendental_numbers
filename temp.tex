@@ -208,6 +208,7 @@ Finally, we need to show that $B$ and $B'$ are disjoint. Note that $B' \subseteq
 
 \proof{Otherwise, any size $k$ set $B := \{\beta_1, \ldots, \beta_k\} \subseteq \{\alpha_1, \ldots, \alpha_n\}$ will contain an algebraic number so it cannot be algebraically independent over $\Q$.\par \[\greenlozenge\]}
 
+\newpage
 \subsection{Number Fields}
 
 Now we will consider some important facts about number fields:\par
@@ -251,7 +252,7 @@ The proof for multiplication is similar by replacing $+$ with $\cdot$ instead.
 \proof{We know that $\mathcal{O}_K$ is a free $\Z$-module of rank $n := [K : \Q]$ so let $\{\beta_1, \ldots, \beta_n\}$ be a basis for $\mathcal{O}_K$ as a $\Z$-module. To show that this is a basis for $K$, we will show that this set $\Q$-spans $K$ and is $\Q$-linearly independent.\par
 
 First, we will show it is spanning. Let $\alpha \in K$. Then, find positive $c \in \Z$  such that $c\alpha \in \mathcal{O}_K$. Now, for $\lambda_1, \ldots, \lambda_n \in \Z$, we can write \[c\alpha = \lambda_1 \beta_1 + \cdots + \lambda_n \beta_n.\] Therefore, since $c > 0$, and is an integer, we can divide by $c$ to get \[\alpha = \frac{\lambda_1}{c} \beta_1 + \cdots + \frac{\lambda_n}{c} \beta_n.\] Since $\frac{\lambda_i}{c} \in \Q$, we know that the basis $\Q$-spans $K$. Now, we will show it is $\Q$-linearly independent. Suppose for contradiction \[0 = \lambda_1\beta_1 + \cdots + \lambda_n\beta_n,\] where $\lambda_i \in \Q$ but there is a nonzero $\lambda_i$. Then, we can multiply both sides by the least common multiple of the demoninators of the $\lambda_i$ to get that the $\lambda_i$'s are not $\Z$-linearly independent, which is a contradiction.\par \[ \greenlozenge \]}
-
+\newpage
 \subsection{Polynomials}
 Now, we will talk about (formal) derivatives of polynomials and how it relates to the multiplicity of a root.\par
 
@@ -274,12 +275,12 @@ Therefore, we get that ${(x-\alpha)}^{m-1} \mid p'(x)$ so $p'(x)$ has the root $
 Now, we want to show that $p'(x)$ has root $\alpha$ with multiplicity at most $m-1$. We need to show that $x-\alpha$ does not divide $\left(mq(x) + (x-\alpha)q'(x)\right)$. We can take this expression modulo $(x-\alpha)$ to get that it is equivalent to $mq(x)$. Note that $(x-\alpha) \nmid q(x)$, so we need $m > 0$. This is true when $\characteristic(R)$ is not a factor of $m$ (otherwise the entire expression is zero). Therefore, we have multiplicity at most $m-1$. Since $\characteristic(\C) = 0$, we know this rule applies to complex polynomials.\par
 \[ \greenlozenge \]}
 
+\newpage
 \subsection{Linear Algebra}
 Now, we will introduce some facts from linear algebra.\par
 
 First, we will introduce Siegel's lemma, which uses the pigeonhole principle to find a bound for the solution to a system of equations. This is used by Alexander Gelfond, Theodor Schneider, and Alan Baker to \enquote{construct} their auxiliary functions. The functions are not constructed explicitly, but this lemma is used to show there exists an auxiliary function with certain desirable properties. For example, it may be used to construct a function with a zero of very high multiplicity.\par
 
-\newpage
 \begin{mybox}
     \lemma{(Siegel's Lemma) Consider the following system of $m$ equations with $n$ unknowns with $0 < m < n$: 
     \[\begin{pmatrix}
@@ -341,7 +342,7 @@ so $\mathbf{x'} - \mathbf{x''}$ is a nontrivial solution to $A\mathbf{x} = 0$ we
 \]
 }
 with nonzero complex elements $x_i^{j}$ in the $i$-th row and $j+1$-th column column where $0 \leq j \leq n-1$ and $1 \leq i \leq n$.\par
-\newpage
+
 \begin{mybox}
     \theorem{Let $V = V(x_1, \ldots, x_n)$ be the square Vandermonde matrix of size $n$. Then, the determinant of the square Vandermonde matrix is \[\prod\limits_{1 \leq i < j \leq n} (x_j - x_i).\] Therefore, the determinant vanishes if and only if $x_i = x_j$ for any $i \neq j$.} 
 \end{mybox}
@@ -510,6 +511,8 @@ Let the function $\Gamma: \{z : \mathfrak{R}(z) > 0\} \to \C$ via \[\Gamma(z) = 
                                                                &= \pi.
     \end{align*} Therefore, our original integral evaluates to $\sqrt{\pi}$.
 }
+
+\newpage
 \subsection{Integration}
 We will make use of the following facts:
 
@@ -523,7 +526,7 @@ We will make use of the following facts:
 
 \note{The proof of this theorem uses the fact that the integral over a closed rectifiable curve is equal to the integral over a very small circle. In this case, for a circle $\mathcal{C}$ in the complex plane centered at $a$, \[\oint_{\mathcal{C}} \frac{1}{z-a} dz = 2\pi i.\] Then, the proof considers the value \[\left\vert \frac{1}{2\pi i} \oint_{\mathcal{C}} \frac{f(z)}{z-a} dz - f(a) \right\vert,\] while shrinking the radius of the circle and shows that this goes to zero.\par}
 
-
+\newpage
 \defn{The \vocab{residue} of $f$ at a point is defined to be \[\Res(f, a_k) = \frac{1}{2\pi i} \oint_{\gamma} f(z) dz.\] for some (positively oriented) curve $\gamma$ around $a_k$.}
 
 \begin{mybox}
@@ -585,6 +588,7 @@ Rearranging terms we can let $C(\alpha) = \min\left\{1, \frac{C}{M(\alpha)}\righ
                                                & = \frac{1}{{\left(q_k\right)}^{k}}
 \end{align*} \[\greenlozenge\]}
 
+\newpage
 \subsection{Minimal Polynomial as Auxiliary Function}
 
 In the previous subsection, we found a particular Liouville number. However, we can use similar proof to show that 
@@ -593,13 +597,14 @@ In the previous subsection, we found a particular Liouville number. However, we 
 
 Note this uses an \vocab{auxiliary function}, the minimal polynomial of an algebraic number, to determine conditions for transcendence. The notion of an auxiliary function is not well defined but in general, it is a function that has some desirable properties (like having zeroes of high multiplicity) to show transcendence.\par
 
+Another way to use the minimal polynomial as an auxiliary function is to consider how a polynomial allows for approximation of its roots using polynomial root finding algorithms from numerical methods. This implies that all non-computable numbers are transcendental. For example, \vocab{Chaitin's constant} or the \vocab{Halting probability} is transcendental. Vaguely, if we put a probability distribution over the set of all programs (which is countable), the probability of selecting a halting program is Chaitin's constant. It can be shown that since the halting problem is undecidable, it cannot be the case that Chaitin's constant is computable, so it is transcendental.\par
 
 We will show in the next chapter a powerful theorem for determining the transcendence of well known constants $e$ and $\pi$.\par
 
 \chapter{Lindemann-Weierstrass Theorem}
 
 \section{Background}
-In this chapter, we will prove the Lindemann-Weierstrass theorem. This proof is based off of the works of Ferdinand von Lindemann.\par
+In this chapter, we will prove the Lindemann-Weierstrass theorem. This proof is based off of the work of Ferdinand von Lindemann.\par
 
 First, we will start by proving a weaker version of the theorem.
 
@@ -670,7 +675,7 @@ First, we will start by proving a weaker version of the theorem.
     &= - \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz
 \end{align*}
 
-    Recall that for all $x, y$,
+    This will be our auxiliary function. Recall that for all $x, y$,
 
     \[c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(x)}) = c_0 + \sum\limits_{j=1}^{r} c_j\exp({\gamma_j}^{(y)}) = 0.\]
 
@@ -751,33 +756,106 @@ First, we will start by proving a weaker version of the theorem.
         \item{$m_5 := \max\limits_{z \in P} \left\vert \prod\limits_{j=1}^{r} g_j(z) \right\vert$}
     \end{itemize}
 
-    Note from these constants that ${m_3}^{p-1}$ is the maximum of $\vert z^{p-1} \vert$ over $P$. Using these constants, we will bound 
+    Note from these constants that ${m_3}^{p-1}$ is the maximum of $\vert z^{p-1} \vert$ over $P$. Also, note that these constants are independent of $p$.
+ Using these constants, we will bound 
 
     \[1 \leq \left\vert \sum\limits_{j=1}^{r} \sum\limits_{i=1}^{n} c_j\exp\left({\gamma_j}^{(i)}\right) \int_{0}^{{\gamma_j}^{(i)}} f(z) \exp(-z) dz\right\vert.\]
 
-    Thus, we get
+    Thus, we get 
 
     \begin{align*}
-        1 \leq \frac{rnm_{1}m_{2}m_{3}m_{4}{(b_{1}b_{2} \cdots b_{r})}^{prn}{m_3}^{p-1}{m_5}^{p}}{(p-1)!}
+        1 &\leq \frac{rnm_{1}m_{2}m_{3}m_{4}{(b_{1}b_{2} \cdots b_{r})}^{prn}{m_3}^{p-1}{m_5}^{p}}{(p-1)!} \\
+          &= \frac{rn{m_1}{m_2}{m_4}{\left({b_1}^{rn}{b_2}^{rn}\cdots {b_r}^{rn}{m_3}{m_5}\right)}^{p}}{(p-1)!}
     \end{align*}
+
+    However, as we send $p \to \infty$, the denominator grows faster than the numerator, so the entire expression goes to $0$, which is a contradiction.\par
+    
+\[\greenlozenge\]}
+\newpage
+\section{Main Theorem}
+\begin{mybox}
+    \theorem{(Lindemann-Weierstrass Theorem) Suppose $\{\alpha_1, \ldots, \alpha_n\} \subseteq \A$. Then, $e^{\alpha_1}, \ldots, e^{\alpha_n}$ are $\A$-linearly independent. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
+\end{mybox}
+
+\proof{This follows quickly from the theorem that was just proved. Suppose for contradiction that there was a linear combination 
+
+\[\sum\limits_{j=1}^{n} a_j\exp(\alpha_j) = 0\]
+
+such that the $a_j \in \A$ are not all zero. Assume without loss of generality that none of the $a_j$'s are zero. Like in the proof of the previous theorem, we construct the Galois extension $\Q(\theta)/\Q(\alpha_1, \ldots, \alpha_n)$. Again, all of the conjugates ${\alpha_j}^{(i)}$are in this field. Suppose the degree of the new field is $q$ over $\Q$. Note that unlike the previous proof, the extension field is determined by $\alpha_j$'s instead of $\exp(\alpha_j)$. We then consider the expression 
+
+\[\prod_{i=1}^{q} \left({a_1}^{(i)} \exp(\alpha_1) + {a_2}^{(i)} \exp(\alpha_2) + \cdots + {a_n}^{(i)} \exp(\alpha_n)\right) = 0.\]
+
+Considering coefficients ${a_{j}}^{(i)}$ as polynomials in $\theta^{(i)}$, the product has coefficients which are symmetric in $\theta^{(1)}, \ldots, \theta^{(q)}$ so they are rational. In this product, since there are nonzero rational coefficients, we know it does not vanish identically. Now, we can apply the same argument from the last proof to argue that this is not possible.\par
 
 \[\greenlozenge\]}
 
-\section{Main Theorem}
-\begin{mybox}
-    \theorem{(Lindemann-Weierstrass Theorem) Suppose \[\alpha_1, \ldots, \alpha_n\] are algebraic numbers that are linearly independent over $\Q$. Then, \[ e^{\alpha_1}, \ldots, e^{\alpha_n} \] are linearly independent over the algebraic numbers. In other words, the extension field $\Q(e^{\alpha_1}, \ldots, e^{\alpha_n})$ has transcendence degree $n$ over $\Q$.}
-\end{mybox}
-
-
-
+\newpage
 \section{Consequences}
 
 \subsection{Transcendence of \texorpdfstring{$e$}{LaTeX} and \texorpdfstring{$\pi$}{LaTeX}}
+
+
 \begin{mybox}
-    \lemma{Let $f(x)$ be a real polynomial with degree $m$. Let \[
-        I(t) = \int_{0}^{t} e^{t-x}f(x) dx.\] Then, \[I(t) = e^t\sum\limits_{j=0}^{m}f^{(j)}(0) - \sum\limits_{j=0}^{m} f^{(j)}(t).\] where $f^{(j)}(t)$ is the $j$-th derivative of $f$ with respect to $x$ evaluated at $t$.}\par
+\theorem{$e$ and $\pi$ are transcendental.}
 \end{mybox}
 
+\proof{By the Lindemann-Weierstrass theorem, for nonzero $\alpha \in \A$, $\trdeg(\Q(e^{\alpha})/\Q)$ is $1$. Therefore, $e^{\alpha}$ must be transcendental. Setting $\alpha = 1$, we get that $e$ is transcendental. Now, suppse for contradiction that $\pi$ is algebraic. Since $\A$ is a field, $\pi i$ is algebraic. Thus, by the Lindemann-Weierstrass theorem, $e^{\pi i} = -1$ is transcendental, which is a contradiction.\par 
+\[\greenlozenge\]}
+
+\begin{mybox}
+    \theorem{For nonzero $\alpha \in \A$, $e^{\alpha}$, $\sin \alpha$, $\cos \alpha$, $\tan \alpha$, $\sinh \alpha$, $\cosh \alpha$, $\tanh \alpha$ are all transcendental.}
+\end{mybox}
+
+\proof{Note that we consider the case for $e^{\alpha}$ in the previous theorem. Suppose for contradiction that $\sin \alpha$ is algebraic. Then, let $a = \sin \alpha$. Note that \[e^{i\alpha} - e^{-i\alpha} - 2iae^{0} = 0.\] We therefore established $\A$-linear dependence between $e^{i\alpha}$, $e^{-i\alpha}$, and $e^{0}$, which contradicts the Lindemann-Weierstrass theorem. Now, for $\sinh$, assume that $a = \sinh \alpha$ was algebraic. Then  
+
+    \[e^{\alpha} - e^{-\alpha} - 2a = 0.\]
+
+    Which again is a contradiction. The transcendence proof for the rest of the trigonometric functions are similar by using the correct identity.\par
+
+\[\greenlozenge\]}
+\newpage
+\begin{mybox}
+    \theorem{For nonzero $\alpha \in \A \neq 1$, $\log \alpha$, $\arcsin \alpha$, $\arccos \alpha$, $\arctan \alpha$, $\sinh^{-1} \alpha$, $\cosh^{-1} \alpha$, $\tanh^{-1} \alpha$ are all transcendental.}
+\end{mybox}
+
+\proof{We need the $\alpha \neq 1$ condition for the cases where there the functions are not defined (the multivalued functions). Suppose for contradiction that $\log \alpha = a$ for some algebraic $\A$. Then, $e^{a} = \alpha$ is transcendental, which is a contradiction. For each of the inverse functions, we do the same thing. For example if $\arcsin \alpha = a \in \A$, then $\sin a = \alpha$ is transcendental. The proof for the rest are similar. 
+
+\[\greenlozenge\]}
+
+\newpage
+\subsection{Transcendence for \texorpdfstring{$\Gamma, B$}{LaTeX} Functions}
+\begin{mybox}
+    \theorem{$\Gamma\left(\frac{1}{2}\right)$ is transcendental.}
+\end{mybox}
+
+\proof{Recall that $\Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}$. Note that since $x \mapsto \sqrt{x}$ is an algebraic function, it cannot be the case that $\sqrt{\pi}$ is algebraic since that would imply $\pi$ is algebraic. As a corollary of the Lindemann-Weierstrass theorem, we know that $\pi$ is transcendental.\par 
+
+
+\[\greenlozenge\]}
+
+\begin{mybox}
+    \theorem{$\Gamma\left(\frac{5}{6}\right)$, $\Gamma\left(\frac{3}{4}\right)$, $\Gamma\left(\frac{2}{3}\right)$, $\Gamma\left(\frac{1}{6}\right)$, $\Gamma\left(\frac{1}{3}\right)$, $\Gamma\left(\frac{1}{4}\right)$ are transcendental.}
+\end{mybox}
+
+\note{This was proven by Gregory Volfovich Chudnovsky in 1978. Transcendence of most values of $\Gamma$ are still unknown. In 1996, Yuri Nesterenkoshow that $\Gamma\left(\frac{1}{4}\right)$, $\pi$, and $e^{\pi}$ are algebraically independent over $\Q$.}
+
+\defn{The \vocab{beta function} is 
+
+\[B(z_1, z_2) = \int_{0}^{1} t^{z_1 - 1} {(1-t)}^{z_2 - 1} dt = \frac{\Gamma(z_1)\Gamma(z_2)}{\Gamma(z_1 + z_2)},\] and is defined on $\C^{2}$ with both components having positive real parts.}
+
+\begin{mybox}
+    \theorem{If $a, b, a+b \in \Q \setminus \Z$, then $B(a, b)$ is transcendental.\par}
+\end{mybox}
+
+\note{This was proven in 1985 by Wolfart and Wustholtz.}
+\newpage
+\subsection{Transcendence for the Lambert \texorpdfstring{$W$}{LaTeX} Function}
+\begin{mybox}
+    \theorem{Let $\alpha \in \A$ be nonzero. Then the value at any branch of $W(\alpha)$ is transcendental. In particular, the omega constant, $\Omega = W(1)$ is transcendental.}
+\end{mybox}
+
+\proof{Let $w$ be any value of $W(\alpha)$. Thus, Then, $we^{w} = \alpha$. Suppose for contradiction that $w$ is algebraic. Then, by the Lindemann-Weierstrass theorem, we know $e^{w}$ is transcendental. Then, the product of a nonzero algebraic and transcendental number is transcendental so $we^{w}$ is transcendental, which is a contradiction.\par
+\[\greenlozenge\]}
 \chapter{Gelfond-Schneider Theorem}
 \section{Background}
 David Hilbert posed 23 unsolved problems in 1900. The seventh problem asks whether an algebraic number $\alpha \neq 0, 1$ raised to an irrational algebraic $\beta$ is transcendental. The Gelfond-Schneider theorem, proved in 1934 by Alexander Gelfond and 1935 by Theodor Schneider independently, affirmatively answers this problem. Furthermore, they showed that $\beta$ need not be irrational; it can be any complex number not in $\Q$. Carl Ludwig Siegel's simplification of Gelfond's proof is recorded in the book \enquote{Transcendental Numbers} pages 75--84 and the proof in this text is roughly based off of that.\par 
@@ -954,8 +1032,19 @@ From the conclusion of Siegel's lemma, the system of equations has a nontrivial 
     \theorem{(Gelfond-Schneider Theorem) Let $\alpha$ and $\beta$ be algebraic numbers such that $\alpha \notin \{0, 1\}$ and $\beta \in \C \setminus \Q$. Then, any value of ${\alpha}^{\beta}$ is transcendental.}\par
 \end{mybox}
 
-\proof{We will break this proof into two main parts. In the first part, we will find an auxiliary function with high a multiplicity root based off of the contradictory assumption that $\alpha, \beta, \gamma$ are all algebraic. We will not explicitly construct the function with such a property but show that it exists, using the generalized version of Siegel's lemma for number fields. In the second part, we will find a $\zeta$ that does not vanish past a high number of derivatives of the auxiliary function, such that $\zeta$ has a bounded norm. However, we will show that we can set that norm arbitarily large, independent of the underlying number field, and dependent only on the auxiliary function we started with. This will lead to a contradiction and imply $\gamma$ cannot be algebraic.
+\proof{We will break this proof into two main parts. In the first part, we will find an auxiliary function with high a multiplicity root based off of the contradictory assumption that $\alpha, \beta, \gamma$ are all algebraic. We will not explicitly construct the function with such a property but show that it exists, using the generalized version of Siegel's lemma for number fields. In the second part, we will find a $\zeta$ that does not vanish past a high number of derivatives of the auxiliary function, such that $\zeta$ has a bounded norm. However, we will show that we can set that norm arbitarily large, independent of the underlying number field, and dependent only on the auxiliary function we started with. This will lead to a contradiction and imply $\gamma$ cannot be algebraic. Here is an example of a function that is a sum of exponentials. Note that this function is entire so the graph does not look strange. However, the assumption that $\gamma$ is algebraic will make the an auxiliary function of this form behave strangely around roots.
 
+    \begin{center} 
+    \begin{tikzpicture} 
+
+\begin{scope}
+    \clip [rounded corners=.7cm] (0,0) rectangle coordinate (centerpoint) (7,7cm); 
+    \node [inner sep=0pt] at (centerpoint) {\includegraphics[width=10cm]{img/domain.png}}; 
+\end{scope}
+
+    \end{tikzpicture}
+\end{center}
+\newpage
     \subsection{Existence of Auxiliary Function} Assume for contradiction that as per the conditions of the theorem, $\alpha, \beta \in \A$ where $\alpha \neq 0, 1$ and $\beta \notin \Q$, but $\alpha^{\beta} \in \A$. Let $\gamma$ be a value of ${\alpha}^{\beta} = \exp(\beta \log \alpha)$. Since we are assuming for contradiction that $\alpha, \beta$, and $\gamma$ are all algebraic, we will assume there is a number field $K$ of finite degree $h$ over $\Q$ which contains $\alpha, \beta$, and $\gamma$. Using $h$, we will describe the following constants $m,q,n,t$ with the following properties:
 
     \begin{enumerate}
@@ -1274,20 +1363,95 @@ Note, we cannot use the direct application of the Gelfond-Schneider theorem for 
 For $e^{-\frac{\pi}{2}}$, we can use Euler's identity as before to get ${\left(e^{-\frac{\pi i}{2}}\right)}^{i} = i^i$. Therefore, this is also transcendental. We can also use the fact that $e^{\pi}$ is transcendental and the function $x \mapsto x^{-\frac{1}{2}}$ is an algebraic function. Therefore, $e^{-\frac{\pi}{2}}$ must be transcendental.\par
 \[\greenlozenge\]}
 
+\newpage
 \begin{mybox}
     \theorem{Let $a, b \in \Z$ be positive such that they are not powers of the same positive integer and $a \neq 1$. Then $\log_{b}(a)$ is transcendental.}
 \end{mybox}
 \proof{Let $c = \log_b(a)$. Then, ${b}^{c} = a$. Note that since $a \neq 1$ and is positive, $b$ is neither $0$ nor $1$. Then, we know that since $a \in \Z$, it cannot be transcendental. Thus, the hypothesis of the Gelfond-Schneider theorem fails. We know that $b$ is an integer not in $\{0, 1\}$ so it must be the case that either $c \in \Q$ or $c \notin \A$. Suppose for contradiction that $c \in \Q$ so $c = \frac{p}{q}$ for integers $p, q$ and $q$ is nonzero. Then, since $\log_{b}(a) = \frac{p}{q}$, we know $b^{\frac{p}{q}} = a$ so $b^{p} = a^{q}$. From this, we can tell that $p$ must also be nonzero since $a \neq 1$ and $q \neq 0$. However, since $a$ and $b$ are not powers of the same positive integer, there is prime $r$ such that $r \mid a$, but $r \nmid b$. Thus, $\nu_{r}(a^{p}) > 0$, but $\nu_{r}(b^{q}) = 0$, which is a contradiction. This means $c = \log_{b}(a)$ must be transcendental.\par \[ \greenlozenge \]}
 \chapter{Baker's Theorem}
+\section{Baker 1966}
 \begin{mybox}
-    \theorem{(Baker's Theorem) Let $\mathbb{L} = \left\{\lambda \in \C : e^{\lambda} \in \overline{\Q}\right\}$. Then, if \[\lambda_1, \ldots, \lambda_n \in \mathbb{L}\] are linearly independent over $\Q$, }
+    \theorem{(Baker's 1966 Theorem) Let nonzero $\alpha_1, \ldots, \alpha_n \in \A$. Then, if $2\pi i, \log(\alpha_1), \ldots, \log(\alpha_{n})$ are $\Q$-linearly independent, they are also $\A$-linearly independent.}
 \end{mybox}
+\note{This proof uses the auxiliary function
+
+\[F(z_1, \ldots, z_n) = \] \[\sum\limits_{\lambda_1 = 0}^{L}\sum\limits_{\lambda_2=0}^{L} \cdots \sum\limits_{\lambda_n = 0}^{L}p(\lambda_1, \lambda_2, \ldots, \lambda_n)\alpha_1^{(\lambda_1 + \lambda_n\beta)z_1}\cdots \alpha_{n-1}^{(\lambda_{n-1}+\lambda_{n}\beta)z_{n-1}}\]
+
+in a very similar way to the Gelfond-Schneider theorem. In particular, it uses Siegel's lemma to show the existence of this function.}
+
+\newpage
+\section{Baker 1967a}
+\begin{mybox}
+    \theorem{(Baker's 1967a Theorem) Let nonzero $\alpha_1, \ldots, \alpha_n \in \A$. Then, if $\log(\alpha_1), \ldots, \log(\alpha_{n})$ are $\Q$-linearly independent, they are also $\A$-linearly independent.}
+\end{mybox}
+\note{Baker later showed how to remove the $2\pi i$ from the previous proof by changing the conditions at the conclusion.}
+
+\newpage
+\section{Baker 1967b}
+\begin{mybox}
+    \theorem{(Baker's 1967b Theorem)  Let nonzero $\alpha_1, \ldots, \alpha_n \in \A$. Then if $\log(\alpha_1), \ldots, \log(\alpha_{n})$ are $\Q$-linearly independent, and $\beta_0, \beta_1, \ldots, \beta_n$ are nonzero algebraic numbers, then 
+    \[\left\vert \beta_0 + \beta_1\log(\alpha_1) + \cdots + \beta_n\log(\alpha_n) \right\vert > H^{-C}\] where $H$ is the maximum of the heights of the $\beta_i$'s and $C$ is effectively computable depending on $n$, $\lambda_i$'s, and the maximum degrees of $\beta$.}
+\end{mybox}
+\note{This was the inequality that resulted from analyzing the auxiliary function in Baker 1966.}
+
+\newpage
+\section{Consequences}
+Baker's theorem generalizes the Lindemann-Weierstrass and Gelfond-Schneider theorems. For $a_1, \ldots, a_n \in \A$ not $0$ or $1$, and $\beta_1, \ldots, \beta_n \in \A \setminus \Q$ and $\Q$-linearly independent, ${a_1}^{\beta_1}\cdots {a_n}^{\beta_n}$ is transcendental.\par
 \chapter{Schanuel's Conjecture}
 \begin{mybox}
-    \conjecture{(Schanuel's Conjecture) Suppose we have $n$ complex numbers \[z_1, \ldots, z_n\] that are linearly independent over $\Q$. Then, $\Q(z_1, \ldots, z_n, e^{z_1}, \ldots, e^{z_n})$ has transcendence degree at least $n$ over $\Q$.} 
+    \conjecture{(Schanuel's Conjecture) Suppose we have $n$ complex numbers \[z_1, \ldots, z_n\] that are linearly independent over $\Q$. Then, $\Q(z_1, \ldots, z_n, e^{z_1}, \ldots, e^{z_n})$ has transcendence degree at least $n$ over $\Q$.}
 \end{mybox}
+\newpage
+\section{Consequences}
+This proves most questions in transcendental number theory. Setting $z_1 = 1, z_2 = \pi i$ shows algebraic independence of $e$ and $\pi$. Setting $z_1 = 1$, $z_2 = e$ shows transcendence of $e^{e}$.
+        Setting $z_1 = \log \log \pi, z_2 = 1 + \log \log \pi, z_3 = \log \pi, z_4 = e \log \pi, z_5 = i \pi$, one can show $\pi^{e}$ is transcendental. 
+\newpage
+\section{Converse Conjecture}
+\begin{mybox}
+    \theorem{(Converse Schanuel conjecture) If $F$ is a countable field with charactersitic $0$, $e: F \to F$ is a field homomorphism from the additive group to the multiplicative group whose kernel is cyclic, and \[\trdeg(\Q(x_1, \ldots, x_n, e(x_1), \ldots, e(x_n))/\Q) \geq n,\]then there is a field homomorphism $h : F \to \C$ such that $h(e(x)) = \exp(h(x))$ for all $x \in F$.}
+\end{mybox}
+
+\note{This is denoted as the converse and is also an open problem.}
+
+\newpage
+\section{Progress}
+In 1971, James Ax proved a similar statement of the conjecture for formal power series. That is, for any $n$ formal power series $f_1, \ldots, f_n \in t\C[[t]]$ which are $\Q$-linearly independent, the field extension $\C(t, f_1, \ldots, f_n, \exp(f_1), \ldots, \exp(f_n))$ has transcendence degree at least $n$ over $\C(t)$.\par
+
+In 2004, Boris Zilber constructed an exponential field using methods from model theory with Schanuel's conjecture as an axiom. If it can be shown that that is isomorphic to $\C$, that would imply Schanuel's conjecture.
 
 \backmatter{}
 \printindex
 \newpage{}
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below, you may need to use multiple columns and/or reduce the font size further if you have many references
+		\footnotesize % Reduce the font size in the bibliography
+	
+		\bibitem[Niven, 1956]{p1}
+			 Ivan Niven
+             \newblock{Irrational Numbers}
+
+        \bibitem[Conway, 1996]{p2}
+            John Conway
+            \newblock{The Look and Say Sequence}
+
+		\bibitem[Burger, 2004]{p3}
+            Edward Burger 
+            \newblock{Making Transcendence Transparent}
+
+            \bibitem[Wolfram MathWorld]{p4}
+            Wolfram MathWorld
+            \newblock{Schanuel's Conjecture}
+        
+            \bibitem[Gelfond, 1959]{p5}
+            Alexander Gelfond
+            \newblock{Transcendental and Algebraic Numbers}
+
+        \bibitem[Baker, 1975]{p6}
+            Alan Baker 
+            \newblock{Transcendental Number Theory}
+
+        \bibitem[Soundararajan, 2011]{p7}
+            Kannan Soundararajan
+            \newblock{Transcendental Number Theory}
+
+	\end{thebibliography} 
 \end{document}

@@ -5,37 +5,43 @@
   \item algebraic extension, \hyperpage{3}
   \item algebraic integer, \hyperpage{6}
   \item algebraic number, \hyperpage{1}
-  \item algebraic number field, \hyperpage{5}
+  \item algebraic number field, \hyperpage{6}
   \item algebraically closed, \hyperpage{3}
   \item algebraically independent, \hyperpage{3}
-  \item analytic continuation, \hyperpage{13}
-  \item analytic function, \hyperpage{13}
-  \item auxiliary function, \hyperpage{21}
+  \item analytic continuation, \hyperpage{14}
+  \item analytic function, \hyperpage{14}
+  \item auxiliary function, \hyperpage{22}
 
   \indexspace
 
-  \item complex differentiable, \hyperpage{13}
-  \item complex logarithm, \hyperpage{14}
+  \item beta function, \hyperpage{33}
+
+  \indexspace
+
+  \item Chaitin's constant, \hyperpage{22}
+  \item complex differentiable, \hyperpage{14}
+  \item complex logarithm, \hyperpage{15}
   \item conjugates, \hyperpage{3}
-  \item curve, \hyperpage{16}
+  \item curve, \hyperpage{18}
 
   \indexspace
 
   \item degree, \hyperpage{3}
-  \item derivative, \hyperpage{13}
-  \item differentiable, \hyperpage{13}
+  \item derivative, \hyperpage{14}
+  \item differentiable, \hyperpage{14}
 
   \indexspace
 
-  \item entire, \hyperpage{13}
+  \item entire, \hyperpage{14}
 
   \indexspace
 
-  \item gamma function, \hyperpage{14}
+  \item gamma function, \hyperpage{15}
 
   \indexspace
 
-  \item holomorphic, \hyperpage{13}
+  \item Halting probability, \hyperpage{22}
+  \item holomorphic, \hyperpage{14}
 
   \indexspace
 
@@ -43,34 +49,34 @@
 
   \indexspace
 
-  \item Lambert $W$ function, \hyperpage{14}
-  \item lattice point, \hyperpage{9}
-  \item limit, \hyperpage{13}
-  \item Liouville number, \hyperpage{19}
+  \item Lambert $W$ function, \hyperpage{15}
+  \item lattice point, \hyperpage{10}
+  \item limit, \hyperpage{14}
+  \item Liouville number, \hyperpage{20}
 
   \indexspace
 
-  \item meromorphic, \hyperpage{13}
+  \item meromorphic, \hyperpage{14}
   \item minimal polynomial, \hyperpage{3}
 
   \indexspace
 
-  \item number field, \hyperpage{5}
+  \item number field, \hyperpage{6}
 
   \indexspace
 
-  \item path, \hyperpage{16}
-  \item path-homotopic, \hyperpage{16}
+  \item path, \hyperpage{18}
+  \item path-homotopic, \hyperpage{18}
 
   \indexspace
 
-  \item rectifiable, \hyperpage{16}
-  \item residue, \hyperpage{17}
+  \item rectifiable, \hyperpage{18}
+  \item residue, \hyperpage{19}
   \item ring of integers, \hyperpage{6}
 
   \indexspace
 
-  \item simply connected domain, \hyperpage{16}
+  \item simply connected domain, \hyperpage{18}
 
   \indexspace
 
@@ -82,6 +88,6 @@
 
   \indexspace
 
-  \item Vandermonde matrix, \hyperpage{10}
+  \item Vandermonde matrix, \hyperpage{11}
 
 \end{theindex}
